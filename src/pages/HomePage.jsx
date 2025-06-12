@@ -1,6 +1,17 @@
 import React from 'react';
+import   { useEffect } from 'react';
 
 const HomePage = () => {
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+
   return (
     <main className="main">
       <section id="hero" className="hero section">
@@ -73,7 +84,7 @@ const HomePage = () => {
         <div className="container section-title" data-aos="fade-up">
           <h2>Nosotros</h2>
           <div>
-            <span>Conoce más</span>
+            <span>Conoce más </span> 
             <span className="description-title">sobre nuestra misión</span>
           </div>
         </div>
@@ -124,6 +135,319 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <section id="services" className="services section">
+
+          {/* <!-- Section Title --> */}
+          <div className="container section-title" data-aos="fade-up">
+            <h2>Soluciones</h2>
+            <div>
+              <span>Descubre nuestras</span>
+              <span className="description-title">herramientas educativas</span>
+            </div>
+          </div>
+          {/* <!-- End Section Title --> */}
+
+          <div className="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div className="service-header">
+              <div className="row align-items-center">
+                <div className="col-lg-8 col-md-12">
+                  <div className="service-intro">
+                    <h2 className="service-heading">
+                      <div>Transformación educativa</div>
+                      <div><span>con tecnología innovadora</span></div>
+                    </h2>
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-12">
+                  <div className="service-summary">
+                    <p>
+                      Combinamos diseño pedagógico, herramientas interactivas (como personajes 3D y plataformas ágiles)
+                      y contenido multimedia para crear experiencias de aprendizaje que cautivan a los estudiantes
+                      y simplifican la gestión académica.
+                    </p>
+                    <a href="#services" className="service-btn">
+                      Ver todas las soluciones
+                      <i className="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="row justify-content-center">
+              {/* <!-- Service 1: Articulate Content --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-laptop"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Cursos en <span>Articulate 360</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Contenido interactivo y responsive diseñado pedagógicamente con Storyline y Rise. Incluye evaluaciones,
+                    simulaciones y compatibilidad SCORM para tu LMS.
+                  </p>
+                </div>
+              </div>
+
+              {/* <!-- Service 2: HTML5 Multimedia --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-code-square"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Contenido <span>HTML5</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Módulos multimedia con animaciones, gamificación y actividades interactivas compatibles con cualquier
+                    dispositivo móvil o computadora.
+                  </p>
+                </div>
+              </div>
+
+              {/* <!-- Service 3: 3D Characters --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-person-video3"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Asistentes <span>3D</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el
+                    aprendizaje más cercano y memorable.
+                  </p>
+                </div>
+              </div>
+
+              {/* <!-- Service 4: Rapid Course Platform --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-lightning-charge"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Plataforma <span>Express</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Sistema para crear cursos universitarios en semanas, no meses. Sube tus PDFs, videos y contenido
+                    existente - nosotros lo convertimos en un curso profesional.
+                  </p>
+                </div>
+              </div>
+
+              {/* <!-- Service 5: Video Production --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-camera-reels"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Producción <span>de Video</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Videos educativos profesionales con animaciones, capturas de pantalla y locuciones. Ideal para explicar
+                    procesos complejos de manera visual.
+                  </p>
+                </div>
+              </div>
+
+              {/* <!-- Service 6: LMS Integration --> */}
+              <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div className="service-card position-relative z-1">
+                  <div className="service-icon">
+                    <i className="bi bi-puzzle"></i>
+                  </div>
+                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
+                    <i className="bi bi-arrow-up-right"></i>
+                  </a>
+                  <h3>
+                    <a href="#navmenu">
+                      Integración <span>LMS</span>
+                    </a>
+                  </h3>
+                  <p>
+                    Conectamos tus cursos con Moodle, Blackboard, Canvas y otros sistemas. Reportes de progreso automáticos
+                    y certificación SCORM/xAPI.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section id="steps" className="steps section">
+          {/* <!-- Section Title --> */}
+          <div className="container section-title" data-aos="fade-up">
+            <h2>Proceso</h2>
+            <div><span>Nuestro método</span> <span className="description-title">de trabajo</span></div>
+          </div>
+          {/* <!-- End Section Title --> */}
+
+          <div className="container" data-aos="fade-up" data-aos-delay="100">
+            <div className="steps-wrapper">
+              {/* <!-- Step 1 --> */}
+              <div className="step-item" data-aos="fade-right" data-aos-delay="200">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-mortarboard"></i>
+                    {/* <!-- Education-focused icon --> */}
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Paso 01</span>
+                    <h3>Diagnóstico Educativo</h3>
+                    <p>Analizamos tus objetivos de aprendizaje, público objetivo y contenido existente para recomendar la
+                      mejor combinación de herramientas (Articulate, HTML5, 3D o plataforma express).</p>
+                  </div>
+                </div>
+              </div>
+              {/* <!-- End Step Item --> */}
+
+              {/* <!-- Step 2 --> */}
+              <div className="step-item" data-aos="fade-left" data-aos-delay="300">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-kanban"></i>
+                    {/* <!-- Planning icon --> */}
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Paso 02</span>
+                    <h3>Diseño Instruccional</h3>
+                    <p>Creamos la estructura pedagógica: guiones para tus videos, flujos de interacción, actividades
+                      evaluativas y la personalización de tu personaje 3D si aplica.</p>
+                  </div>
+                </div>
+              </div>
+              {/* <!-- End Step Item --> */}
+
+              {/* <!-- Step 3 --> */}
+              <div className="step-item" data-aos="fade-right" data-aos-delay="400">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-code-slash"></i>
+                    {/* <!-- Development icon --> */}
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Paso 03</span>
+                    <h3>Producción Ágil</h3>
+                    <p>Desarrollamos tu curso en 2-4 semanas: grabamos videos, programamos interacciones HTML5, configuramos
+                      la plataforma y te entregamos avances semanales para revisión.</p>
+                  </div>
+                </div>
+              </div>
+              {/* <!-- End Step Item --> */}
+
+              {/* <!-- Step 4 --> */}
+              <div className="step-item" data-aos="fade-left" data-aos-delay="500">
+                <div className="step-content">
+                  <div className="step-icon">
+                    <i className="bi bi-graph-up-arrow"></i>
+                    {/* <!-- Results icon --> */}
+                  </div>
+                  <div className="step-info">
+                    <span className="step-number">Paso 04</span>
+                    <h3>Implementación con Métricas</h3>
+                    <p>Publicamos tu curso en tu LMS o nuestra plataforma, con reportes automáticos de progreso estudiantil
+                      y soporte continuo para actualizaciones.</p>
+                  </div>
+                </div>
+              </div>
+              {/* <!-- End Step Item --> */}
+            </div>
+          </div>
+        </section>
+        {/* <!-- /Steps Section --> */}
+
+        {/* <!-- Call To Action Section --> */}
+        <section id="call-to-action" className="call-to-action section">
+          <div className="container" data-aos="fade-up" data-aos-delay="100">
+            <div className="advertise-1 d-flex flex-column flex-lg-row gap-4 align-items-center position-relative">
+
+              {/* <!-- Left Content --> */}
+              <div className="content-left flex-grow-1" data-aos="fade-right" data-aos-delay="200">
+                <span className="badge text-uppercase mb-2">¡Oferta especial!</span>
+                <h2>Transforma tu educación digital en semanas, no meses</h2>
+                <p className="my-4">Lúmina Interactiva ayuda a universidades a crear cursos profesionales con nuestra plataforma
+                  express, personajes 3D y contenido interactivo. Únete a las 50+ instituciones que ya modernizaron su
+                  enseñanza.</p>
+
+                <div className="features d-flex flex-wrap gap-3 mb-4">
+                  <div className="feature-item">
+                    <i className="bi bi-check-circle-fill"></i>
+                    <span>Cursos listos en 15 días</span>
+                  </div>
+                  <div className="feature-item">
+                    <i className="bi bi-check-circle-fill"></i>
+                    <span>Integración con tu LMS</span>
+                  </div>
+                  <div className="feature-item">
+                    <i className="bi bi-check-circle-fill"></i>
+                    <span>Soporte pedagógico 24/7</span>
+                  </div>
+                </div>
+
+                <div className="cta-buttons d-flex flex-wrap gap-3">
+                  <a href="#contact" className="btn btn-primary">Solicitar demostración</a>
+                  <a href="#services" className="btn btn-outline">Ver casos de éxito</a>
+                </div>
+              </div>
+
+              {/* <!-- Right Content --> */}
+              <div className="content-right position-relative" data-aos="fade-left" data-aos-delay="300">
+                <img src="assets/img/misc/plataforma-elearning.webp" alt="Plataforma de eLearning"
+                  className="img-fluid rounded-4" />
+                <div className="floating-card">
+                  <div className="card-icon">
+                    <i className="bi bi-people-fill"></i>
+                  </div>
+                  <div className="card-content">
+                    <span className="stats-number">95%</span>
+                    <span className="stats-text">Satisfacción estudiantil</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* <!-- Decorative Elements --> */}
+              <div className="decoration">
+                <div className="circle-1"></div>
+                <div className="circle-2"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       {/* Rest of sections... */}
     </main>

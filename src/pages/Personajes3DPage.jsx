@@ -1,10 +1,26 @@
 import React from 'react';
-// import '../styles/personajes3d.css';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 const Personajes3DPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Small delay to ensure the component is fully rendered
+      const timer = setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]); // Listen for hash changes
+
+
   return (
-
-
 
     <div className="personajes3d-page">
 
@@ -77,281 +93,281 @@ const Personajes3DPage = () => {
         </div>
       </section>
 
- 
 
-    <section id="service-details" className="service-details section">
 
-      <div className="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <section id="service-details" className="service-details section">
 
-        <div className="row gy-5">
+        <div className="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
-          <div className="col-lg-8 order-lg-1 order-2">
-            <div className="service-main-content">
-              <div className="service-header aos-init aos-animate" data-aos="fade-up">
-                <h1>Digital Marketing Excellence</h1>
-                <div className="service-meta">
-                  <span><i className="bi bi-award"></i> Premium Service</span>
-                  <span><i className="bi bi-clock"></i> Since 2015</span>
-                  <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
+          <div className="row gy-5">
+
+            <div className="col-lg-8 order-lg-1 order-2">
+              <div className="service-main-content">
+                <div className="service-header aos-init aos-animate" data-aos="fade-up">
+                  <h1>Digital Marketing Excellence</h1>
+                  <div className="service-meta">
+                    <span><i className="bi bi-award"></i> Premium Service</span>
+                    <span><i className="bi bi-clock"></i> Since 2015</span>
+                    <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
+                  </div>
+                  <p className="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo erat at malesuada bibendum. Nullam eu risus sit amet nunc fermentum lacinia.
+                  </p>
                 </div>
-                <p className="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo erat at malesuada bibendum. Nullam eu risus sit amet nunc fermentum lacinia.
-                </p>
-              </div>
 
-              <div className="service-tabs aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                <ul className="nav nav-tabs" id="serviceTab" role="tablist">
-                  <li className="nav-item" role="presentation">
-                    <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#service-details-tab-1" type="button" role="tab" aria-controls="overview" aria-selected="true">
-                      <i className="bi bi-info-circle"></i> Overview
-                    </button>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false" tabIndex="-1">
-                      <i className="bi bi-diagram-3"></i> Process
-                    </button>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false" tabIndex="-1">
-                      <i className="bi bi-graph-up-arrow"></i> Benefits
-                    </button>
-                  </li>
-                </ul>
+                <div className="service-tabs aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <ul className="nav nav-tabs" id="serviceTab" role="tablist">
+                    <li className="nav-item" role="presentation">
+                      <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#service-details-tab-1" type="button" role="tab" aria-controls="overview" aria-selected="true">
+                        <i className="bi bi-info-circle"></i> Overview
+                      </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false" tabIndex="-1">
+                        <i className="bi bi-diagram-3"></i> Process
+                      </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false" tabIndex="-1">
+                        <i className="bi bi-graph-up-arrow"></i> Benefits
+                      </button>
+                    </li>
+                  </ul>
 
-                <div className="tab-content">
+                  <div className="tab-content">
 
-                  <div className="tab-pane fade active show" id="service-details-tab-1" role="tabpanel" aria-labelledby="overview-tab">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="content-block">
-                          <h3>Strategic Marketing Approach</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat nibh. Praesent a nibh at eros sodales finibus. Suspendisse potenti. Sed vitae sagittis nulla.</p>
-                          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam consequat, nulla nec commodo finibus, ipsum magna pretium libero.</p>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <img src="assets/img/services/services-7.webp" alt="Digital Marketing Strategy" className="img-fluid rounded" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="tab-pane fade" id="service-details-tab-2" role="tabpanel" aria-labelledby="process-tab">
-                    <div className="process-timeline">
-                      <div className="timeline-item">
-                        <div className="timeline-marker">01</div>
-                        <div className="timeline-content">
-                          <h4>Discovery & Research</h4>
-                          <p>Thorough market analysis and competitor research to define your target audience and marketing goals.</p>
-                        </div>
-                      </div>
-
-                      <div className="timeline-item">
-                        <div className="timeline-marker">02</div>
-                        <div className="timeline-content">
-                          <h4>Strategy Development</h4>
-                          <p>Creating comprehensive marketing strategies tailored to your specific business objectives and target demographics.</p>
-                        </div>
-                      </div>
-
-                      <div className="timeline-item">
-                        <div className="timeline-marker">03</div>
-                        <div className="timeline-content">
-                          <h4>Implementation</h4>
-                          <p>Executing the marketing plan across various channels with precise targeting and creative content delivery.</p>
-                        </div>
-                      </div>
-
-                      <div className="timeline-item">
-                        <div className="timeline-marker">04</div>
-                        <div className="timeline-content">
-                          <h4>Analysis & Optimization</h4>
-                          <p>Continuous monitoring, data analysis, and strategy refinement to maximize ROI and campaign effectiveness.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="tab-pane fade" id="service-details-tab-3" role="tabpanel" aria-labelledby="benefits-tab">
-                    <div className="row g-4">
-                      <div className="col-md-6">
-                        <div className="benefit-card">
-                          <div className="benefit-icon">
-                            <i className="bi bi-graph-up"></i>
+                    <div className="tab-pane fade active show" id="service-details-tab-1" role="tabpanel" aria-labelledby="overview-tab">
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="content-block">
+                            <h3>Strategic Marketing Approach</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat nibh. Praesent a nibh at eros sodales finibus. Suspendisse potenti. Sed vitae sagittis nulla.</p>
+                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam consequat, nulla nec commodo finibus, ipsum magna pretium libero.</p>
                           </div>
-                          <h4>Increased Brand Visibility</h4>
-                          <p>Expand your digital footprint and reach more potential customers through targeted marketing efforts.</p>
+                        </div>
+                        <div className="col-md-6">
+                          <img src="assets/img/services/services-7.webp" alt="Digital Marketing Strategy" className="img-fluid rounded" />
                         </div>
                       </div>
-                      <div className="col-md-6">
-                        <div className="benefit-card">
-                          <div className="benefit-icon">
-                            <i className="bi bi-people"></i>
+                    </div>
+
+                    <div className="tab-pane fade" id="service-details-tab-2" role="tabpanel" aria-labelledby="process-tab">
+                      <div className="process-timeline">
+                        <div className="timeline-item">
+                          <div className="timeline-marker">01</div>
+                          <div className="timeline-content">
+                            <h4>Discovery & Research</h4>
+                            <p>Thorough market analysis and competitor research to define your target audience and marketing goals.</p>
                           </div>
-                          <h4>Higher Engagement Rates</h4>
-                          <p>Create meaningful connections with your audience through relevant and compelling content strategies.</p>
                         </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="benefit-card">
-                          <div className="benefit-icon">
-                            <i className="bi bi-cash-coin"></i>
+
+                        <div className="timeline-item">
+                          <div className="timeline-marker">02</div>
+                          <div className="timeline-content">
+                            <h4>Strategy Development</h4>
+                            <p>Creating comprehensive marketing strategies tailored to your specific business objectives and target demographics.</p>
                           </div>
-                          <h4>Improved ROI</h4>
-                          <p>Maximize your marketing budget with data-driven campaigns that deliver measurable results.</p>
                         </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="benefit-card">
-                          <div className="benefit-icon">
-                            <i className="bi bi-bar-chart-line"></i>
+
+                        <div className="timeline-item">
+                          <div className="timeline-marker">03</div>
+                          <div className="timeline-content">
+                            <h4>Implementation</h4>
+                            <p>Executing the marketing plan across various channels with precise targeting and creative content delivery.</p>
                           </div>
-                          <h4>Data-Driven Decisions</h4>
-                          <p>Make informed marketing choices based on comprehensive analytics and performance metrics.</p>
+                        </div>
+
+                        <div className="timeline-item">
+                          <div className="timeline-marker">04</div>
+                          <div className="timeline-content">
+                            <h4>Analysis & Optimization</h4>
+                            <p>Continuous monitoring, data analysis, and strategy refinement to maximize ROI and campaign effectiveness.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="tab-pane fade" id="service-details-tab-3" role="tabpanel" aria-labelledby="benefits-tab">
+                      <div className="row g-4">
+                        <div className="col-md-6">
+                          <div className="benefit-card">
+                            <div className="benefit-icon">
+                              <i className="bi bi-graph-up"></i>
+                            </div>
+                            <h4>Increased Brand Visibility</h4>
+                            <p>Expand your digital footprint and reach more potential customers through targeted marketing efforts.</p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="benefit-card">
+                            <div className="benefit-icon">
+                              <i className="bi bi-people"></i>
+                            </div>
+                            <h4>Higher Engagement Rates</h4>
+                            <p>Create meaningful connections with your audience through relevant and compelling content strategies.</p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="benefit-card">
+                            <div className="benefit-icon">
+                              <i className="bi bi-cash-coin"></i>
+                            </div>
+                            <h4>Improved ROI</h4>
+                            <p>Maximize your marketing budget with data-driven campaigns that deliver measurable results.</p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="benefit-card">
+                            <div className="benefit-icon">
+                              <i className="bi bi-bar-chart-line"></i>
+                            </div>
+                            <h4>Data-Driven Decisions</h4>
+                            <p>Make informed marketing choices based on comprehensive analytics and performance metrics.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                <h3>Our Marketing Portfolio</h3>
-                <div className="service-details-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
-                  {/* Swiper config moved to component initialization */}
-                  <div className="swiper-wrapper" id="swiper-wrapper-f7858dc9f9b3a7d7" aria-live="off" style={{transitionDuration: '0ms', transform: 'translate3d(-383px, 0px, 0px)', transitionDelay: '0ms'}}>
-                    
-                    
-                    
-                  <div className="swiper-slide swiper-slide-prev" style={{width: '353px', marginRight: '30px'}} role="group" aria-label="2 / 3" data-swiper-slide-index="1">
-                      <div className="portfolio-item">
-                        <img src="assets/img/services/services-4.webp" alt="" className="img-fluid" loading="lazy" />
-                        <div className="portfolio-info">
-                          <h5>SEO Optimization</h5>
-                          <p>Ranked #1 for target keywords</p>
+                <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                  <h3>Our Marketing Portfolio</h3>
+                  <div className="service-details-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                    {/* Swiper config moved to component initialization */}
+                    <div className="swiper-wrapper" id="swiper-wrapper-f7858dc9f9b3a7d7" aria-live="off" style={{ transitionDuration: '0ms', transform: 'translate3d(-383px, 0px, 0px)', transitionDelay: '0ms' }}>
+
+
+
+                      <div className="swiper-slide swiper-slide-prev" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="2 / 3" data-swiper-slide-index="1">
+                        <div className="portfolio-item">
+                          <img src="assets/img/services/services-4.webp" alt="" className="img-fluid" loading="lazy" />
+                          <div className="portfolio-info">
+                            <h5>SEO Optimization</h5>
+                            <p>Ranked #1 for target keywords</p>
+                          </div>
                         </div>
-                      </div>
-                    </div><div className="swiper-slide swiper-slide-active" style={{width: '353px', marginRight: '30px'}} role="group" aria-label="3 / 3" data-swiper-slide-index="2">
-                      <div className="portfolio-item">
-                        <img src="assets/img/services/services-10.webp" alt="" className="img-fluid" loading="lazy" />
-                        <div className="portfolio-info">
-                          <h5>Content Marketing</h5>
-                          <p>200% increase in organic traffic</p>
+                      </div><div className="swiper-slide swiper-slide-active" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+                        <div className="portfolio-item">
+                          <img src="assets/img/services/services-10.webp" alt="" className="img-fluid" loading="lazy" />
+                          <div className="portfolio-info">
+                            <h5>Content Marketing</h5>
+                            <p>200% increase in organic traffic</p>
+                          </div>
                         </div>
-                      </div>
-                    </div><div className="swiper-slide swiper-slide-next" style={{width: '353px', marginRight: '30px'}} role="group" aria-label="1 / 3" data-swiper-slide-index="0">
-                      <div className="portfolio-item">
-                        <img src="assets/img/services/services-2.webp" alt="" className="img-fluid" loading="lazy" />
-                        <div className="portfolio-info">
-                          <h5>Social Media Campaign</h5>
-                          <p>Increased engagement by 187%</p>
+                      </div><div className="swiper-slide swiper-slide-next" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="1 / 3" data-swiper-slide-index="0">
+                        <div className="portfolio-item">
+                          <img src="assets/img/services/services-2.webp" alt="" className="img-fluid" loading="lazy" />
+                          <div className="portfolio-info">
+                            <h5>Social Media Campaign</h5>
+                            <p>Increased engagement by 187%</p>
+                          </div>
                         </div>
-                      </div>
-                    </div></div>
-                  <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 1"></span><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 2"></span><span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span></div>
-                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 order-lg-2 order-1">
-            <div className="service-sidebar aos-init aos-animate" data-aos="fade-left">
-              <div className="action-card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                <h3>Ready to Boost Your Online Presence?</h3>
-                <p>Get a free consultation with our digital marketing experts and discover how we can help grow your business.</p>
-                <a href="#" className="btn-primary">Schedule Consultation</a>
-                <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
-              </div>
-
-              <div className="service-features-list aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                <h4>What We Offer</h4>
-                <ul>
-                  <li>
-                    <i className="bi bi-megaphone"></i>
-                    <div>
-                      <h5>Social Media Marketing</h5>
-                      <p>Strategic presence across all relevant platforms</p>
-                    </div>
-                  </li>
-                  <li>
-                    <i className="bi bi-search"></i>
-                    <div>
-                      <h5>SEO Optimization</h5>
-                      <p>Improve your search engine rankings</p>
-                    </div>
-                  </li>
-                  <li>
-                    <i className="bi bi-newspaper"></i>
-                    <div>
-                      <h5>Content Marketing</h5>
-                      <p>Engaging content that converts visitors</p>
-                    </div>
-                  </li>
-                  <li>
-                    <i className="bi bi-envelope-paper"></i>
-                    <div>
-                      <h5>Email Campaigns</h5>
-                      <p>Targeted email marketing strategies</p>
-                    </div>
-                  </li>
-                  <li>
-                    <i className="bi bi-graph-up-arrow"></i>
-                    <div>
-                      <h5>Analytics & Reporting</h5>
-                      <p>Comprehensive performance tracking</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="testimonial-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                <div className="testimonial-header">
-                  <i className="bi bi-quote"></i>
-                  <div className="rating">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <p className="testimonial-text">
-                  "Their digital marketing strategies transformed our online presence completely. We've seen a 300% increase in qualified leads within just 3 months."
-                </p>
-                <div className="client-info">
-                  <img src="assets/img/person/person-m-5.webp" alt="Client" className="client-image" />
-                  <div className="client-details">
-                    <h5>Robert Johnson</h5>
-                    <span>CEO, TechSolutions Inc.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-                <h4>Have Questions?</h4>
-                <div className="contact-method">
-                  <i className="bi bi-telephone-fill"></i>
-                  <div>
-                    <span>Call Us Now</span>
-                    <p>+1 (803) 952-3845</p>
-                  </div>
-                </div>
-                <div className="contact-method">
-                  <i className="bi bi-envelope-fill"></i>
-                  <div>
-                    <span>Email Us</span>
-                    <p>marketing@example.com</p>
-                  </div>
+                      </div></div>
+                    <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 1"></span><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 2"></span><span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span></div>
+                    <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                 </div>
               </div>
             </div>
+
+            <div className="col-lg-4 order-lg-2 order-1">
+              <div className="service-sidebar aos-init aos-animate" data-aos="fade-left">
+                <div className="action-card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+                  <h3>Ready to Boost Your Online Presence?</h3>
+                  <p>Get a free consultation with our digital marketing experts and discover how we can help grow your business.</p>
+                  <a href="#" className="btn-primary">Schedule Consultation</a>
+                  <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
+                </div>
+
+                <div className="service-features-list aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <h4>What We Offer</h4>
+                  <ul>
+                    <li>
+                      <i className="bi bi-megaphone"></i>
+                      <div>
+                        <h5>Social Media Marketing</h5>
+                        <p>Strategic presence across all relevant platforms</p>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-search"></i>
+                      <div>
+                        <h5>SEO Optimization</h5>
+                        <p>Improve your search engine rankings</p>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-newspaper"></i>
+                      <div>
+                        <h5>Content Marketing</h5>
+                        <p>Engaging content that converts visitors</p>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-envelope-paper"></i>
+                      <div>
+                        <h5>Email Campaigns</h5>
+                        <p>Targeted email marketing strategies</p>
+                      </div>
+                    </li>
+                    <li>
+                      <i className="bi bi-graph-up-arrow"></i>
+                      <div>
+                        <h5>Analytics & Reporting</h5>
+                        <p>Comprehensive performance tracking</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="testimonial-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                  <div className="testimonial-header">
+                    <i className="bi bi-quote"></i>
+                    <div className="rating">
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                      <i className="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                  <p className="testimonial-text">
+                    "Their digital marketing strategies transformed our online presence completely. We've seen a 300% increase in qualified leads within just 3 months."
+                  </p>
+                  <div className="client-info">
+                    <img src="assets/img/person/person-m-5.webp" alt="Client" className="client-image" />
+                    <div className="client-details">
+                      <h5>Robert Johnson</h5>
+                      <span>CEO, TechSolutions Inc.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+                  <h4>Have Questions?</h4>
+                  <div className="contact-method">
+                    <i className="bi bi-telephone-fill"></i>
+                    <div>
+                      <span>Call Us Now</span>
+                      <p>+1 (803) 952-3845</p>
+                    </div>
+                  </div>
+                  <div className="contact-method">
+                    <i className="bi bi-envelope-fill"></i>
+                    <div>
+                      <span>Email Us</span>
+                      <p>marketing@example.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
-    
 
       <section id="pricing" className="pricing section">
         {/* <!-- Section Title --> */}
