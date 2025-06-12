@@ -14,7 +14,7 @@ const Personajes3DPage = () => {
         const element = document.querySelector(hash);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
       }, 100);
-      
+
       return () => clearTimeout(timer);
     }
   }, [location.hash]); // Listen for hash changes
@@ -46,12 +46,12 @@ const Personajes3DPage = () => {
                     en línea.</p>
                 </div>
 
-                <div className="cta-button">
+                {/* <div className="cta-button">
                   <a href="#services" className="btn">
                     <span>VER SERVICIOS</span>
                     <i className="bi bi-arrow-right"></i>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -104,14 +104,14 @@ const Personajes3DPage = () => {
             <div className="col-lg-8 order-lg-1 order-2">
               <div className="service-main-content">
                 <div className="service-header aos-init aos-animate" data-aos="fade-up">
-                  <h1>Digital Marketing Excellence</h1>
+                  <h1>Animación 3D que Cautiva a tu Audiencia</h1>
                   <div className="service-meta">
-                    <span><i className="bi bi-award"></i> Premium Service</span>
-                    <span><i className="bi bi-clock"></i> Since 2015</span>
-                    <span><i className="bi bi-star-fill"></i> 4.9/5 Rating</span>
+                    <span><i className="bi bi-award"></i> Solución Asequible</span>
+                    <span><i className="bi bi-clock"></i> Entrega en 3-4 Semanas</span>
+                    <span><i className="bi bi-star-fill"></i> Alta Retención de Audiencia</span>
                   </div>
                   <p className="lead">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo erat at malesuada bibendum. Nullam eu risus sit amet nunc fermentum lacinia.
+                    Impresiona a tus usuarios con personajes 3D animados que elevan la calidad de tus contenidos educativos y corporativos sin gastar una fortuna.
                   </p>
                 </div>
 
@@ -119,92 +119,89 @@ const Personajes3DPage = () => {
                   <ul className="nav nav-tabs" id="serviceTab" role="tablist">
                     <li className="nav-item" role="presentation">
                       <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#service-details-tab-1" type="button" role="tab" aria-controls="overview" aria-selected="true">
-                        <i className="bi bi-info-circle"></i> Overview
+                        <i className="bi bi-info-circle"></i> ¿Por Qué 3D?
                       </button>
                     </li>
                     <li className="nav-item" role="presentation">
-                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false" tabIndex="-1">
-                        <i className="bi bi-diagram-3"></i> Process
+                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false">
+                        <i className="bi bi-diagram-3"></i> Paso a Paso
                       </button>
                     </li>
                     <li className="nav-item" role="presentation">
-                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false" tabIndex="-1">
-                        <i className="bi bi-graph-up-arrow"></i> Benefits
+                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false">
+                        <i className="bi bi-graph-up-arrow"></i> Beneficios
                       </button>
                     </li>
                   </ul>
 
                   <div className="tab-content">
 
-                    <div className="tab-pane fade active show" id="service-details-tab-1" role="tabpanel" aria-labelledby="overview-tab">
+                    <div className="tab-pane fade active show" id="service-details-tab-1" role="tabpanel">
                       <div className="row">
                         <div className="col-md-6">
                           <div className="content-block">
-                            <h3>Strategic Marketing Approach</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat nibh. Praesent a nibh at eros sodales finibus. Suspendisse potenti. Sed vitae sagittis nulla.</p>
-                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam consequat, nulla nec commodo finibus, ipsum magna pretium libero.</p>
+                            <h3>Impacto del Contenido Animado</h3>
+                            <p>📈 Los videos con personajes animados 3D tienen un 30% más de retención que los formatos tradicionales (2D o live-action).</p>
+                            <p>💬 El 70% de los marketers considera el 3D la herramienta más efectiva para engagement, según HubSpot.</p>
+                            <p>🛒 Las campañas con animación 3D aumentan las tasas de conversión un 40% en e-commerce.</p>
+                            <p>🧠 El 90% de los consumidores recuerda mejor una marca con contenido audiovisual animado frente a solo texto.</p>
                           </div>
                         </div>
                         <div className="col-md-6">
-                          <img src="assets/img/services/services-7.webp" alt="Digital Marketing Strategy" className="img-fluid rounded" />
+                          <img src="assets/img/services/3d_assistants.png" alt="Ventajas del contenido animado" className="img-fluid rounded" />
                         </div>
                       </div>
                     </div>
 
-                    <div className="tab-pane fade" id="service-details-tab-2" role="tabpanel" aria-labelledby="process-tab">
+                    <div className="tab-pane fade" id="service-details-tab-2" role="tabpanel">
                       <div className="process-timeline">
                         <div className="timeline-item">
                           <div className="timeline-marker">01</div>
                           <div className="timeline-content">
-                            <h4>Discovery & Research</h4>
-                            <p>Thorough market analysis and competitor research to define your target audience and marketing goals.</p>
+                            <h4>Elección del Personaje</h4>
+                            <p>Selecciona entre una galería de personajes 3D prediseñados o solicita uno personalizado según tu marca.</p>
                           </div>
                         </div>
-
                         <div className="timeline-item">
                           <div className="timeline-marker">02</div>
                           <div className="timeline-content">
-                            <h4>Strategy Development</h4>
-                            <p>Creating comprehensive marketing strategies tailored to your specific business objectives and target demographics.</p>
+                            <h4>Desarrollo de Guión</h4>
+                            <p>Te ayudamos a redactar un guión claro y didáctico para maximizar la conexión con la audiencia.</p>
                           </div>
                         </div>
-
                         <div className="timeline-item">
                           <div className="timeline-marker">03</div>
                           <div className="timeline-content">
-                            <h4>Implementation</h4>
-                            <p>Executing the marketing plan across various channels with precise targeting and creative content delivery.</p>
+                            <h4>Grabación de Voz</h4>
+                            <p>Locución profesional grabada en estudio o de forma remota con tu voz preferida.</p>
                           </div>
                         </div>
-
                         <div className="timeline-item">
                           <div className="timeline-marker">04</div>
                           <div className="timeline-content">
-                            <h4>Analysis & Optimization</h4>
-                            <p>Continuous monitoring, data analysis, and strategy refinement to maximize ROI and campaign effectiveness.</p>
+                            <h4>Animación y Render</h4>
+                            <p>Animamos tu personaje con movimiento facial, corporal y expresión emocional. Luego lo renderizamos con calidad HD.</p>
+                          </div>
+                        </div>
+                        <div className="timeline-item">
+                          <div className="timeline-marker">05</div>
+                          <div className="timeline-content">
+                            <h4>Motion Graphics + Entrega</h4>
+                            <p>Agregamos transiciones, música y subtítulos. Entregamos en múltiples formatos para plataformas, LMS o redes.</p>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="tab-pane fade" id="service-details-tab-3" role="tabpanel" aria-labelledby="benefits-tab">
+                    <div className="tab-pane fade" id="service-details-tab-3" role="tabpanel">
                       <div className="row g-4">
                         <div className="col-md-6">
                           <div className="benefit-card">
                             <div className="benefit-icon">
-                              <i className="bi bi-graph-up"></i>
+                              <i className="bi bi-eye"></i>
                             </div>
-                            <h4>Increased Brand Visibility</h4>
-                            <p>Expand your digital footprint and reach more potential customers through targeted marketing efforts.</p>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="benefit-card">
-                            <div className="benefit-icon">
-                              <i className="bi bi-people"></i>
-                            </div>
-                            <h4>Higher Engagement Rates</h4>
-                            <p>Create meaningful connections with your audience through relevant and compelling content strategies.</p>
+                            <h4>Mayor Retención</h4>
+                            <p>Tu audiencia recuerda más y se compromete mejor con personajes animados realistas.</p>
                           </div>
                         </div>
                         <div className="col-md-6">
@@ -212,8 +209,17 @@ const Personajes3DPage = () => {
                             <div className="benefit-icon">
                               <i className="bi bi-cash-coin"></i>
                             </div>
-                            <h4>Improved ROI</h4>
-                            <p>Maximize your marketing budget with data-driven campaigns that deliver measurable results.</p>
+                            <h4>Accesible para Todos</h4>
+                            <p>Producción profesional sin presupuestos excesivos. Ideal para empresas educativas y comerciales.</p>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="benefit-card">
+                            <div className="benefit-icon">
+                              <i className="bi bi-lightning-charge"></i>
+                            </div>
+                            <h4>Producción Ágil</h4>
+                            <p>Todo el proceso en solo 3 a 4 semanas. Con avances iterativos y entregas rápidas.</p>
                           </div>
                         </div>
                         <div className="col-md-6">
@@ -221,105 +227,133 @@ const Personajes3DPage = () => {
                             <div className="benefit-icon">
                               <i className="bi bi-bar-chart-line"></i>
                             </div>
-                            <h4>Data-Driven Decisions</h4>
-                            <p>Make informed marketing choices based on comprehensive analytics and performance metrics.</p>
+                            <h4>Resultados Medibles</h4>
+                            <p>Mejora en conversiones, leads y recordación de marca garantizados con estadísticas reales.</p>
                           </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
 
                 <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                  <h3>Our Marketing Portfolio</h3>
+                  <h3>Ejemplos de Animación 3D</h3>
                   <div className="service-details-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
-                    {/* Swiper config moved to component initialization */}
-                    <div className="swiper-wrapper" id="swiper-wrapper-f7858dc9f9b3a7d7" aria-live="off" style={{ transitionDuration: '0ms', transform: 'translate3d(-383px, 0px, 0px)', transitionDelay: '0ms' }}>
+                    <div className="swiper-wrapper">
+                      <div className="swiper-slide">
+                        <div className="portfolio-item">
+                          <div style={{ position: "relative", paddingTop: "56.25%" }}>
+                            <iframe
+                              src="https://iframe.mediadelivery.net/embed/183081/1323c7e2-7340-4126-9268-63bd3a247164?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+                              loading="lazy"
+                              style={{
+                                border: 0,
+                                position: "absolute",
+                                top: 0,
+                                height: "100%",
+                                width: "100%",
+                              }}
+                              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
 
 
 
-                      <div className="swiper-slide swiper-slide-prev" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="2 / 3" data-swiper-slide-index="1">
-                        <div className="portfolio-item">
-                          <img src="assets/img/services/services-4.webp" alt="" className="img-fluid" loading="lazy" />
                           <div className="portfolio-info">
-                            <h5>SEO Optimization</h5>
-                            <p>Ranked #1 for target keywords</p>
+                            <h5>Asistente Virtual Educativo</h5>
+                            <p>Transforma PDFs en contenido animado</p>
                           </div>
                         </div>
-                      </div><div className="swiper-slide swiper-slide-active" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+                      </div>
+                      {/* <div className="swiper-slide">
                         <div className="portfolio-item">
-                          <img src="assets/img/services/services-10.webp" alt="" className="img-fluid" loading="lazy" />
+                          <img src="assets/img/services/services-10.webp" alt="Demo 2" className="img-fluid" loading="lazy" />
                           <div className="portfolio-info">
-                            <h5>Content Marketing</h5>
-                            <p>200% increase in organic traffic</p>
+                            <h5>Personaje 3D Interactivo</h5>
+                            <p>Guías dinámicas para plataformas LMS</p>
                           </div>
                         </div>
-                      </div><div className="swiper-slide swiper-slide-next" style={{ width: '353px', marginRight: '30px' }} role="group" aria-label="1 / 3" data-swiper-slide-index="0">
+                      </div>
+                      <div className="swiper-slide">
                         <div className="portfolio-item">
-                          <img src="assets/img/services/services-2.webp" alt="" className="img-fluid" loading="lazy" />
+                          <img src="assets/img/services/services-2.webp" alt="Demo 3" className="img-fluid" loading="lazy" />
                           <div className="portfolio-info">
-                            <h5>Social Media Campaign</h5>
-                            <p>Increased engagement by 187%</p>
+                            <h5>Campaña Corporativa</h5>
+                            <p>Mensaje institucional con animación facial</p>
                           </div>
                         </div>
-                      </div></div>
-                    <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 1"></span><span className="swiper-pagination-bullet" tabIndex="0" role="button" aria-label="Go to slide 2"></span><span className="swiper-pagination-bullet swiper-pagination-bullet-active" tabIndex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span></div>
-                    <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                      </div> */}
+                    </div>
+                    <div className="swiper-pagination"></div>
+                    <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                  </div>
                 </div>
               </div>
             </div>
 
+
             <div className="col-lg-4 order-lg-2 order-1">
               <div className="service-sidebar aos-init aos-animate" data-aos="fade-left">
+
                 <div className="action-card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                  <h3>Ready to Boost Your Online Presence?</h3>
-                  <p>Get a free consultation with our digital marketing experts and discover how we can help grow your business.</p>
-                  <a href="#" className="btn-primary">Schedule Consultation</a>
-                  <span className="guarantee"><i className="bi bi-shield-check"></i> 100% Satisfaction Guarantee</span>
+                  <h3>¿Listo para Impresionar con 3D?</h3>
+                  <p>Solicita una animación personalizada para tu curso, empresa o presentación. Producción rápida, profesional y accesible.</p>
+
+                  <a
+                    href="https://wa.me/573103339208?text=Hola,%20quiero%20saber%20más%20sobre%20los%20asistentes%203D"
+                    className="btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Solicita Cotización
+                  </a>
+
+                  <span className="guarantee"><i className="bi bi-shield-check"></i> 100 % Entrega Garantizada</span>
                 </div>
 
                 <div className="service-features-list aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                  <h4>What We Offer</h4>
+                  <h4>¿Qué Incluye?</h4>
                   <ul>
                     <li>
-                      <i className="bi bi-megaphone"></i>
+                      <i className="bi bi-person-bounding-box"></i>
                       <div>
-                        <h5>Social Media Marketing</h5>
-                        <p>Strategic presence across all relevant platforms</p>
+                        <h5>Personajes 3D</h5>
+                        <p>Prediseñados o personalizados con branding institucional</p>
                       </div>
                     </li>
                     <li>
-                      <i className="bi bi-search"></i>
+                      <i className="bi bi-mic-fill"></i>
                       <div>
-                        <h5>SEO Optimization</h5>
-                        <p>Improve your search engine rankings</p>
+                        <h5>Guión + Locución</h5>
+                        <p>Apoyo en redacción y voz profesional</p>
                       </div>
                     </li>
                     <li>
-                      <i className="bi bi-newspaper"></i>
+                      <i className="bi bi-film"></i>
                       <div>
-                        <h5>Content Marketing</h5>
-                        <p>Engaging content that converts visitors</p>
+                        <h5>Render + Motion</h5>
+                        <p>Animación + edición con subtítulos y música</p>
                       </div>
                     </li>
                     <li>
-                      <i className="bi bi-envelope-paper"></i>
+                      <i className="bi bi-tv"></i>
                       <div>
-                        <h5>Email Campaigns</h5>
-                        <p>Targeted email marketing strategies</p>
+                        <h5>Entrega Multiformato</h5>
+                        <p>Video final listo para LMS, YouTube o eventos</p>
                       </div>
                     </li>
                     <li>
-                      <i className="bi bi-graph-up-arrow"></i>
+                      <i className="bi bi-clock-history"></i>
                       <div>
-                        <h5>Analytics & Reporting</h5>
-                        <p>Comprehensive performance tracking</p>
+                        <h5>Producción Rápida</h5>
+                        <p>Entrega en 3 a 4 semanas</p>
                       </div>
                     </li>
                   </ul>
                 </div>
 
-                <div className="testimonial-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                {/* <div className="testimonial-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                   <div className="testimonial-header">
                     <i className="bi bi-quote"></i>
                     <div className="rating">
@@ -331,42 +365,46 @@ const Personajes3DPage = () => {
                     </div>
                   </div>
                   <p className="testimonial-text">
-                    "Their digital marketing strategies transformed our online presence completely. We've seen a 300% increase in qualified leads within just 3 months."
+                    “El asistente 3D transformó por completo nuestra inducción virtual. Fue como tener un presentador real, pero automatizado y listo para todos los empleados.”
                   </p>
                   <div className="client-info">
-                    <img src="assets/img/person/person-m-5.webp" alt="Client" className="client-image" />
+                    <img src="assets/img/person/person-m-5.webp" alt="Cliente" className="client-image" />
                     <div className="client-details">
-                      <h5>Robert Johnson</h5>
-                      <span>CEO, TechSolutions Inc.</span>
+                      <h5>María González</h5>
+                      <span>RRHH, Grupo Monteazul</span>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-                  <h4>Have Questions?</h4>
+                  <h4>¿Tienes Preguntas?</h4>
                   <div className="contact-method">
                     <i className="bi bi-telephone-fill"></i>
                     <div>
-                      <span>Call Us Now</span>
-                      <p>+1 (803) 952-3845</p>
+                      <span>Llámanos</span>
+                      <p>+57 310 333 9208</p>
                     </div>
                   </div>
                   <div className="contact-method">
                     <i className="bi bi-envelope-fill"></i>
                     <div>
-                      <span>Email Us</span>
-                      <p>marketing@example.com</p>
+                      <span>Escríbenos</span>
+                      <p>luminawebs@gmail.com</p>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
 
-          </div>
 
+
+
+          </div>
         </div>
 
       </section>
+
 
 
       <section id="pricing" className="pricing section">

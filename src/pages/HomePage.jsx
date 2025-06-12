@@ -1,15 +1,23 @@
 import React from 'react';
-import   { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+  const location = useLocation();
 
   useEffect(() => {
-    const hash = window.location.hash;
+    const hash = location.hash;
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      // Small delay to ensure the component is fully rendered
+      const timer = setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      
+      return () => clearTimeout(timer);
     }
-  }, []);
+  }, [location.hash]); // Listen for hash changes
 
 
   return (
@@ -225,13 +233,10 @@ const HomePage = () => {
                   <div className="service-icon">
                     <i className="bi bi-person-video3"></i>
                   </div>
-                  <a href="#navmenu" className="card-action d-flex align-items-center justify-content-center rounded-circle">
-                    <i className="bi bi-arrow-up-right"></i>
-                  </a>
+                 
+                  <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                   <h3>
-                    <a href="#navmenu">
-                      Asistentes <span>3D</span>
-                    </a>
+                   <Link to="/personajes3d#hero" className="active">Asistentes 3D</Link>
                   </h3>
                   <p>
                     Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el
