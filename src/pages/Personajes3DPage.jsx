@@ -34,7 +34,7 @@ const Personajes3DPage = () => {
                 </div>
 
                 <div className="main-heading">
-                  <h1>Asistentes 3D</h1>
+                  <h1>Avatars 3D</h1>
                 </div>
 
                 <div className="divider"></div>
@@ -59,7 +59,7 @@ const Personajes3DPage = () => {
               <div className="visual-content">
                 <div className="fluid-shape">
                   <div style={{ position: 'relative', paddingTop: '56.25%' }}><iframe
-                    src="https://iframe.mediadelivery.net/embed/354319/33fc09af-d689-4669-8c79-82816f38f0a7?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+                    src="https://iframe.mediadelivery.net/embed/354319/33fc09af-d689-4669-8c79-82816f38f0a7?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                     loading="lazy" style={{
                       border: '0',
                       position: 'absolute',
@@ -67,7 +67,7 @@ const Personajes3DPage = () => {
                       height: '100%',
                       width: '100%'
                     }}
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                    allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
                     allowFullScreen={true}
                     title="Video ejemplo de 3D personajes"></iframe></div>
                 </div>
@@ -245,7 +245,7 @@ const Personajes3DPage = () => {
                         <div className="portfolio-item">
                           <div style={{ position: "relative", paddingTop: "56.25%" }}>
                             <iframe
-                              src="https://iframe.mediadelivery.net/embed/183081/1323c7e2-7340-4126-9268-63bd3a247164?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+                              src="https://iframe.mediadelivery.net/embed/183081/1323c7e2-7340-4126-9268-63bd3a247164?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                               loading="lazy"
                               style={{
                                 border: 0,
@@ -254,7 +254,7 @@ const Personajes3DPage = () => {
                                 height: "100%",
                                 width: "100%",
                               }}
-                              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                              allow="accelerometer; gyroscope; encrypted-media; picture-in-picture"
                               allowFullScreen
                             ></iframe>
                           </div>
@@ -262,7 +262,7 @@ const Personajes3DPage = () => {
 
 
                           <div className="portfolio-info">
-                            <h5>Asistente Virtual Educativo</h5>
+                            <h5>Asistente Avatar Virtual Educativo</h5>
                             <p>Transforma PDFs en contenido animado</p>
                           </div>
                         </div>
@@ -353,28 +353,7 @@ const Personajes3DPage = () => {
                   </ul>
                 </div>
 
-                {/* <div className="testimonial-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                  <div className="testimonial-header">
-                    <i className="bi bi-quote"></i>
-                    <div className="rating">
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                      <i className="bi bi-star-fill"></i>
-                    </div>
-                  </div>
-                  <p className="testimonial-text">
-                    “El asistente 3D transformó por completo nuestra inducción virtual. Fue como tener un presentador real, pero automatizado y listo para todos los empleados.”
-                  </p>
-                  <div className="client-info">
-                    <img src="assets/img/person/person-m-5.webp" alt="Cliente" className="client-image" />
-                    <div className="client-details">
-                      <h5>María González</h5>
-                      <span>RRHH, Grupo Monteazul</span>
-                    </div>
-                  </div>
-                </div> */}
+              
 
                 <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
                   <h4>¿Tienes Preguntas?</h4>
