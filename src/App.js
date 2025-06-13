@@ -1,18 +1,23 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Personajes3DPage from './pages/Personajes3DPage';
 import FAQSection from './components/FAQSection';
+import PageTracker from './components/PageTracker';
+import useScrollTracking from './hooks/useScrollTracking';
+import { initializeAutoTracking } from './utils/autoTracking';
+import { trackButtonClick, trackContactClick, trackFormSubmission, trackPageView, trackSliderInteraction, trackContactSectionView } from './utils/analytics';
 // import ScrollComponent from "./components/ScrollComponent";
 
 function App() {
+  // Initialize scroll tracking
+  useScrollTracking();
 
-
-  // Remove preloader when component mounts
+  // Remove preloader when component mounts and initialize tracking
   useEffect(() => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -23,6 +28,9 @@ function App() {
 
       return () => clearTimeout(timer);
     }
+
+    // Initialize automatic tracking for elements without React handlers
+    initializeAutoTracking();
   }, []);
 
 
@@ -40,11 +48,18 @@ function App() {
 
             <Menu />
 
-            <a className="btn-getstarted" href="#contact">Contacto</a>
+            <a 
+              className="btn-getstarted" 
+              href="#contact"
+              onClick={() => trackButtonClick('Header Contact Button', 'Navigation')}
+            >
+              Contacto
+            </a>
 
           </div>
         </header>
 
+        <PageTracker />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/personajes3d" element={<Personajes3DPage />} />
@@ -68,8 +83,18 @@ function App() {
                     <h3>Impacto Demostrado</h3>
                     <p>Descubre cómo nuestras soluciones han transformado la educación en instituciones como la tuya.</p>
                     <div className="swiper-nav-buttons mt-4">
-                      <button className="slider-prev"><i className="bi bi-arrow-left"></i></button>
-                      <button className="slider-next"><i className="bi bi-arrow-right"></i></button>
+                      <button 
+                        className="slider-prev"
+                        onClick={() => trackSliderInteraction('previous')}
+                      >
+                        <i className="bi bi-arrow-left"></i>
+                      </button>
+                      <button 
+                        className="slider-next"
+                        onClick={() => trackSliderInteraction('next')}
+                      >
+                        <i className="bi bi-arrow-right"></i>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -118,7 +143,7 @@ function App() {
                           <ul className="case-study-features" style={{ listStyle: "none" }}>
                             <li><i className="bi bi-check-circle"></i> Plataforma personalizada con integración directa a
                               contenido Articulate 360</li>
-                            <li><i className="bi bi-check-circle"></i> Asistente virtual 3D que guía el aprendizaje durante todo
+                            <li><i className="bi bi-check-circle"></i> Avatar virtual 3D que guía el aprendizaje durante todo
                               el curso</li>
                             <li><i className="bi bi-check-circle"></i> Sistema de seguimiento automatizado con:</li>
                             <ul>
@@ -212,7 +237,14 @@ function App() {
                   </div>
                   <div className="info-content">
                     <h4>Email</h4>
-                    <p>luminawebs@gmail.com</p>
+                    <p>
+                      <a 
+                        href="mailto:luminawebs@gmail.com"
+                        onClick={() => trackContactClick('Email', 'luminawebs@gmail.com')}
+                      >
+                        luminawebs@gmail.com
+                      </a>
+                    </p>
                     <p>David Castañeda</p>
                   </div>
                 </div>
@@ -249,7 +281,12 @@ function App() {
                 <div className="contact-form-wrapper">
                   <h2 className="text-center mb-4">Ponte en Contacto</h2>
 
-                  <form action="https://formspree.io/f/mblovblv" method="POST" className="php-email-form">
+                  <form 
+                    action="https://formspree.io/f/mblovblv" 
+                    method="POST" 
+                    className="php-email-form"
+                    onSubmit={() => trackFormSubmission('Contact Form', 'main_contact')}
+                  >
                     <div className="row g-3">
                       <div className="col-md-6">
                         <div className="form-group">
@@ -316,8 +353,14 @@ function App() {
         <Footer></Footer>
 
         {/* <!-- Scroll Top --> */}
-        <a href="#header" id="scroll-top" className="scroll-top d-flex align-items-center justify-content-center"><i
-          className="bi bi-arrow-up-short"></i></a>
+        <a 
+          href="#header" 
+          id="scroll-top" 
+          className="scroll-top d-flex align-items-center justify-content-center"
+          onClick={() => trackButtonClick('Scroll to Top', 'Navigation')}
+        >
+          <i className="bi bi-arrow-up-short"></i>
+        </a>
 
         {/* <!-- Preloader --> */}
         <div id="preloader"></div>

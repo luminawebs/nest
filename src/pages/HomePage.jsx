@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { trackButtonClick, trackServiceInquiry, trackLinkClick } from '../utils/analytics';
 
 const HomePage = () => {
   const location = useLocation();
@@ -45,7 +46,11 @@ const HomePage = () => {
                 </div>
 
                 <div className="cta-button">
-                  <a href="#services" className="btn">
+                  <a 
+                    href="#services" 
+                    className="btn"
+                    onClick={() => trackButtonClick('Hero CTA - Ver Servicios', 'Hero')}
+                  >
                     <span>VER SERVICIOS</span>
                     <i className="bi bi-arrow-right"></i>
                   </a>
@@ -137,7 +142,13 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                <a href="#services" className="btn btn-primary mt-4">Conoce Nuestras Soluciones</a>
+                <a 
+                  href="#services" 
+                  className="btn btn-primary mt-4"
+                  onClick={() => trackButtonClick('About CTA - Conoce Nuestras Soluciones', 'About')}
+                >
+                  Conoce Nuestras Soluciones
+                </a>
               </div>
             </div>
           </div>
@@ -236,7 +247,7 @@ const HomePage = () => {
                  
                   <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                   <h3>
-                   <Link to="/personajes3d#hero" className="active">Asistentes 3D</Link>
+                   <Link to="/personajes3d#hero" className="active">Avatars 3D</Link>
                   </h3>
                   <p>
                     Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el
@@ -424,8 +435,20 @@ const HomePage = () => {
                 </div>
 
                 <div className="cta-buttons d-flex flex-wrap gap-3">
-                  <a href="#contact" className="btn btn-primary">Solicitar demostración</a>
-                  <a href="#services" className="btn btn-outline">Ver casos de éxito</a>
+                  <a 
+                    href="#contact" 
+                    className="btn btn-primary"
+                    onClick={() => trackButtonClick('CTA - Solicitar demostración', 'Call to Action')}
+                  >
+                    Solicitar demostración
+                  </a>
+                  <a 
+                    href="#services" 
+                    className="btn btn-outline"
+                    onClick={() => trackButtonClick('CTA - Ver casos de éxito', 'Call to Action')}
+                  >
+                    Ver casos de éxito
+                  </a>
                 </div>
               </div>
 
