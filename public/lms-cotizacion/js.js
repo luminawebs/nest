@@ -383,6 +383,18 @@
                         totalPrice.textContent = `${formatCurrency(displayAmount, currency)}/${period}`;
                     }
 
+                    // Display annual total price (always show full annual cost)
+                    const annualTotalPrice = document.getElementById('annual-total-price');
+                    if (annualTotalPrice) {
+                        annualTotalPrice.textContent = formatCurrency(totalCost, currency);
+                    }
+
+                    // Display initial payment
+                    const initialPaymentDisplay = document.getElementById('initial-payment-display');
+                    if (initialPaymentDisplay) {
+                        initialPaymentDisplay.textContent = formatCurrency(initialPayment, currency);
+                    }
+
                     // Cost breakdown
                     const lang = document.getElementById('language')?.value || 'es';
                     const isSpanish = lang === 'es';
