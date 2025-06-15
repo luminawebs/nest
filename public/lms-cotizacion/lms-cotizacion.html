@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador LMS Moodle SaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800">
+    <div class="container mx-auto max-w-4xl p-6">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="flex justify-between items-center mb-4">
+                <h1 id="title" class="text-3xl font-bold text-gray-900">LMS Moodle SaaS Quote Calculator</h1>
+                <div class="flex items-center space-x-4">
+                    <select id="language" class="p-2 border rounded-md">
+                        <option value="en">English</option>
+                        <option value="es" selected>Español</option>
+                    </select>
+                    <select id="currency" class="p-2 border rounded-md">
+                        <option value="USD">USD</option>
+                        <option value="COP">COP</option>
+                    </select>
+                </div>
+            </div>
+            <p id="description" class="text-gray-600 mb-6">Configure su plataforma de aprendizaje en línea y obtenga una
+                cotización personalizada.</p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="tab px-4 py-2 bg-gray-200 rounded-t-md text-gray-700 font-semibold active"
+                    onclick="openTab(event, 'basic')" aria-selected="true" data-translate="basic">Configuración
+                    Básica</button>
+                <button class="tab px-4 py-2 bg-gray-200 rounded-t-md text-gray-700 font-semibold"
+                    onclick="openTab(event, 'integrations')" aria-selected="false"
+                    data-translate="integrations">Integraciones</button>
+                <button class="tab px-4 py-2 bg-gray-200 rounded-t-md text-gray-700 font-semibold"
+                    onclick="openTab(event, 'payment')" aria-selected="false" data-translate="payment">Método de
+                    Pago</button>
+            </div>
+
+            <form id="quote-form" onsubmit="event.preventDefault(); validateAndCalculateQuote();">
+                <div id="basic" class="tab-content active space-y-6">
+                    <div class="form-group">
+                        <label for="users" class="block text-sm font-medium text-gray-700 mb-2"
+                            data-translate="users">Número estimado de usuarios:</label>
+                        <select id="users" class="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-500"
+                            required aria-describedby="users-help users-error">
+                            <option value="">Seleccione...</option>
+                            <option value="100">Hasta 100 usuarios (Pequeño)</option>
+                            <option value="500">101-1,000 usuarios (Mediano)</option>
+                            <option value="1000">Más de 1,000 usuarios (Grande)</option>
+                        </select>
+                        <p id="users-help" class="text-sm text-gray-500 mt-1" data-translate="usersHelp">Seleccione el
+                            rango de usuarios para su plataforma.</p>
+                        <p id="users-error" class="error hidden" data-translate="usersError">Por favor seleccione un
+                            rango de usuarios.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-translate="support">Soporte
+                            incluido:</label>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="support" checked disabled class="mr-2">
+                            <label for="support" class="flex items-center" data-translate="supportLabel">
+                                Soporte técnico básico incluido
+                                <span class="ml-2 text-green-600 font-semibold">($162-$681 USD/mes)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customization" class="block text-sm font-medium text-gray-700 mb-2"
+                            data-translate="customization">Nivel de personalización:</label>
+                        <select id="customization" class="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-500"
+                            required aria-describedby="customization-error">
+                            <option value="">Seleccione...</option>
+                            <option value="basic" data-cost="0">Básica (logo y colores) (+$0)</option>
+                            <option value="moderate" data-cost="500">Moderada (tema personalizado) (+$500)</option>
+                            <option value="advanced" data-cost="1500">Avanzada (desarrollo a medida) (+$1,500)</option>
+                        </select>
+                        <p id="customization-error" class="error hidden" data-translate="customizationError">Por favor
+                            seleccione un nivel de personalización.</p>
+                    </div>
+                </div>
+
+                <div id="integrations" class="tab-content space-y-6">
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="videoconferencing">
+                            <span class="mr-2">📹</span> Videoconferencias
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="zoom" value="zoom" data-cost="900" class="mr-2">
+                                    Zoom
+                                    <span class="ml-2 text-blue-600 font-semibold">+$900 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="10 hosts, $90/host/year">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="bbb" value="bbb" data-cost="1200" class="mr-2">
+                                    BigBlueButton
+                                    <span class="ml-2 text-blue-600 font-semibold">+$1,200 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 users">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="teams" value="teams" data-cost="0" class="mr-2">
+                                    Microsoft Teams
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free for education">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="interactiveContent">
+                            <span class="mr-2">🧩</span> Contenido Interactivo
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="h5p" value="h5p" data-cost="0" class="mr-2">
+                                    H5P
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free open-source">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="nearpod" value="nearpod" data-cost="10000" class="mr-2">
+                                    Nearpod
+                                    <span class="ml-2 text-blue-600 font-semibold">+$10,000 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 teachers">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="kahoot" value="kahoot" data-cost="5000" class="mr-2">
+                                    Kahoot
+                                    <span class="ml-2 text-blue-600 font-semibold">+$5,000 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 teachers">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="assessments">
+                            <span class="mr-2">📝</span> Evaluaciones
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="turnitin" value="turnitin" data-cost="10000"
+                                        class="mr-2">
+                                    Turnitin
+                                    <span class="ml-2 text-blue-600 font-semibold">+$10,000 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="1,000 students">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="seb" value="seb" data-cost="0" class="mr-2">
+                                    Safe Exam Browser
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="proctorio" value="proctorio" data-cost="5000"
+                                        class="mr-2">
+                                    Proctorio
+                                    <span class="ml-2 text-blue-600 font-semibold">+$5,000 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="1,000 exams">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="analytics">
+                            <span class="mr-2">📊</span> Reportes y Analítica
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="intelliboard" value="intelliboard" data-cost="2000"
+                                        class="mr-2">
+                                    IntelliBoard
+                                    <span class="ml-2 text-blue-600 font-semibold">+$2,000 USD/año</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="zoola" value="zoola" data-cost="3000" class="mr-2">
+                                    Zoola Analytics
+                                    <span class="ml-2 text-blue-600 font-semibold">+$3,000 USD/año</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="fileManagement">
+                            <span class="mr-2">📂</span> Gestión de Archivos
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="google-drive" value="google-drive" data-cost="0"
+                                        class="mr-2">
+                                    Google Drive
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free for education">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="dropbox" value="dropbox" data-cost="1200" class="mr-2">
+                                    Dropbox
+                                    <span class="ml-2 text-blue-600 font-semibold">+$1,200 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 users">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="onedrive" value="onedrive" data-cost="0" class="mr-2">
+                                    OneDrive
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free for education">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center" data-translate="aiTools">
+                            <span class="mr-2">🤖</span> Herramientas de IA
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="chatgpt" value="chatgpt" data-cost="2400"
+                                        data-recurring="200" class="mr-2">
+                                    ChatGPT
+                                    <span class="ml-2 text-blue-600 font-semibold">+$2,400 USD/año (+$200
+                                        USD/mes)</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 teachers">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="grammarly" value="grammarly" data-cost="1500"
+                                        class="mr-2">
+                                    Grammarly
+                                    <span class="ml-2 text-blue-600 font-semibold">+$1,500 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="100 users">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="integration-section">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"
+                            data-translate="authPayments">
+                            <span class="mr-2">🔐</span> Autenticación y Pagos
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="pse" value="pse" data-cost="500" class="mr-2">
+                                    PSE (Colombia)
+                                    <span class="ml-2 text-blue-600 font-semibold">+$500 USD/año</span>
+                                    <span class="tooltip ml-2" data-tooltip="Integration cost">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="stripe" value="stripe" data-cost="0" class="mr-2">
+                                    Stripe
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD (2.9% + $0.30/tx)</span>
+                                    <span class="tooltip ml-2" data-tooltip="Transaction fees apply">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="paypal" value="paypal" data-cost="0" class="mr-2">
+                                    PayPal
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD (2.9% + $0.30/tx)</span>
+                                    <span class="tooltip ml-2" data-tooltip="Transaction fees apply">ℹ️</span>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="google-saml" value="google-saml" data-cost="0"
+                                        class="mr-2">
+                                    Google/SAML Login
+                                    <span class="ml-2 text-blue-600 font-semibold">+$0 USD</span>
+                                    <span class="tooltip ml-2" data-tooltip="Free">ℹ️</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment" class="tab-content space-y-6">
+                    <div class="form-group">
+                        <label for="payment-method" class="block text-sm font-medium text-gray-700 mb-2"
+                            data-translate="paymentMethod">Método de pago:</label>
+                        <select id="payment-method"
+                            class="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-500" required
+                            aria-describedby="payment-error">
+                            <option value="">Seleccione...</option>
+                            <option value="monthly">Mensual</option>
+                            <option value="annual">Anual (10% de descuento)</option>
+                        </select>
+                        <p id="payment-error" class="error hidden" data-translate="paymentError">Por favor seleccione un
+                            método de pago.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-translate="initialPayment">Pago
+                            inicial:</label>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="initial-payment" checked disabled class="mr-2">
+                            <label for="initial-payment" data-translate="initialPaymentLabel">30% del costo inicial
+                                (obligatorio)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <button type="submit"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+                        data-translate="generateQuote">Generar Cotización</button>
+                    <button type="button" onclick="resetForm()"
+                        class="bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400"
+                        data-translate="reset">Reiniciar</button>
+                </div>
+            </form>
+
+            <div id="result" class="mt-8 p-6 bg-gray-50 rounded-md border-l-4 border-blue-600 hidden">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4" data-translate="quoteTitle">Su Cotización Personalizada</h2>
+                
+                <!-- Pricing Display -->
+                <div class="pricing-display bg-white p-4 rounded-lg shadow-sm mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <p class="text-sm text-gray-600 mb-1" data-translate="periodicPayment">Pago Periódico</p>
+                            <div class="price text-2xl font-bold text-blue-600" id="total-price">$0 USD</div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-600 mb-1" data-translate="totalAnnualCost">Costo Total Anual</p>
+                            <div class="price text-2xl font-bold text-green-600" id="annual-total-price">$0 USD</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p class="text-sm text-gray-500" data-translate="initialPaymentRequired">Pago inicial requerido:</p>
+                        <div class="text-lg font-semibold text-orange-600" id="initial-payment-display">$0 USD</div>
+                    </div>
+                </div>
+
+                <div class="breakdown mt-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2" data-translate="breakdown">Desglose de Costos</h3>
+                    <div id="cost-breakdown" class="space-y-2"></div>
+                </div>
+
+                <div class="feature-list mt-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2" data-translate="features">Características Incluidas</h3>
+                    <div id="features-list" class="space-y-2"></div>
+                </div>
+
+                <div class="flex gap-4 mt-4">
+                    <button onclick="downloadPDF()" class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700" data-translate="downloadPDF">Descargar PDF</button>
+                    <button onclick="saveQuote()" class="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700" data-translate="saveQuote">Guardar Cotización</button>
+                </div>
+            </div>
+                        class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700"
+                        data-translate="downloadPDF">Descargar PDF</button>
+                    <button onclick="saveQuote()"
+                        class="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700"
+                        data-translate="saveQuote">Guardar Cotización</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
