@@ -370,10 +370,17 @@
                     // Final calculations
                     const firstYearCost = baseCost + recurringCost;
                     const margin = firstYearCost * 0.3;
-                    let totalCost = firstYearCost + margin;
+                    let subtotal = firstYearCost + margin;
+                    
+                    // Apply annual discount before IVA
+                    if (paymentMethod === 'annual') subtotal *= 0.9;
+                    
+                    // Calculate IVA (19% for Colombia)
+                    const ivaRate = 0.19;
+                    const ivaAmount = subtotal * ivaRate;
+                    const totalCost = subtotal + ivaAmount;
+                    
                     const initialPayment = baseCost * 0.3;
-
-                    if (paymentMethod === 'annual') totalCost *= 0.9;
 
                     // Display results
                     const totalPrice = document.getElementById('total-price');
@@ -429,7 +436,19 @@
                         `;
                     }
                     breakdownHTML += `
-                        <div class="flex justify-between py-2 font-bold">
+                        <div class="flex justify-between py-2 border-b font-semibold">
+                            <span>${isSpanish ? 'Subtotal (antes de IVA):' : 'Subtotal (before IVA):'}</span>
+                            <span>${formatCurrency(subtotal, currency)}</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b">
+                            <span>${isSpanish ? 'IVA (19%):' : 'IVA (19%):'}</span>
+                            <span>${formatCurrency(ivaAmount, currency)}</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b font-bold text-green-600">
+                            <span>${isSpanish ? 'Total anual (con IVA):' : 'Annual total (with IVA):'}</span>
+                            <span>${formatCurrency(totalCost, currency)}</span>
+                        </div>
+                        <div class="flex justify-between py-2 font-bold text-orange-600">
                             <span>${isSpanish ? 'Pago inicial requerido (30%):' : 'Required initial payment (30%):'}</span>
                             <span>${formatCurrency(initialPayment, currency)}</span>
                         </div>
