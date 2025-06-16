@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Nav, Tab } from 'react-bootstrap';
 
 
 const Personajes3DPage = () => {
@@ -116,125 +117,125 @@ const Personajes3DPage = () => {
                 </div>
 
                 <div className="service-tabs aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                  <ul className="nav nav-tabs" id="serviceTab" role="tablist">
-                    <li className="nav-item" role="presentation">
-                      <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#service-details-tab-1" type="button" role="tab" aria-controls="overview" aria-selected="true">
-                        <i className="bi bi-info-circle"></i> ¿Por Qué 3D?
-                      </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false">
-                        <i className="bi bi-diagram-3"></i> Paso a Paso
-                      </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <button className="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false">
-                        <i className="bi bi-graph-up-arrow"></i> Beneficios
-                      </button>
-                    </li>
-                  </ul>
+                  <Tab.Container id="serviceTab" defaultActiveKey="tab1">
+                    <Nav variant="tabs" className="nav nav-tabs">
+                      <Nav.Item>
+                        <Nav.Link eventKey="tab1" className="nav-link">
+                          <i className="bi bi-info-circle"></i> ¿Por Qué 3D?
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="tab2" className="nav-link">
+                          <i className="bi bi-diagram-3"></i> Paso a Paso
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="tab3" className="nav-link">
+                          <i className="bi bi-graph-up-arrow"></i> Beneficios
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Nav>
 
-                  <div className="tab-content">
-
-                    <div className="tab-pane fade active show" id="service-details-tab-1" role="tabpanel">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="content-block">
-                            <h3>Impacto del Contenido Animado</h3>
-                            <p>📈 Los videos con personajes animados 3D tienen un 30% más de retención que los formatos tradicionales (2D o live-action).</p>
-                            <p>💬 El 70% de los marketers considera el 3D la herramienta más efectiva para engagement, según HubSpot.</p>
-                            <p>🛒 Las campañas con animación 3D aumentan las tasas de conversión un 40% en e-commerce.</p>
-                            <p>🧠 El 90% de los consumidores recuerda mejor una marca con contenido audiovisual animado frente a solo texto.</p>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <img src="assets/img/services/3d_assistants.png" alt="Ventajas del contenido animado" className="img-fluid rounded" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="tab-pane fade" id="service-details-tab-2" role="tabpanel">
-                      <div className="process-timeline">
-                        <div className="timeline-item">
-                          <div className="timeline-marker">01</div>
-                          <div className="timeline-content">
-                            <h4>Elección del Personaje</h4>
-                            <p>Selecciona entre una galería de personajes 3D prediseñados o solicita uno personalizado según tu marca.</p>
-                          </div>
-                        </div>
-                        <div className="timeline-item">
-                          <div className="timeline-marker">02</div>
-                          <div className="timeline-content">
-                            <h4>Desarrollo de Guión</h4>
-                            <p>Te ayudamos a redactar un guión claro y didáctico para maximizar la conexión con la audiencia.</p>
-                          </div>
-                        </div>
-                        <div className="timeline-item">
-                          <div className="timeline-marker">03</div>
-                          <div className="timeline-content">
-                            <h4>Grabación de Voz</h4>
-                            <p>Locución profesional grabada en estudio o de forma remota con tu voz preferida.</p>
-                          </div>
-                        </div>
-                        <div className="timeline-item">
-                          <div className="timeline-marker">04</div>
-                          <div className="timeline-content">
-                            <h4>Animación y Render</h4>
-                            <p>Animamos tu personaje con movimiento facial, corporal y expresión emocional. Luego lo renderizamos con calidad HD.</p>
-                          </div>
-                        </div>
-                        <div className="timeline-item">
-                          <div className="timeline-marker">05</div>
-                          <div className="timeline-content">
-                            <h4>Motion Graphics + Entrega</h4>
-                            <p>Agregamos transiciones, música y subtítulos. Entregamos en múltiples formatos para plataformas, LMS o redes.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="tab-pane fade" id="service-details-tab-3" role="tabpanel">
-                      <div className="row g-4">
-                        <div className="col-md-6">
-                          <div className="benefit-card">
-                            <div className="benefit-icon">
-                              <i className="bi bi-eye"></i>
+                    <Tab.Content className="tab-content">
+                      <Tab.Pane eventKey="tab1" className="tab-pane">
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="content-block">
+                              <h3>Impacto del Contenido Animado</h3>
+                              <p>📈 Los videos con personajes animados 3D tienen un 30% más de retención que los formatos tradicionales (2D o live-action).</p>
+                              <p>💬 El 70% de los marketers considera el 3D la herramienta más efectiva para engagement, según HubSpot.</p>
+                              <p>🛒 Las campañas con animación 3D aumentan las tasas de conversión un 40% en e-commerce.</p>
+                              <p>🧠 El 90% de los consumidores recuerda mejor una marca con contenido audiovisual animado frente a solo texto.</p>
                             </div>
-                            <h4>Mayor Retención</h4>
-                            <p>Tu audiencia recuerda más y se compromete mejor con personajes animados realistas.</p>
+                          </div>
+                          <div className="col-md-6">
+                            <img src="assets/img/services/3d_assistants.png" alt="Ventajas del contenido animado" className="img-fluid rounded" />
                           </div>
                         </div>
-                        <div className="col-md-6">
-                          <div className="benefit-card">
-                            <div className="benefit-icon">
-                              <i className="bi bi-cash-coin"></i>
-                            </div>
-                            <h4>Accesible para Todos</h4>
-                            <p>Producción profesional sin presupuestos excesivos. Ideal para empresas educativas y comerciales.</p>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="benefit-card">
-                            <div className="benefit-icon">
-                              <i className="bi bi-lightning-charge"></i>
-                            </div>
-                            <h4>Producción Ágil</h4>
-                            <p>Todo el proceso en solo 3 a 4 semanas. Con avances iterativos y entregas rápidas.</p>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="benefit-card">
-                            <div className="benefit-icon">
-                              <i className="bi bi-bar-chart-line"></i>
-                            </div>
-                            <h4>Resultados Medibles</h4>
-                            <p>Mejora en conversiones, leads y recordación de marca garantizados con estadísticas reales.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      </Tab.Pane>
 
-                  </div>
+                      <Tab.Pane eventKey="tab2" className="tab-pane">
+                        <div className="process-timeline">
+                          <div className="timeline-item">
+                            <div className="timeline-marker">01</div>
+                            <div className="timeline-content">
+                              <h4>Elección del Personaje</h4>
+                              <p>Selecciona entre una galería de personajes 3D prediseñados o solicita uno personalizado según tu marca.</p>
+                            </div>
+                          </div>
+                          <div className="timeline-item">
+                            <div className="timeline-marker">02</div>
+                            <div className="timeline-content">
+                              <h4>Desarrollo de Guión</h4>
+                              <p>Te ayudamos a redactar un guión claro y didáctico para maximizar la conexión con la audiencia.</p>
+                            </div>
+                          </div>
+                          <div className="timeline-item">
+                            <div className="timeline-marker">03</div>
+                            <div className="timeline-content">
+                              <h4>Grabación de Voz</h4>
+                              <p>Locución profesional grabada en estudio o de forma remota con tu voz preferida.</p>
+                            </div>
+                          </div>
+                          <div className="timeline-item">
+                            <div className="timeline-marker">04</div>
+                            <div className="timeline-content">
+                              <h4>Animación y Render</h4>
+                              <p>Animamos tu personaje con movimiento facial, corporal y expresión emocional. Luego lo renderizamos con calidad HD.</p>
+                            </div>
+                          </div>
+                          <div className="timeline-item">
+                            <div className="timeline-marker">05</div>
+                            <div className="timeline-content">
+                              <h4>Motion Graphics + Entrega</h4>
+                              <p>Agregamos transiciones, música y subtítulos. Entregamos en múltiples formatos para plataformas, LMS o redes.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="tab3" className="tab-pane">
+                        <div className="row g-4">
+                          <div className="col-md-6">
+                            <div className="benefit-card">
+                              <div className="benefit-icon">
+                                <i className="bi bi-eye"></i>
+                              </div>
+                              <h4>Mayor Retención</h4>
+                              <p>Tu audiencia recuerda más y se compromete mejor con personajes animados realistas.</p>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="benefit-card">
+                              <div className="benefit-icon">
+                                <i className="bi bi-cash-coin"></i>
+                              </div>
+                              <h4>Accesible para Todos</h4>
+                              <p>Producción profesional sin presupuestos excesivos. Ideal para empresas educativas y comerciales.</p>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="benefit-card">
+                              <div className="benefit-icon">
+                                <i className="bi bi-lightning-charge"></i>
+                              </div>
+                              <h4>Producción Ágil</h4>
+                              <p>Todo el proceso en solo 3 a 4 semanas. Con avances iterativos y entregas rápidas.</p>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="benefit-card">
+                              <div className="benefit-icon">
+                                <i className="bi bi-bar-chart-line"></i>
+                              </div>
+                              <h4>Resultados Medibles</h4>
+                              <p>Mejora en conversiones, leads y recordación de marca garantizados con estadísticas reales.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
                 </div>
 
                 <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">

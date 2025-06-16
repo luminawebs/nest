@@ -7,6 +7,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "1️⃣ Vídeo personalizado y adaptativo",
       question: "How personalized are your training videos?",
+      image: "assets/img/g/01 How personalized are your training videos.png",
       options: [
         "We use the same generic videos for all learners",
         "We have different videos for different departments/roles",
@@ -19,6 +20,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "2️⃣ Vídeo personalizado y adaptativo",
       question: "How does your video content adapt to different learning styles?",
+      image: "assets/img/g/02 How does your video content adapt to different learning styles.png",
       options: [
         "Our videos don't adapt to learning styles",
         "Learners can choose from different versions of the same content",
@@ -33,6 +35,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "3️⃣ Vídeos interactivos: quizzes y branching",
       question: "How interactive are your training videos?",
+      image: "assets/img/g/03 How interactive are your training videos.png",
       options: [
         "Our videos are purely linear with no interaction",
         "We include simple quizzes at the end of videos",
@@ -45,6 +48,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "3️⃣ Vídeos interactivos: quizzes y branching",
       question: "How does your system handle branching scenarios?",
+      image: "assets/img/g/How does your system handle branching scenarios.png",
       options: [
         "We don't use branching scenarios",
         "We have simple binary choices (correct/incorrect paths)",
@@ -59,6 +63,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "4️⃣ Generación sintética total de contenido",
       question: "How does your organization use synthetic media (AI-generated content)?",
+      image: "assets/img/g/04 How does your organization use synthetic media (AI-generated content).png",
       options: [
         "We don't use any synthetic media",
         "We've experimented with basic text-to-speech or avatar videos",
@@ -71,6 +76,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "4️⃣ Generación sintética total de contenido",
       question: "How quickly can you create new training content?",
+      image: "assets/img/g/04 How quickly can you create new training content.png",
       options: [
         "Weeks or months - we create everything manually",
         "Several days - we use some templates but mostly manual work",
@@ -85,6 +91,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "5️⃣ Ética y transparencia: deepfakes",
       question: "How does your organization address ethical concerns with synthetic media?",
+      image: "assets/img/g/05 How does your organization address ethical concerns with synthetic media.png",
       options: [
         "We don't have any policies regarding synthetic media",
         "We have basic usage guidelines but no formal policy",
@@ -97,6 +104,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "5️⃣ Ética y transparencia: deepfakes",
       question: "How transparent are you about using AI-generated content?",
+      image: "assets/img/g/How transparent are you about using AI-generated content.png",
       options: [
         "We don't disclose when content is AI-generated",
         "We disclose only if directly asked",
@@ -272,18 +280,30 @@ const XRAIProficiencyChallenge = () => {
           </div>
           
           <h2>{quizData[currentQuestion].category}</h2>
-          <div className="question">{quizData[currentQuestion].question}</div>
           
-          <div className="options">
-            {quizData[currentQuestion].options.map((option, index) => (
-              <div 
-                key={index}
-                className={`option ${selectedOption === index ? 'selected' : ''}`}
-                onClick={() => selectOption(index)}
-              >
-                {option}
+          <div className="question-content">
+            <div className="question-image">
+              <img 
+                src={quizData[currentQuestion].image} 
+                alt={quizData[currentQuestion].question}
+                className="question-img"
+              />
+            </div>
+            <div className="question-text-options">
+              <div className="question">{quizData[currentQuestion].question}</div>
+              
+              <div className="options">
+                {quizData[currentQuestion].options.map((option, index) => (
+                  <div 
+                    key={index}
+                    className={`option ${selectedOption === index ? 'selected' : ''}`}
+                    onClick={() => selectOption(index)}
+                  >
+                    {option}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
           
           {selectedOption !== null && (
@@ -320,35 +340,35 @@ const XRAIProficiencyChallenge = () => {
                 <div>
                   <strong>1️⃣ Vídeo personalizado y adaptativo</strong>
                   <div style={{ height: '10px', background: '#e9ecef', borderRadius: '5px', marginTop: '0.5rem' }}>
-                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--primary), var(--secondary))', width: `${scores.category1 / 2}%` }}></div>
+                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--accent-color), var(--accent-color))', width: `${scores.category1 / 2}%` }}></div>
                   </div>
                   <div style={{ textAlign: 'right', marginTop: '0.25rem', fontSize: '0.9rem' }}>{scores.category1 / 2}%</div>
                 </div>
                 <div>
                   <strong>2️⃣ Vídeos interactivos: quizzes y branching</strong>
                   <div style={{ height: '10px', background: '#e9ecef', borderRadius: '5px', marginTop: '0.5rem' }}>
-                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--primary), var(--secondary))', width: `${scores.category2 / 2}%` }}></div>
+                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--accent-color), var(--accent-color))', width: `${scores.category2 / 2}%` }}></div>
                   </div>
                   <div style={{ textAlign: 'right', marginTop: '0.25rem', fontSize: '0.9rem' }}>{scores.category2 / 2}%</div>
                 </div>
                 <div>
                   <strong>3️⃣ Generación sintética total de contenido</strong>
                   <div style={{ height: '10px', background: '#e9ecef', borderRadius: '5px', marginTop: '0.5rem' }}>
-                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--primary), var(--secondary))', width: `${scores.category3 / 2}%` }}></div>
+                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--accent-color), var(--accent-color))', width: `${scores.category3 / 2}%` }}></div>
                   </div>
                   <div style={{ textAlign: 'right', marginTop: '0.25rem', fontSize: '0.9rem' }}>{scores.category3 / 2}%</div>
                 </div>
                 <div>
                   <strong>4️⃣ Ética y transparencia: deepfakes</strong>
                   <div style={{ height: '10px', background: '#e9ecef', borderRadius: '5px', marginTop: '0.5rem' }}>
-                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--primary), var(--secondary))', width: `${scores.category4 / 2}%` }}></div>
+                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--accent-color), var(--accent-color))', width: `${scores.category4 / 2}%` }}></div>
                   </div>
                   <div style={{ textAlign: 'right', marginTop: '0.25rem', fontSize: '0.9rem' }}>{scores.category4 / 2}%</div>
                 </div>
                 <div>
                   <strong>5️⃣ Ética y transparencia: deepfakes</strong>
                   <div style={{ height: '10px', background: '#e9ecef', borderRadius: '5px', marginTop: '0.5rem' }}>
-                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--primary), var(--secondary))', width: `${scores.category5 / 2}%` }}></div>
+                    <div style={{ height: '100%', borderRadius: '5px', background: 'linear-gradient(90deg, var(--accent-color), var(--accent-color))', width: `${scores.category5 / 2}%` }}></div>
                   </div>
                   <div style={{ textAlign: 'right', marginTop: '0.25rem', fontSize: '0.9rem' }}>{scores.category5 / 2}%</div>
                 </div>
@@ -474,27 +494,28 @@ const XRAIProficiencyChallenge = () => {
       
       {/* CSS Styles */}
       <style jsx>{`
+        /* Inherit edunest.co color scheme and design system */
         :root {
-          --primary: #6e48aa;
-          --secondary: #9d50bb;
-          --accent: #4776E6;
-          --light: #f8f9fa;
-          --dark: #343a40;
-          --success: #28a745;
+          --background-color: #031119;
+          --default-color: rgba(255, 255, 255, 0.8);
+          --heading-color: #e0e9f2;
+          --accent-color: #e3a127;
+          --surface-color: #1b262c;
+          --contrast-color: #ffffff;
+          --success: #059652;
           --warning: #ffc107;
-          --danger: #dc3545;
+          --danger: #df1529;
+          --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          --heading-font: "Nunito Sans", sans-serif;
         }
         
-        .container {
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 2rem;
-        }
+ 
         
         .game-card {
-          background: white;
+          background: var(--surface-color);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 15px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
           padding: 2rem;
           margin-bottom: 2rem;
           transform: translateY(0);
@@ -503,25 +524,33 @@ const XRAIProficiencyChallenge = () => {
         
         .game-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
-        h1 {
-          color: var(--primary);
-          text-align: center;
-          margin-bottom: 1.5rem;
-          font-weight: 700;
-        }
+     
         
         h2 {
-          color: var(--secondary);
+          color: var(--heading-color);
+          font-family: var(--heading-font);
           margin-top: 0;
+          font-weight: 600;
+        }
+        
+        h3 {
+          color: var(--heading-color);
+          font-family: var(--heading-font);
+          font-weight: 600;
+        }
+        
+        p {
+          color: var(--default-color);
+          line-height: 1.6;
         }
         
         .progress-container {
           width: 100%;
           height: 10px;
-          background-color: #e9ecef;
+          background-color: rgba(255, 255, 255, 0.1);
           border-radius: 5px;
           margin-bottom: 2rem;
         }
@@ -529,14 +558,49 @@ const XRAIProficiencyChallenge = () => {
         .progress-bar {
           height: 100%;
           border-radius: 5px;
-          background: linear-gradient(90deg, var(--primary), var(--secondary));
+          background: var(--accent-color);
           width: 0%;
           transition: width 0.5s ease;
+        }
+        
+        .question-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-bottom: 1.5rem;
+          align-items: start;
+        }
+        
+        .question-image {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        
+        .question-img {
+          width: 100%;
+          // max-width: 400px;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .question-img:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .question-text-options {
+          display: flex;
+          flex-direction: column;
         }
         
         .question {
           margin-bottom: 1.5rem;
           font-weight: 500;
+          font-size: 1.1rem;
+          color: var(--heading-color);
         }
         
         .options {
@@ -547,60 +611,70 @@ const XRAIProficiencyChallenge = () => {
         
         .option {
           padding: 1rem;
-          border: 2px solid #e9ecef;
+          border: 2px solid rgba(255, 255, 255, 0.1);
           border-radius: 8px;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 0.3s ease;
+          background-color: rgba(255, 255, 255, 0.02);
+          color: var(--default-color);
         }
         
         .option:hover {
-          border-color: var(--primary);
-          background-color: rgba(110, 72, 170, 0.05);
+          border-color: var(--accent-color);
+          background-color: rgba(227, 161, 39, 0.1);
+          transform: translateY(-2px);
         }
         
         .option.selected {
-          border-color: var(--primary);
-          background-color: rgba(110, 72, 170, 0.1);
+          border-color: var(--accent-color);
+          background-color: rgba(227, 161, 39, 0.15);
+          color: var(--contrast-color);
         }
         
         .option.correct {
           border-color: var(--success);
-          background-color: rgba(40, 167, 69, 0.1);
+          background-color: rgba(5, 150, 82, 0.15);
         }
         
         .option.incorrect {
           border-color: var(--danger);
-          background-color: rgba(220, 53, 69, 0.1);
+          background-color: rgba(223, 21, 41, 0.15);
         }
         
         .btn {
           display: inline-block;
-          padding: 0.8rem 1.5rem;
+          padding: 0.75rem 1.5rem;
           border: none;
-          border-radius: 8px;
+          border-radius: 50px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
         }
         
         .btn-primary {
-          background: linear-gradient(90deg, var(--primary), var(--secondary));
-          color: white;
+          background-color: var(--accent-color);
+          color: var(--contrast-color);
+          border: 1px solid var(--accent-color);
         }
         
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(110, 72, 170, 0.4);
+          background-color: color-mix(in srgb, var(--accent-color), black 10%);
+          box-shadow: 0 5px 15px rgba(227, 161, 39, 0.4);
         }
         
         .btn-secondary {
-          background-color: white;
-          color: var(--primary);
-          border: 2px solid var(--primary);
+          background-color: transparent;
+          color: var(--accent-color);
+          border: 2px solid var(--accent-color);
         }
         
         .btn-secondary:hover {
-          background-color: rgba(110, 72, 170, 0.05);
+          background-color: var(--accent-color);
+          color: var(--contrast-color);
         }
         
         .hidden {
@@ -614,13 +688,19 @@ const XRAIProficiencyChallenge = () => {
         .score {
           font-size: 3rem;
           font-weight: 700;
-          color: var(--primary);
+          color: var(--accent-color);
           margin: 1rem 0;
+          font-family: var(--heading-font);
         }
         
         .feedback {
           margin-bottom: 2rem;
           font-size: 1.1rem;
+          color: var(--default-color);
+          padding: 1rem;
+          background-color: rgba(255, 255, 255, 0.02);
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .lead-form {
@@ -628,6 +708,7 @@ const XRAIProficiencyChallenge = () => {
           grid-template-columns: 1fr;
           gap: 1rem;
           margin-top: 2rem;
+          text-align: left;
         }
         
         .form-group {
@@ -638,20 +719,29 @@ const XRAIProficiencyChallenge = () => {
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 500;
+          color: var(--heading-color);
         }
         
         input, select {
           width: 100%;
           padding: 0.8rem;
-          border: 2px solid #e9ecef;
+          border: 2px solid rgba(255, 255, 255, 0.1);
           border-radius: 8px;
           font-size: 1rem;
           transition: border-color 0.3s ease;
+          background-color: rgba(255, 255, 255, 0.02);
+          color: var(--default-color);
+          box-sizing: border-box;
         }
         
         input:focus, select:focus {
           outline: none;
-          border-color: var(--primary);
+          border-color: var(--accent-color);
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        input::placeholder {
+          color: rgba(255, 255, 255, 0.4);
         }
         
         .checkbox-group {
@@ -665,11 +755,17 @@ const XRAIProficiencyChallenge = () => {
           margin-right: 0.5rem;
         }
         
+        .checkbox-group label {
+          margin-bottom: 0;
+          color: var(--default-color);
+        }
+        
         .feature-badge {
           display: inline-block;
           padding: 0.5rem 1rem;
-          background-color: rgba(110, 72, 170, 0.1);
-          color: var(--primary);
+          background-color: rgba(227, 161, 39, 0.1);
+          color: var(--accent-color);
+          border: 1px solid rgba(227, 161, 39, 0.3);
           border-radius: 20px;
           margin: 0.5rem;
           font-size: 0.9rem;
@@ -687,6 +783,16 @@ const XRAIProficiencyChallenge = () => {
           margin-bottom: 1rem;
         }
         
+        a {
+          color: var(--accent-color);
+          text-decoration: none;
+          transition: 0.3s;
+        }
+        
+        a:hover {
+          color: color-mix(in srgb, var(--accent-color), transparent 25%);
+        }
+        
         @media (max-width: 768px) {
           .container {
             padding: 1rem;
@@ -694,6 +800,31 @@ const XRAIProficiencyChallenge = () => {
           
           .game-card {
             padding: 1.5rem;
+          }
+          
+          h1 {
+            font-size: 2rem;
+          }
+          
+          .score {
+            font-size: 2.5rem;
+          }
+          
+          .question-content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .question-image {
+            order: 1;
+          }
+          
+          .question-text-options {
+            order: 2;
+          }
+          
+          .question-img {
+            max-width: 240px;
           }
         }
       `}</style>
