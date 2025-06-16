@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Personajes3DPage from './pages/Personajes3DPage';
+import LMSPricing from './pages/LMSPricing';
 import FAQSection from './components/FAQSection';
 import PageTracker from './components/PageTracker';
 import useScrollTracking from './hooks/useScrollTracking';
@@ -63,6 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/personajes3d" element={<Personajes3DPage />} />
+          <Route path="/lmspricing" element={<LMSPricing />} />
         </Routes>
 
 
