@@ -9,23 +9,23 @@ const Menu = () => {
   };
 
   return (
-    <nav id="navmenu" className="navmenu" style={{width: "50%"}}>
+    <nav id="navmenu" className="navmenu" style={{ width: "50%" }}>
       <ul>
         <li className="dropdown">
           <a href="#">
-            <Link 
-              to="/#hero" 
+            <Link
+              to="/#hero"
               className="active"
               onClick={() => handleMenuClick('Home', 'main_navigation')}
             >
               Home
-            </Link> 
+            </Link>
             <i className="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
             <li>
-              <Link 
-                to="/#about" 
+              <Link
+                to="/#about"
                 className="active"
                 onClick={() => handleMenuClick('Nosotros', 'home_dropdown')}
               >
@@ -33,8 +33,8 @@ const Menu = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/#services" 
+              <Link
+                to="/#services"
                 className="active"
                 onClick={() => handleMenuClick('Soluciones', 'home_dropdown')}
               >
@@ -42,8 +42,8 @@ const Menu = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/#contact" 
+              <Link
+                to="/#contact"
                 className="active"
                 onClick={() => handleMenuClick('Contacto', 'home_dropdown')}
               >
@@ -54,18 +54,18 @@ const Menu = () => {
         </li>
         <li className="dropdown">
           <a href="#">
-            <Link 
-              to="/personajes3d#hero" 
+            <Link
+              to="/personajes3d#hero"
               className="active"
               onClick={() => handleMenuClick('Avatars 3D', 'main_navigation')}
             >
               Avatars 3D
-            </Link> 
+            </Link>
             <i className="bi bi-chevron-down toggle-dropdown"></i>
           </a>
           <ul>
             <li>
-              <Link 
+              <Link
                 to="/personajes3d#pricing"
                 onClick={() => handleMenuClick('Planes', 'avatars_dropdown')}
               >
@@ -74,6 +74,14 @@ const Menu = () => {
             </li>
           </ul>
         </li>
+        <li>
+            <Link
+              to="/lmspricing"
+              className="active"
+              onClick={() => handleMenuClick('Avatars 3D', 'main_navigation')}
+            >
+              LMS SaaS
+            </Link></li>
       </ul>
       <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
