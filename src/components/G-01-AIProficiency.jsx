@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MinimalistLayout from './MinimalistLayout';
+import { sendFormData } from '../services/emailService';
 
 const XRAIProficiencyChallenge = () => {
   const navigate = useNavigate();
@@ -8,6 +9,30 @@ const XRAIProficiencyChallenge = () => {
   // Go back to resources page
   const goBack = () => {
     navigate('/resources');
+  };
+
+  // Go to home page
+  const goHome = () => {
+    navigate('/');
+  };
+
+  // Handle embed functionality
+  const handleEmbed = () => {
+    const embedCode = `<iframe src="${window.location.origin}/ai-proficiency-challenge" width="800" height="600" frameborder="0" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></iframe>`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(embedCode).then(() => {
+      alert('Embed code copied to clipboard!\n\nYou can now paste this code into your website or LMS.');
+    }).catch(() => {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = embedCode;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Embed code copied to clipboard!\n\nYou can now paste this code into your website or LMS.');
+    });
   };
 
 
@@ -230,8 +255,8 @@ const XRAIProficiencyChallenge = () => {
   };
 
   // Submit form
-  const submitForm = () => {
-    const { email } = formData;
+  const submitForm = async () => {
+    const { email, fullName, meetingDate, meetingTime, scheduleMeeting } = formData;
 
     // Basic validation
     if (!email) {
@@ -239,15 +264,50 @@ const XRAIProficiencyChallenge = () => {
       return;
     }
 
-    // In a real application, you would send this data to your server
-    console.log('Form submitted:', {
-      ...formData,
-      scores,
-      answers
-    });
+    if (!fullName) {
+      alert('Please enter your full name');
+      return;
+    }
 
-    // Show confirmation
-    setScreen('confirmation');
+    // Validate meeting fields if meeting is scheduled
+    if (scheduleMeeting) {
+      if (!meetingDate) {
+        alert('Please select a preferred date for your meeting');
+        return;
+      }
+      if (!meetingTime) {
+        alert('Please select a preferred time slot for your meeting');
+        return;
+      }
+    }
+
+    // Show loading state (optional)
+    const submitButton = document.querySelector('.btn-primary');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    try {
+      // Send email with form data
+      await sendFormData(formData, scores, answers);
+      
+      // Log success (for debugging)
+      console.log('Form submitted successfully:', {
+        ...formData,
+        scores,
+        answers
+      });
+
+      // Show confirmation
+      setScreen('confirmation');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error sending your information. Please try again or contact us directly.');
+      
+      // Reset button
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
+    }
   };
 
   // Calculate total score
@@ -272,16 +332,37 @@ const XRAIProficiencyChallenge = () => {
       <div className="container" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
         {/* Back Navigation */}
         <div className="back-navigation">
-          <button
-            className="back-arrow-btn"
-            onClick={goBack}
-            title="Go back to Resources"
-          >
-            <i className="bi bi-arrow-left"></i>
-            <span>Back to Resources</span>
-          </button>
-          <div className="navigation-logo">
+          <div className="nav-buttons-left">
+            <button
+              className="back-arrow-btn"
+              onClick={goBack}
+              title="Go back to Resources"
+            >
+              <i className="bi bi-arrow-left"></i>
+              <span>Back to Resources</span>
+            </button>
+            {/* <button
+              className="back-arrow-btn home-btn"
+              onClick={goHome}
+              title="Go to Home"
+            >
+              <i className="bi bi-house"></i>
+              <span>Home</span>
+            </button> */}
+            <button
+              className="embed-btn"
+              onClick={handleEmbed}
+              title="Get embed code for this game"
+            >
+              <i className="bi bi-code-square"></i>
+              <span>Embed</span>
+            </button>
+          </div>
+          <div className="nav-buttons-right">
+          <div className="navigation-logo" onClick={goHome} style={{ cursor: 'pointer' }}>
             <img src="/assets/img/edunest-dark.svg" alt="Edunest" width="120" />
+          </div>
+            
           </div>
         </div>
 
@@ -578,8 +659,24 @@ const XRAIProficiencyChallenge = () => {
         }
         
         .back-navigation {
-          margin-bottom: 2rem; display: flex;  flex-direction: row;  align-items: center;  gap: 0.75rem;
+          margin-bottom: 2rem; 
+          display: flex;  
+          flex-direction: row;  
+          align-items: center;  
           justify-content: space-between;
+          width: 100%;
+        }
+        
+        .nav-buttons-left, .nav-buttons-right {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+        
+        .navigation-logo {
+          flex: 1;
+          display: flex;
+          justify-content: center;
         }
         
         .back-arrow-btn {
@@ -606,6 +703,33 @@ const XRAIProficiencyChallenge = () => {
         }
         
         .back-arrow-btn i {
+          font-size: 1.1rem;
+        }
+        
+        .embed-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.25rem;
+          background: rgba(227, 161, 39, 0.1);
+          border: 2px solid var(--accent-color);
+          border-radius: 8px;
+          color: var(--accent-color);
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+        
+        .embed-btn:hover {
+          background-color: var(--accent-color);
+          color: var(--contrast-color);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(227, 161, 39, 0.3);
+        }
+        
+        .embed-btn i {
           font-size: 1.1rem;
         }
         
