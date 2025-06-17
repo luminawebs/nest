@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import MinimalistLayout from './MinimalistLayout';
 import { sendFormData } from '../services/emailService';
 
@@ -326,9 +327,30 @@ const XRAIProficiencyChallenge = () => {
     }
   };
 
-  // Render current screen
+// Render meta tags and current screen
   return (
-    <MinimalistLayout title="AI Proficiency Challenge">
+    <>
+      <Helmet>
+        <title>AI Proficiency Challenge - EduNest</title>
+        <meta name="description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="AI Proficiency Challenge - EduNest" />
+        <meta property="og:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
+        <meta property="og:image" content="https://edunest.co/assets/img/g/01%20How%20personalized%20are%20your%20training%20videos.png" />
+        <meta property="og:url" content="https://edunest.co/ai-proficiency-challenge" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EduNest" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Proficiency Challenge - EduNest" />
+        <meta name="twitter:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
+        <meta name="twitter:image" content="https://edunest.co/assets/img/g/01%20How%20personalized%20are%20your%20training%20videos.png" />
+        <meta name="twitter:site" content="@edunest" />
+      </Helmet>
+      
+      <MinimalistLayout title="AI Proficiency Challenge">
       <div className="container" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
         {/* Back Navigation */}
         <div className="back-navigation">
@@ -1054,6 +1076,7 @@ const XRAIProficiencyChallenge = () => {
         </style>
       </div>
     </MinimalistLayout>
+    </>
   );
 };
 
