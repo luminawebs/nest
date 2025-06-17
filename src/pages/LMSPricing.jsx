@@ -288,21 +288,54 @@ const LMSPricing = () => {
 
 
 
-    <section id="lms" className="hero section">
+
+
+
+
+
+
+
+
+    <section id="lms" className=" ">
+
+
+      <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
+        <div className="container position-relative">
+          <h1>{translations[language].title}</h1>
+          {/* <p>Experiencias inmersivas con personajes tridimensionales</p> */}
+          <nav className="breadcrumbs">
+            {/* <ol>
+              <li><a href="index.html">Home</a></li>
+              <li className="current">Avatars 3D<</li>
+            </ol> */}
+
+            <ol>
+              <li>
+
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+
 
       <div className="container">
+
+
+
         <div className="row">
+
 
 
 
           <div className="lms-pricing-container">
             <div className="container">
-                  <div className="main-heading mb-8 mt-8">
-                    <h1>{translations[language].title}</h1>
-                  </div>
+              <div className="main-heading mb-8 mt-8">
+              </div>
               <div className="pricing-card p-4">
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                 
+
                   <div className="d-flex align-items-center">
                     <select
                       value={language}
@@ -328,7 +361,7 @@ const LMSPricing = () => {
                 </p>
 
                 {/* Tabs */}
-                <div className="nav-tabs-wrapper">
+                {/* <div className="nav-tabs-wrapper">
                   <ul className="nav nav-tabs">
                     {['basic', 'integrations', 'payment'].map(tab => (
                       <li key={tab} className="nav-item">
@@ -341,6 +374,31 @@ const LMSPricing = () => {
                       </li>
                     ))}
                   </ul>
+                </div> */}
+
+
+                <div className="nav nav-tabs nav nav-tabs" role="tablist">
+                  {['basic', 'integrations', 'payment'].map(tab => (
+                    <div key={tab} className="nav-item">
+                      <a
+                        role="tab"
+                        data-rr-ui-event-key={tab}
+                        id={`${tab}Tab`}
+                        aria-controls={`${tab}Panel`}
+                        aria-selected={activeTab === tab}
+                        className={`nav-link nav-link ${activeTab === tab ? 'active' : ''}`}
+                        tabIndex={activeTab === tab ? 0 : -1}
+                        onClick={() => setActiveTab(tab)}
+                        href="#"
+                      >
+                        <i className={`bi bi-${tab === 'basic' ? 'gear' :
+                            tab === 'integrations' ? 'plug' :
+                              'credit-card'
+                          }`} />
+                        {translations[language][tab]}
+                      </a>
+                    </div>
+                  ))}
                 </div>
 
                 <form onSubmit={validateAndCalculateQuote}>
@@ -564,33 +622,31 @@ const LMSPricing = () => {
                             const isTotal = item.label.includes('Total') || item.label.includes('total');
                             const isDiscount = item.amount < 0;
                             const isInitialPayment = item.label.includes('inicial') || item.label.includes('initial');
-                            
+
                             return (
                               <div
                                 key={index}
-                                className={`breakdown-item ${
-                                  isTotal ? 'breakdown-total' : 
-                                  isSubtotal ? 'breakdown-subtotal' : 
-                                  isInitialPayment ? 'breakdown-payment' :
-                                  isDiscount ? 'breakdown-discount' : 'breakdown-regular'
-                                }`}
+                                className={`breakdown-item ${isTotal ? 'breakdown-total' :
+                                  isSubtotal ? 'breakdown-subtotal' :
+                                    isInitialPayment ? 'breakdown-payment' :
+                                      isDiscount ? 'breakdown-discount' : 'breakdown-regular'
+                                  }`}
                               >
                                 <div className="breakdown-label">
                                   <span className="breakdown-icon-small">
-                                    {isTotal ? '💰' : 
-                                     isSubtotal ? '📋' : 
-                                     isInitialPayment ? '🏦' :
-                                     isDiscount ? '🏷️' : '📌'}
+                                    {isTotal ? '💰' :
+                                      isSubtotal ? '📋' :
+                                        isInitialPayment ? '🏦' :
+                                          isDiscount ? '🏷️' : '📌'}
                                   </span>
                                   <span>{item.label}</span>
                                 </div>
                                 <div className="breakdown-amount">
-                                  <span className={`amount-value ${
-                                    isDiscount ? 'discount-amount' : 
-                                    isTotal ? 'total-amount' : 
-                                    isSubtotal ? 'subtotal-amount' :
-                                    isInitialPayment ? 'payment-amount' : 'regular-amount'
-                                  }`}>
+                                  <span className={`amount-value ${isDiscount ? 'discount-amount' :
+                                    isTotal ? 'total-amount' :
+                                      isSubtotal ? 'subtotal-amount' :
+                                        isInitialPayment ? 'payment-amount' : 'regular-amount'
+                                    }`}>
                                     {item.amount < 0 ? '-' : ''}{formatCurrency(Math.abs(item.amount))}
                                   </span>
                                 </div>
@@ -598,7 +654,7 @@ const LMSPricing = () => {
                             );
                           })}
                         </div>
-                        
+
                         {/* Summary Card */}
                         <div className="breakdown-summary">
                           <div className="summary-row">
@@ -619,8 +675,8 @@ const LMSPricing = () => {
                           </div>
                           <div className="summary-note">
                             <small>
-                              {language === 'es' ? 
-                                '💡 Incluye configuración, integraciones y primer año de servicio con IVA (19%)' : 
+                              {language === 'es' ?
+                                '💡 Incluye configuración, integraciones y primer año de servicio con IVA (19%)' :
                                 '💡 Includes setup, integrations and first year of service with IVA (19%)'}
                             </small>
                           </div>
@@ -695,7 +751,7 @@ const LMSPricing = () => {
               }
               
               .nav-tabs {
-                border-bottom: 2px solid var(--accent-color);
+                border-bottom: 2px solid color-mix(in srgb, var(--heading-color), transparent 90%);
               }
               
               .nav-link {
@@ -715,9 +771,10 @@ const LMSPricing = () => {
               }
               
               .nav-link.active {
-                background-color: #000 !important;
+                background-color: var(--surface-color) !important;
                 color: var(--accent-color)  !important;
-                border:var(--surface-color) 1px solid !important;
+                // border:var(--surface-color) 1px solid !important;
+                border-bottom:var(--accent-color) 3px solid !important;
                 
               }
               
