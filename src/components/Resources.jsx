@@ -23,8 +23,11 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       titleSpan: 'Mejores Prácticas',
       description: 'Manual completo con estrategias probadas para diseñar cursos efectivos, aumentar el engagement estudiantil y optimizar resultados de aprendizaje.',
       delay: '200',
-      link: '#coming-soon',
-      comingSoon: true
+      action: () => {
+        trackLinkClick('Best Practices Guide', 'Free Resources');
+        window.location.href = '/coming-soon?resource=Mejores Prácticas';
+      },
+      isButton: true
     },
     {
       id: 3,
@@ -33,8 +36,11 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       titleSpan: 'ROI eLearning',
       description: 'Herramienta interactiva para calcular el retorno de inversión de tus proyectos de eLearning y justificar el presupuesto ante stakeholders.',
       delay: '300',
-      link: '#coming-soon',
-      comingSoon: true
+      action: () => {
+        trackLinkClick('ROI Calculator', 'Free Resources');
+        window.location.href = '/coming-soon?resource=ROI eLearning';
+      },
+      isButton: true
     },
     {
       id: 4,
@@ -43,8 +49,11 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       titleSpan: 'Implementación XR',
       description: 'Lista completa de verificación para implementar exitosamente tecnologías de realidad extendida en programas educativos corporativos.',
       delay: '400',
-      link: '#coming-soon',
-      comingSoon: true
+      action: () => {
+        trackLinkClick('XR Implementation Checklist', 'Free Resources');
+        window.location.href = '/coming-soon?resource=Implementación XR';
+      },
+      isButton: true
     },
     {
       id: 5,
@@ -53,8 +62,11 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       titleSpan: 'Creación de Contenido',
       description: 'Conjunto de plantillas prediseñadas para acelerar la creación de contenido educativo profesional y mantener consistencia visual.',
       delay: '500',
-      link: '#coming-soon',
-      comingSoon: true
+      action: () => {
+        trackLinkClick('Content Creation Templates', 'Free Resources');
+        window.location.href = '/coming-soon?resource=Creación de Contenido';
+      },
+      isButton: true
     },
     {
       id: 6,
@@ -63,8 +75,11 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       titleSpan: 'Analíticas de Aprendizaje',
       description: 'Herramienta de visualización de datos para monitorear el progreso estudiantil, identificar patrones y optimizar estrategias educativas.',
       delay: '600',
-      link: '#coming-soon',
-      comingSoon: true
+      action: () => {
+        trackLinkClick('Learning Analytics Dashboard', 'Free Resources');
+        window.location.href = '/coming-soon?resource=Analíticas de Aprendizaje';
+      },
+      isButton: true
     }
   ];
 

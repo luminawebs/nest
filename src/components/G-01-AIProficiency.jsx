@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import MinimalistLayout from './MinimalistLayout';
 
 const XRAIProficiencyChallenge = () => {
   const navigate = useNavigate();
@@ -83,7 +84,7 @@ const XRAIProficiencyChallenge = () => {
     },
     {
       category: "🤖 AI-Generated Content (No Humans Allowed)",
-      question: "Roe: 'How fast could you train employees on, say, *how to fight a kangaroo*?'",
+      question: "Roe: 'How fast could you train employees on, say, *how to fight a bear*?'",
       image: "assets/img/g/04 How quickly can you create new training content.png",
       options: [
         "Weeks. Our process is slower than DMV lines.",
@@ -267,7 +268,7 @@ const XRAIProficiencyChallenge = () => {
 
   // Render current screen
   return (
-    <main className="main">
+    <MinimalistLayout title="AI Proficiency Challenge">
       <div className="container" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
         {/* Back Navigation */}
         <div className="back-navigation">
@@ -279,6 +280,9 @@ const XRAIProficiencyChallenge = () => {
             <i className="bi bi-arrow-left"></i>
             <span>Back to Resources</span>
           </button>
+          <div className="navigation-logo">
+            <img src="/assets/img/edunest-dark.svg" alt="Edunest" width="120" />
+          </div>
         </div>
 
         {/* Intro Screen */}
@@ -574,7 +578,8 @@ const XRAIProficiencyChallenge = () => {
         }
         
         .back-navigation {
-          margin-bottom: 2rem;
+          margin-bottom: 2rem; display: flex;  flex-direction: row;  align-items: center;  gap: 0.75rem;
+          justify-content: space-between;
         }
         
         .back-arrow-btn {
@@ -924,7 +929,7 @@ const XRAIProficiencyChallenge = () => {
       `}
         </style>
       </div>
-    </main>
+    </MinimalistLayout>
   );
 };
 
