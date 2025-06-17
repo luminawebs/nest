@@ -296,7 +296,7 @@ const LMSPricing = () => {
 
 
 
-    <section id="lms" className=" ">
+    <section id="lms" className=" " style={{ padding: '0px' }}>
 
 
       <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
