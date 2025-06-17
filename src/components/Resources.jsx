@@ -6,7 +6,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       id: 1,
       icon: 'bi bi-robot',
       title: 'Evaluación de Competencias en IA (eng)',
-      titleSpan: 'Competencias en IA',
+      titleSpan: 'Competencias en IA  (eng)',
       description: 'Descubre qué tan avanzada está tu organización en el uso de inteligencia artificial para el aprendizaje. Evaluación interactiva con recomendaciones personalizadas.',
       delay: '100',
       action: () => {
@@ -74,8 +74,8 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       <div className="container section-title" data-aos="fade-up">
         <h2>Recursos</h2>
         <div>
-          <span>Explora nuestros</span>
-          <span className="description-title">materiales gratuitos</span>
+          {/* <span>Explora nuestros</span>
+          <span className="description-title">materiales gratuitos</span> */}
         </div>
       </div>
       {/* End Section Title */}
@@ -119,7 +119,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
                     onClick={resource.action}
                     style={{ 
                       border: 'none', 
-                      background: 'transparent',
+                      // background: 'transparent',
                       cursor: 'pointer'
                     }}
                   >

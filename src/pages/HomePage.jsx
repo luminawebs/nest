@@ -1,8 +1,13 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { trackButtonClick, trackServiceInquiry, trackLinkClick } from '../utils/analytics';
+import { Link } from 'react-router-dom';import { 
+  trackButtonClick, 
+  trackServiceInquiry, 
+  trackLinkClick,
+  trackContactClick,
+  trackFormSubmission 
+} from '../utils/analytics';
 import ImpactoDemostrado from '../components/ImpactoDemostrado';
 import FAQSection from '../components/FAQSection';
 
