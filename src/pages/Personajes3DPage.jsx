@@ -1,11 +1,10 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Nav, Tab } from 'react-bootstrap';
 
 
 const Personajes3DPage = () => {
   const location = useLocation();
+  const [activeTab, setActiveTab] = useState('tab1');
 
   useEffect(() => {
     const hash = location.hash;
@@ -23,22 +22,43 @@ const Personajes3DPage = () => {
 
   return (
 
+
+
     <div className="personajes3d-page">
 
-      <section id="hero" className="hero section">
+      <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
+        <div className="container position-relative">
+          <h1>Avatars 3D</h1>
+          <p>Experiencias inmersivas con personajes tridimensionales</p>
+          <nav className="breadcrumbs">
+            {/* <ol>
+              <li><a href="index.html">Home</a></li>
+              <li className="current">Avatars 3D<</li>
+            </ol> */}
+
+            <ol>
+              <li>
+                
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <section id="hero" className=" section">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 content-col" data-aos="fade-up">
               <div className="content">
-                <div className="agency-name">
+                {/* <div className="agency-name">
                   <h5>Experiencias inmersivas con personajes tridimensionales</h5>
                 </div>
 
                 <div className="main-heading">
                   <h1>Avatars 3D</h1>
-                </div>
+                </div> */}
 
-                <div className="divider"></div>
+                {/* <div className="divider"></div> */}
 
                 <div className="description">
                   <p>Descubre estrategias innovadoras para la educación digital. Transformamos contenidos en experiencias
@@ -117,27 +137,42 @@ const Personajes3DPage = () => {
                 </div>
 
                 <div className="service-tabs aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                  <Tab.Container id="serviceTab" defaultActiveKey="tab1">
-                    <Nav variant="tabs" className="nav nav-tabs">
-                      <Nav.Item>
-                        <Nav.Link eventKey="tab1" className="nav-link">
+                  <div className="tab-container">
+                    <ul className="nav nav-tabs" role="tablist">
+                      <li className="nav-item" role="presentation">
+                        <button 
+                          className={`nav-link ${activeTab === 'tab1' ? 'active' : ''}`}
+                          onClick={() => setActiveTab('tab1')}
+                          type="button"
+                          role="tab"
+                        >
                           <i className="bi bi-info-circle"></i> ¿Por Qué 3D?
-                        </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="tab2" className="nav-link">
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button 
+                          className={`nav-link ${activeTab === 'tab2' ? 'active' : ''}`}
+                          onClick={() => setActiveTab('tab2')}
+                          type="button"
+                          role="tab"
+                        >
                           <i className="bi bi-diagram-3"></i> Paso a Paso
-                        </Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="tab3" className="nav-link">
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button 
+                          className={`nav-link ${activeTab === 'tab3' ? 'active' : ''}`}
+                          onClick={() => setActiveTab('tab3')}
+                          type="button"
+                          role="tab"
+                        >
                           <i className="bi bi-graph-up-arrow"></i> Beneficios
-                        </Nav.Link>
-                      </Nav.Item>
-                    </Nav>
+                        </button>
+                      </li>
+                    </ul>
 
-                    <Tab.Content className="tab-content">
-                      <Tab.Pane eventKey="tab1" className="tab-pane">
+                    <div className="tab-content">
+                      <div className={`tab-pane ${activeTab === 'tab1' ? 'show active' : ''}`} role="tabpanel">
                         <div className="row">
                           <div className="col-md-6">
                             <div className="content-block">
@@ -152,9 +187,9 @@ const Personajes3DPage = () => {
                             <img src="assets/img/services/3d_assistants.png" alt="Ventajas del contenido animado" className="img-fluid rounded" />
                           </div>
                         </div>
-                      </Tab.Pane>
+                      </div>
 
-                      <Tab.Pane eventKey="tab2" className="tab-pane">
+                      <div className={`tab-pane ${activeTab === 'tab2' ? 'show active' : ''}`} role="tabpanel">
                         <div className="process-timeline">
                           <div className="timeline-item">
                             <div className="timeline-marker">01</div>
@@ -192,9 +227,9 @@ const Personajes3DPage = () => {
                             </div>
                           </div>
                         </div>
-                      </Tab.Pane>
+                      </div>
 
-                      <Tab.Pane eventKey="tab3" className="tab-pane">
+                      <div className={`tab-pane ${activeTab === 'tab3' ? 'show active' : ''}`} role="tabpanel">
                         <div className="row g-4">
                           <div className="col-md-6">
                             <div className="benefit-card">
@@ -233,9 +268,9 @@ const Personajes3DPage = () => {
                             </div>
                           </div>
                         </div>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
@@ -354,7 +389,7 @@ const Personajes3DPage = () => {
                   </ul>
                 </div>
 
-              
+
 
                 <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
                   <h4>¿Tienes Preguntas?</h4>

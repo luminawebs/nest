@@ -111,6 +111,14 @@ const Menu = () => {
             LMS SaaS
           </Link>
         </li>
+        <li>
+          <Link
+            to="/resources"
+            onClick={() => handleNavItemClick('Resources', 'main_navigation')}
+          >
+            Recursos
+          </Link>
+        </li>
       </ul>
       <i 
         className="mobile-nav-toggle d-xl-none bi bi-list"
