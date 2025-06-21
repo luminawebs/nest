@@ -42,7 +42,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🎬 Hollywood-Level Training Videos",
       question: "Roe Jogan: 'Bro, imagine if Tony Hawk’s training videos were made for YOU. How personalized are your videos?'",
-      image: "assets/img/g/01 How personalized are your training videos.png",
+      image: "/assets/img/g/01-how-personalized-are-your-training-videos.png",
       options: [
         "Generic AF. Like a 90s infomercial (0% personalization)",
         "We’ve got different vids for sales vs. engineers (Basic segmentation)",
@@ -55,7 +55,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🎬 Hollywood-Level Training Videos",
       question: "Roe: 'Dude, what if your videos could read minds? How do they adapt to learning styles?'",
-      image: "assets/img/g/02 How does your video content adapt to different learning styles.png",
+      image: "/assets/img/g/02-how-does-your-video-content-adapt-to-different-learning-styles.png",
       options: [
         "They don’t. It’s like a college lecture from 1982.",
         "Learners pick ‘fast’ or ‘slow’ versions (Like DVD menus)",
@@ -70,7 +70,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🕹️ Choose-Your-Own-Adventure Training",
       question: "Roe: 'What if learners could branch like a *Black Mirror* episode? How interactive are your videos?'",
-      image: "assets/img/g/03 How interactive are your training videos.png",
+      image: "/assets/img/g/03-how-interactive-are-your-training videos.png",
       options: [
         "Linear. Like watching paint dry (No interaction)",
         "We added a quiz at the end (Bare minimum)",
@@ -83,7 +83,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🕹️ Choose-Your-Own-Adventure Training",
       question: "Roe: 'Ever seen *Bandersnatch*? How nuts does your branching get?'",
-      image: "assets/img/g/How does your system handle branching scenarios.png",
+      image: "/assets/img/g/how-does-your-system-handle-branching-scenarios.png",
       options: [
         "No branching. It’s a straight road to Snoozeville.",
         "Simple ‘right/wrong’ paths (Like a morality system in *Fable*)",
@@ -98,7 +98,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🤖 AI-Generated Content (No Humans Allowed)",
       question: "Roe: 'What if your training content was made by robots? How deep does the AI rabbit hole go?'",
-      image: "assets/img/g/04 How does your organization use synthetic media (AI-generated content).png",
+      image: "/assets/img/g/04-how-does-your-organization-use-synthetic-media(AI-generated-content).png",
       options: [
         "We don’t trust robots. Humans write everything.",
         "We use text-to-speech that sounds like a GPS (Robotic but functional)",
@@ -111,7 +111,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "🤖 AI-Generated Content (No Humans Allowed)",
       question: "Roe: 'How fast could you train employees on, say, *how to fight a bear*?'",
-      image: "assets/img/g/04 How quickly can you create new training content.png",
+      image: "/assets/img/g/04-how-quickly can-you-create-new-training content.png",
       options: [
         "Weeks. Our process is slower than DMV lines.",
         "Days. We’ve got templates, but still need coffee breaks.",
@@ -126,7 +126,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "👁️ Ethics & Deepfakes (Don’t Be Creepy)",
       question: "Roe: 'What if your AI clones someone’s voice? How do you handle the ethics?'",
-      image: "assets/img/g/05 How does your organization address ethical concerns with synthetic media.png",
+      image: "/assets/img/g/05-how-does-your-organization-address-ethical-concerns with-synthetic-media.png",
       options: [
         "We don’t. It’s the Wild West up in here.",
         "We pinky-swore not to deepfake the CEO (No written policy)",
@@ -139,7 +139,7 @@ const XRAIProficiencyChallenge = () => {
     {
       category: "👁️ Ethics & Deepfakes (Don’t Be Creepy)",
       question: "Roe: 'If you use AI, do you tell people? Or is it a *Black Mirror* secret?'",
-      image: "assets/img/g/How transparent are you about using AI-generated content.png",
+      image: "/assets/img/g/how-transparent-are-you-about-using-AI-generated-content.png",
       options: [
         "Nope. Let them think it’s magic.",
         "Only if they ask (Like a dodgy politician)",
@@ -337,7 +337,7 @@ const XRAIProficiencyChallenge = () => {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="AI Proficiency Challenge - EduNest" />
         <meta property="og:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
-        <meta property="og:image" content="https://edunest.co/assets/img/g/01%20How%20personalized%20are%20your%20training%20videos.png" />
+        <meta property="og:image" content="https://edunest.co/assets/img/g/01-how-personalized-are-your-training-videos.png" />
         <meta property="og:url" content="https://edunest.co/ai-proficiency-challenge" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="EduNest" />
@@ -346,7 +346,7 @@ const XRAIProficiencyChallenge = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Proficiency Challenge - EduNest" />
         <meta name="twitter:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
-        <meta name="twitter:image" content="https://edunest.co/assets/img/g/01%20How%20personalized%20are%20your%20training%20videos.png" />
+        <meta name="twitter:image" content="https://edunest.co/assets/img/g/01-how-personalized-are-your-training-videos.png" />
         <meta name="twitter:site" content="@edunest" />
       </Helmet>
       
@@ -392,9 +392,9 @@ const XRAIProficiencyChallenge = () => {
         {screen === 'intro' && (
           <div className="game-card" style={{ display: 'flex', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ flex: '1' }}>
-              <img src="./assets/img/g/01 How personalized are your training videos.png" alt="" width={"100%"} style={{ borderRadius: '16px' }}/>
+              <img src="./assets/img/g/01-how-personalized-are-your-training-videos.png" alt="" width={"100%"} style={{ borderRadius: '16px' }}/>
             </div>
-            <div  style={{ flex: '1' }}>
+            <div style={{ flex: '1' }}>
               <h1>Learning & AI Proficiency Challenge</h1>
               <p>Discover how your company measures up in the 5 key areas of immersive learning technology. This 5-minute challenge will assess your proficiency and provide personalized recommendations.</p>
 
@@ -407,7 +407,8 @@ const XRAIProficiencyChallenge = () => {
 
               <p>Complete the challenge to receive your customized proficiency report and see how you compare to industry leaders.</p>
 
-              <button className="btn btn-primary" onClick={startQuiz}>Start the Challenge</button></div>
+              <button className="btn btn-primary" onClick={startQuiz}>Start the Challenge</button>
+            </div>
           </div>
         )}
 
