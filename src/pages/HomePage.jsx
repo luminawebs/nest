@@ -1,7 +1,9 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';import { 
+import { Link } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
+import { 
   trackButtonClick, 
   trackServiceInquiry, 
   trackLinkClick,
@@ -14,6 +16,7 @@ import FAQSection from '../components/FAQSection';
 
 const HomePage = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const hash = location.hash;
@@ -37,20 +40,17 @@ const HomePage = () => {
             <div className="col-lg-5 content-col" data-aos="fade-up">
               <div className="content">
                 <div className="agency-name">
-                  <h5>LÚMINA INTERACTIVA</h5>
+                  <h5>{t('hero.agency')}</h5>
                 </div>
 
                 <div className="main-heading">
-                  <h1>SOLUCIONES DE <br />ELEARNING</h1>
+                  <h1>{t('hero.mainHeading')}</h1>
                 </div>
 
                 <div className="divider"></div>
 
                 <div className="description">
-                  <p>Descubre estrategias innovadoras para la educación digital. Transformamos contenidos en experiencias
-                    interactivas que cautivan a los estudiantes. Nuestro equipo especializado combina tecnología
-                    pedagógica y diseño impactante para crear cursos que destacan en el competitivo mundo del aprendizaje
-                    en línea.</p>
+                  <p>{t('hero.description')}</p>
                 </div>
 
                 <div className="cta-button">
@@ -59,7 +59,7 @@ const HomePage = () => {
                     className="btn"
                     onClick={() => trackButtonClick('Hero CTA - Ver Servicios', 'Hero')}
                   >
-                    <span>VER SERVICIOS</span>
+                    <span>{t('hero.ctaButton')}</span>
                     <i className="bi bi-arrow-right"></i>
                   </a>
                 </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
                     <h2>100+</h2>
                   </div>
                   <div className="stats-label">
-                    <p>Cursos Implementados</p>
+                    <p>{t('hero.statsLabel')}</p>
                   </div>
                   <div className="stats-arrow">
                     <a href="#portafolio"><i className="bi bi-arrow-up-right"></i></a>
@@ -103,10 +103,10 @@ const HomePage = () => {
       {/* About Section */}
       <section id="about" className="about section">
         <div className="container section-title" data-aos="fade-up">
-          <h2>Nosotros</h2>
+          <h2>{t('about.title')}</h2>
           <div>
-            <span>Conoce más </span>
-            <span className="description-title">sobre nuestra misión</span>
+            <span>{t('about.subtitle')} </span>
+            <span className="description-title">{t('about.subtitleHighlight')}</span>
           </div>
         </div>
 
@@ -118,34 +118,30 @@ const HomePage = () => {
                   loading="lazy" />
                 <div className="experience-badge">
                   <span className="years">10+</span>
-                  <span className="text">Años en Educación Digital</span>
+                  <span className="text">{t('about.yearsExperience')}</span>
                 </div>
               </div>
             </div>
 
             <div className="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
               <div className="about-content">
-                <h2>Transformamos la Educación con Tecnología Innovadora</h2>
-                <p className="lead">Diseñamos soluciones de eLearning personalizadas que simplifican la creación de cursos y
-                  mejoran la experiencia de aprendizaje.</p>
-                <p>Combinamos pedagogía, diseño interactivo y tecnología avanzada para ayudar a universidades y educadores
-                  a destacar en la era digital.</p>
+                <h2>{t('about.mainTitle')}</h2>
+                <p className="lead">{t('about.leadText')}</p>
+                <p>{t('about.description')}</p>
 
                 <div className="row g-4 mt-3">
                   <div className="col-md-6" data-aos="zoom-in" data-aos-delay="400">
                     <div className="feature-item">
                       <i className="bi bi-check-circle-fill"></i>
-                      <h5>Soporte Integral</h5>
-                      <p>Nuestro equipo especializado acompaña cada etapa, desde el diseño hasta la implementación de tus
-                        cursos.</p>
+                      <h5>{t('about.integralSupport')}</h5>
+                      <p>{t('about.integralSupportDesc')}</p>
                     </div>
                   </div>
                   <div className="col-md-6" data-aos="zoom-in" data-aos-delay="450">
                     <div className="feature-item">
                       <i className="bi bi-lightbulb-fill"></i>
-                      <h5>Tecnología Pedagógica</h5>
-                      <p>Utilizamos herramientas innovadoras (como personajes 3D y plataformas ágiles) para maximizar el
-                        engagement estudiantil.</p>
+                      <h5>{t('about.pedagogicalTech')}</h5>
+                      <p>{t('about.pedagogicalTechDesc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +151,7 @@ const HomePage = () => {
                   className="btn btn-primary mt-4"
                   onClick={() => trackButtonClick('About CTA - Conoce Nuestras Soluciones', 'About')}
                 >
-                  Conoce Nuestras Soluciones
+                  {t('about.ctaButton')}
                 </a>
               </div>
             </div>
@@ -167,10 +163,10 @@ const HomePage = () => {
 
         {/* <!-- Section Title --> */}
         <div className="container section-title" data-aos="fade-up">
-          <h2>Soluciones</h2>
+          <h2>{t('services.title')}</h2>
           <div>
-            <span>Descubre nuestras</span>
-            <span className="description-title">herramientas educativas</span>
+            <span>{t('services.subtitle')}</span>
+            <span className="description-title">{t('services.subtitleHighlight')}</span>
           </div>
         </div>
         {/* <!-- End Section Title --> */}
@@ -182,20 +178,18 @@ const HomePage = () => {
               <div className="col-lg-8 col-md-12">
                 <div className="service-intro">
                   <h2 className="service-heading">
-                    <div>Transformación educativa</div>
-                    <div><span>con tecnología innovadora</span></div>
+                    <div>{t('services.mainHeading')}</div>
+                    <div><span>{t('services.mainHeadingHighlight')}</span></div>
                   </h2>
                 </div>
               </div>
               <div className="col-lg-4 col-md-12">
                 <div className="service-summary">
                   <p>
-                    Combinamos diseño pedagógico, herramientas interactivas (como personajes 3D y plataformas ágiles)
-                    y contenido multimedia para crear experiencias de aprendizaje que cautivan a los estudiantes
-                    y simplifican la gestión académica.
+                    {t('services.summary')}
                   </p>
                   <a href="#services" className="service-btn">
-                    Ver todas las soluciones
+                    {t('services.viewAllSolutions')}
                     <i className="bi bi-arrow-right"></i>
                   </a>
                 </div>

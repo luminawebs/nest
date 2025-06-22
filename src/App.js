@@ -2,6 +2,7 @@
 import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 import ConditionalLayout from './components/ConditionalLayout';
 import HomePage from './pages/HomePage';
 import Personajes3DPage from './pages/Personajes3DPage';
@@ -37,25 +38,27 @@ function App() {
 
 
   return (
-    <Router>
-      <div className="App">
-        <PageTracker />
-        <ConditionalLayout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/personajes3d" element={<Personajes3DPage />} />
-            <Route path="/lmspricing" element={<LMSPricing />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/coming-soon" element={<ComingSoonPage />} />
-            <Route path="/ai-proficiency-challenge" element={<XRAIProficiencyChallenge />} />
-          </Routes>
-        </ConditionalLayout>
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          <PageTracker />
+          <ConditionalLayout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/personajes3d" element={<Personajes3DPage />} />
+              <Route path="/lmspricing" element={<LMSPricing />} />
+              <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/coming-soon" element={<ComingSoonPage />} />
+              <Route path="/ai-proficiency-challenge" element={<XRAIProficiencyChallenge />} />
+            </Routes>
+          </ConditionalLayout>
 
-        {/* <!-- Preloader --> */}
-        <div id="preloader"></div>
+          {/* <!-- Preloader --> */}
+          <div id="preloader"></div>
 
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 
