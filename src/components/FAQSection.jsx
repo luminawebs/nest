@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 
 const FAQSection = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0); // First item is active by default
 
   const faqData = [
     {
-      question: "¿Qué incluye el servicio de personajes 3D?",
-      answer: "Nuestros paquetes incluyen: diseño del personaje, animaciones básicas (gestos y movimientos), integración con tu contenido educativo, y formatos listos para usar en tu plataforma (MP4, FBX o OBJ). Los paquetes premium incluyen más animaciones y personalización avanzada."
+      question: t('faq.questions.q1.question'),
+      answer: t('faq.questions.q1.answer')
     },
     {
-      question: "¿Cuánto tiempo toma desarrollar un curso completo?",
-      answer: "Con nuestra plataforma express: 2-4 semanas para cursos estándar. Los tiempos varían según: cantidad de contenido, integraciones requeridas con LMS, y complejidad de las interacciones. Ofrecemos entregas parciales semanales para tu revisión."
+      question: t('faq.questions.q2.question'),
+      answer: t('faq.questions.q2.answer')
     },
     {
-      question: "¿Pueden integrar el contenido con nuestro LMS existente?",
-      answer: "Sí, trabajamos con Moodle, Blackboard, Canvas y otros sistemas. Nuestros contenidos son compatibles con estándares SCORM y xAPI. Solo necesitamos acceso de desarrollador a tu LMS para configurar la integración."
+      question: t('faq.questions.q3.question'),
+      answer: t('faq.questions.q3.answer')
     },
     {
-      question: "¿Qué pasa si necesito cambios después de la entrega?",
-      answer: "Cada paquete incluye revisiones (2 por minuto en el plan básico). Revisiones adicionales tienen un costo de $200.000 COP c/u. Para proyectos grandes recomendamos el plan premium que incluye 100 revisiones."
+      question: t('faq.questions.q4.question'),
+      answer: t('faq.questions.q4.answer')
     },
     {
-      question: "¿Cómo funciona el pago y qué garantías ofrecen?",
-      answer: "Requerimos el 50% para iniciar y 50% al finalizar. Trabajamos con contratos que especifican plazos, entregables y derechos de autor (que serán 100% tuyos al finalizar el pago). Facturamos por Lúmina Interactiva SAS (NIT 900713256-1)."
+      question: t('faq.questions.q5.question'),
+      answer: t('faq.questions.q5.answer')
     },
     {
-      question: "¿Ofrecen capacitación para usar la plataforma?",
-      answer: "Sí, incluimos: 1) Sesión inicial de onboarding (2 horas), 2) Manuales técnicos y pedagógicos, 3) Soporte prioritario por 30 días, y 4) Videos tutoriales. Para equipos grandes ofrecemos talleres presenciales adicionales."
+      question: t('faq.questions.q6.question'),
+      answer: t('faq.questions.q6.answer')
     }
   ];
 
@@ -39,10 +41,9 @@ const FAQSection = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-5" data-aos="fade-up">
-            <h2 className="faq-title">¿Preguntas frecuentes?</h2>
+            <h2 className="faq-title">{t('faq.title')}</h2>
             <p className="faq-description">
-              Encuentra respuestas sobre nuestros servicios de personajes 3D, desarrollo de
-              cursos y plataforma educativa.
+              {t('faq.description')}
             </p>
             <div className="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
               <svg className="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
