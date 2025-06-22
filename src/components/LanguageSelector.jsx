@@ -20,7 +20,7 @@ const LanguageSelector = ({ className = '', style = {} }) => {
         }}
         style={{
           textDecoration: 'none',
-          color: language === 'es' ? '#007bff' : '#6c757d',
+          color: language === 'es' ? '#e3a127' : '#6c757d',
           fontWeight: language === 'es' ? 'bold' : 'normal',
           fontSize: '14px',
           marginRight: '8px',
@@ -38,7 +38,7 @@ const LanguageSelector = ({ className = '', style = {} }) => {
         }}
         style={{
           textDecoration: 'none',
-          color: language === 'en' ? '#007bff' : '#6c757d',
+          color: language === 'en' ? '#e3a127' : '#6c757d',
           fontWeight: language === 'en' ? 'bold' : 'normal',
           fontSize: '14px',
           marginLeft: '8px',

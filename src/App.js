@@ -7,6 +7,7 @@ import ConditionalLayout from './components/ConditionalLayout';
 import HomePage from './pages/HomePage';
 import Personajes3DPage from './pages/Personajes3DPage';
 import LMSPricing from './pages/LMSPricing';
+import PortfolioPage from './pages/PortfolioPage';
 import ResourcesPage from './pages/ResourcesPage';
 import ComingSoonPage from './pages/ComingSoonPage';
 import PageTracker from './components/PageTracker';
@@ -48,6 +49,7 @@ function App() {
               <Route path="/personajes3d" element={<Personajes3DPage />} />
               <Route path="/lmspricing" element={<LMSPricing />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/coming-soon" element={<ComingSoonPage />} />
               <Route path="/ai-proficiency-challenge" element={<XRAIProficiencyChallenge />} />
             </Routes>

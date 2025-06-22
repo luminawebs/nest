@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
 
 
 const Personajes3DPage = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('tab1');
+
+  // Handle tab clicks
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+  };
 
   useEffect(() => {
     const hash = location.hash;
@@ -28,8 +35,8 @@ const Personajes3DPage = () => {
 
       <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
         <div className="container position-relative">
-          <h1>Avatars 3D</h1>
-          <p>Experiencias inmersivas con personajes tridimensionales</p>
+          <h1>{t('personajes3d.title')}</h1>
+          <p>{t('personajes3d.subtitle')}</p>
           <nav className="breadcrumbs">
             {/* <ol>
               <li><a href="index.html">Home</a></li>
@@ -90,7 +97,7 @@ const Personajes3DPage = () => {
                     }}
                     allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
                     allowFullScreen={true}
-                    title="Video ejemplo de 3D personajes"></iframe></div>
+                    title={t('personajes3d.videoTitle')}></iframe></div>
                 </div>
 
                 {/* <div className="stats-card">
@@ -125,14 +132,14 @@ const Personajes3DPage = () => {
             <div className="col-lg-8 order-lg-1 order-2">
               <div className="service-main-content">
                 <div className="service-header aos-init aos-animate" data-aos="fade-up">
-                  <h1>Animación 3D que Cautiva a tu Audiencia</h1>
+                  <h1>{t('personajes3d.mainHeading')}</h1>
                   <div className="service-meta">
-                    <span><i className="bi bi-award"></i> Solución Asequible</span>
-                    <span><i className="bi bi-clock"></i> Entrega en 3-4 Semanas</span>
-                    <span><i className="bi bi-star-fill"></i> Alta Retención de Audiencia</span>
+                    <span><i className="bi bi-award"></i> {t('personajes3d.meta.affordable')}</span>
+                    <span><i className="bi bi-clock"></i> {t('personajes3d.meta.delivery')}</span>
+                    <span><i className="bi bi-star-fill"></i> {t('personajes3d.meta.retention')}</span>
                   </div>
                   <p className="lead">
-                    Impresiona a tus usuarios con personajes 3D animados que elevan la calidad de tus contenidos educativos y corporativos sin gastar una fortuna.
+                    {t('personajes3d.leadText')}
                   </p>
                 </div>
 
@@ -146,7 +153,7 @@ const Personajes3DPage = () => {
                           type="button"
                           role="tab"
                         >
-                          <i className="bi bi-info-circle"></i> ¿Por Qué 3D?
+                          <i className="bi bi-info-circle"></i> {t('personajes3d.tabs.whyThreeD')}
                         </button>
                       </li>
                       <li className="nav-item" role="presentation">
@@ -156,7 +163,7 @@ const Personajes3DPage = () => {
                           type="button"
                           role="tab"
                         >
-                          <i className="bi bi-diagram-3"></i> Paso a Paso
+                          <i className="bi bi-diagram-3"></i> {t('personajes3d.tabs.stepByStep')}
                         </button>
                       </li>
                       <li className="nav-item" role="presentation">
@@ -166,7 +173,7 @@ const Personajes3DPage = () => {
                           type="button"
                           role="tab"
                         >
-                          <i className="bi bi-graph-up-arrow"></i> Beneficios
+                          <i className="bi bi-graph-up-arrow"></i> {t('personajes3d.tabs.benefits')}
                         </button>
                       </li>
                     </ul>
@@ -176,15 +183,15 @@ const Personajes3DPage = () => {
                         <div className="row">
                           <div className="col-md-6">
                             <div className="content-block">
-                              <h3>Impacto del Contenido Animado</h3>
-                              <p>📈 Los videos con personajes animados 3D tienen un 30% más de retención que los formatos tradicionales (2D o live-action).</p>
-                              <p>💬 El 70% de los marketers considera el 3D la herramienta más efectiva para engagement, según HubSpot.</p>
-                              <p>🛒 Las campañas con animación 3D aumentan las tasas de conversión un 40% en e-commerce.</p>
-                              <p>🧠 El 90% de los consumidores recuerda mejor una marca con contenido audiovisual animado frente a solo texto.</p>
+                              <h3>{t('personajes3d.whyThreeD.title')}</h3>
+                              <p>{t('personajes3d.whyThreeD.stat1')}</p>
+                              <p>{t('personajes3d.whyThreeD.stat2')}</p>
+                              <p>{t('personajes3d.whyThreeD.stat3')}</p>
+                              <p>{t('personajes3d.whyThreeD.stat4')}</p>
                             </div>
                           </div>
                           <div className="col-md-6">
-                            <img src="assets/img/services/3d_assistants.png" alt="Ventajas del contenido animado" className="img-fluid rounded" />
+                            <img src="assets/img/services/3d_assistants.png" alt={t('personajes3d.whyThreeD.imageAlt')} className="img-fluid rounded" />
                           </div>
                         </div>
                       </div>
@@ -192,38 +199,38 @@ const Personajes3DPage = () => {
                       <div className={`tab-pane ${activeTab === 'tab2' ? 'show active' : ''}`} role="tabpanel">
                         <div className="process-timeline">
                           <div className="timeline-item">
-                            <div className="timeline-marker">01</div>
+                            <div className="timeline-marker">{t('personajes3d.stepByStep.step1.number')}</div>
                             <div className="timeline-content">
-                              <h4>Elección del Personaje</h4>
-                              <p>Selecciona entre una galería de personajes 3D prediseñados o solicita uno personalizado según tu marca.</p>
+                              <h4>{t('personajes3d.stepByStep.step1.title')}</h4>
+                              <p>{t('personajes3d.stepByStep.step1.description')}</p>
                             </div>
                           </div>
                           <div className="timeline-item">
-                            <div className="timeline-marker">02</div>
+                            <div className="timeline-marker">{t('personajes3d.stepByStep.step2.number')}</div>
                             <div className="timeline-content">
-                              <h4>Desarrollo de Guión</h4>
-                              <p>Te ayudamos a redactar un guión claro y didáctico para maximizar la conexión con la audiencia.</p>
+                              <h4>{t('personajes3d.stepByStep.step2.title')}</h4>
+                              <p>{t('personajes3d.stepByStep.step2.description')}</p>
                             </div>
                           </div>
                           <div className="timeline-item">
-                            <div className="timeline-marker">03</div>
+                            <div className="timeline-marker">{t('personajes3d.stepByStep.step3.number')}</div>
                             <div className="timeline-content">
-                              <h4>Grabación de Voz</h4>
-                              <p>Locución profesional grabada en estudio o de forma remota con tu voz preferida.</p>
+                              <h4>{t('personajes3d.stepByStep.step3.title')}</h4>
+                              <p>{t('personajes3d.stepByStep.step3.description')}</p>
                             </div>
                           </div>
                           <div className="timeline-item">
-                            <div className="timeline-marker">04</div>
+                            <div className="timeline-marker">{t('personajes3d.stepByStep.step4.number')}</div>
                             <div className="timeline-content">
-                              <h4>Animación y Render</h4>
-                              <p>Animamos tu personaje con movimiento facial, corporal y expresión emocional. Luego lo renderizamos con calidad HD.</p>
+                              <h4>{t('personajes3d.stepByStep.step4.title')}</h4>
+                              <p>{t('personajes3d.stepByStep.step4.description')}</p>
                             </div>
                           </div>
                           <div className="timeline-item">
-                            <div className="timeline-marker">05</div>
+                            <div className="timeline-marker">{t('personajes3d.stepByStep.step5.number')}</div>
                             <div className="timeline-content">
-                              <h4>Motion Graphics + Entrega</h4>
-                              <p>Agregamos transiciones, música y subtítulos. Entregamos en múltiples formatos para plataformas, LMS o redes.</p>
+                              <h4>{t('personajes3d.stepByStep.step5.title')}</h4>
+                              <p>{t('personajes3d.stepByStep.step5.description')}</p>
                             </div>
                           </div>
                         </div>
@@ -236,8 +243,8 @@ const Personajes3DPage = () => {
                               <div className="benefit-icon">
                                 <i className="bi bi-eye"></i>
                               </div>
-                              <h4>Mayor Retención</h4>
-                              <p>Tu audiencia recuerda más y se compromete mejor con personajes animados realistas.</p>
+                              <h4>{t('personajes3d.benefits.retention.title')}</h4>
+                              <p>{t('personajes3d.benefits.retention.description')}</p>
                             </div>
                           </div>
                           <div className="col-md-6">
@@ -245,8 +252,8 @@ const Personajes3DPage = () => {
                               <div className="benefit-icon">
                                 <i className="bi bi-cash-coin"></i>
                               </div>
-                              <h4>Accesible para Todos</h4>
-                              <p>Producción profesional sin presupuestos excesivos. Ideal para empresas educativas y comerciales.</p>
+                              <h4>{t('personajes3d.benefits.affordable.title')}</h4>
+                              <p>{t('personajes3d.benefits.affordable.description')}</p>
                             </div>
                           </div>
                           <div className="col-md-6">
@@ -254,8 +261,8 @@ const Personajes3DPage = () => {
                               <div className="benefit-icon">
                                 <i className="bi bi-lightning-charge"></i>
                               </div>
-                              <h4>Producción Ágil</h4>
-                              <p>Todo el proceso en solo 3 a 4 semanas. Con avances iterativos y entregas rápidas.</p>
+                              <h4>{t('personajes3d.benefits.agile.title')}</h4>
+                              <p>{t('personajes3d.benefits.agile.description')}</p>
                             </div>
                           </div>
                           <div className="col-md-6">
@@ -263,8 +270,8 @@ const Personajes3DPage = () => {
                               <div className="benefit-icon">
                                 <i className="bi bi-bar-chart-line"></i>
                               </div>
-                              <h4>Resultados Medibles</h4>
-                              <p>Mejora en conversiones, leads y recordación de marca garantizados con estadísticas reales.</p>
+                              <h4>{t('personajes3d.benefits.measurable.title')}</h4>
+                              <p>{t('personajes3d.benefits.measurable.description')}</p>
                             </div>
                           </div>
                         </div>
@@ -274,7 +281,7 @@ const Personajes3DPage = () => {
                 </div>
 
                 <div className="service-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                  <h3>Ejemplos de Animación 3D</h3>
+                  <h3>{t('personajes3d.gallery.title')}</h3>
                   <div className="service-details-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
                     <div className="swiper-wrapper">
                       <div className="swiper-slide">
@@ -298,8 +305,8 @@ const Personajes3DPage = () => {
 
 
                           <div className="portfolio-info">
-                            <h5>Asistente Avatar Virtual Educativo</h5>
-                            <p>Transforma PDFs en contenido animado</p>
+                            <h5>{t('personajes3d.gallery.demo1.title')}</h5>
+                            <p>{t('personajes3d.gallery.demo1.description')}</p>
                           </div>
                         </div>
                       </div>
@@ -334,56 +341,56 @@ const Personajes3DPage = () => {
               <div className="service-sidebar aos-init aos-animate" data-aos="fade-left">
 
                 <div className="action-card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                  <h3>¿Listo para Impresionar con 3D?</h3>
-                  <p>Solicita una animación personalizada para tu curso, empresa o presentación. Producción rápida, profesional y accesible.</p>
+                  <h3>{t('personajes3d.cta.title')}</h3>
+                  <p>{t('personajes3d.cta.description')}</p>
 
                   <a
                     href="https://wa.me/573103339208?text=Hola,%20quiero%20saber%20más%20sobre%20los%20asistentes%203D"
                     className="btn-primary"
                     target="_blank"
                     rel="noopener noreferrer">
-                    Solicita Cotización
+                    {t('personajes3d.cta.button')}
                   </a>
 
-                  <span className="guarantee"><i className="bi bi-shield-check"></i> 100 % Entrega Garantizada</span>
+                  <span className="guarantee"><i className="bi bi-shield-check"></i> {t('personajes3d.cta.guarantee')}</span>
                 </div>
 
                 <div className="service-features-list aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                  <h4>¿Qué Incluye?</h4>
+                  <h4>{t('personajes3d.features.title')}</h4>
                   <ul>
                     <li>
                       <i className="bi bi-person-bounding-box"></i>
                       <div>
-                        <h5>Personajes 3D</h5>
-                        <p>Prediseñados o personalizados con branding institucional</p>
+                        <h5>{t('personajes3d.features.characters.title')}</h5>
+                        <p>{t('personajes3d.features.characters.description')}</p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-mic-fill"></i>
                       <div>
-                        <h5>Guión + Locución</h5>
-                        <p>Apoyo en redacción y voz profesional</p>
+                        <h5>{t('personajes3d.features.voiceover.title')}</h5>
+                        <p>{t('personajes3d.features.voiceover.description')}</p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-film"></i>
                       <div>
-                        <h5>Render + Motion</h5>
-                        <p>Animación + edición con subtítulos y música</p>
+                        <h5>{t('personajes3d.features.render.title')}</h5>
+                        <p>{t('personajes3d.features.render.description')}</p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-tv"></i>
                       <div>
-                        <h5>Entrega Multiformato</h5>
-                        <p>Video final listo para LMS, YouTube o eventos</p>
+                        <h5>{t('personajes3d.features.delivery.title')}</h5>
+                        <p>{t('personajes3d.features.delivery.description')}</p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-clock-history"></i>
                       <div>
-                        <h5>Producción Rápida</h5>
-                        <p>Entrega en 3 a 4 semanas</p>
+                        <h5>{t('personajes3d.features.production.title')}</h5>
+                        <p>{t('personajes3d.features.production.description')}</p>
                       </div>
                     </li>
                   </ul>
@@ -392,19 +399,19 @@ const Personajes3DPage = () => {
 
 
                 <div className="contact-info aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-                  <h4>¿Tienes Preguntas?</h4>
+                  <h4>{t('personajes3d.contactInfo.title')}</h4>
                   <div className="contact-method">
                     <i className="bi bi-telephone-fill"></i>
                     <div>
-                      <span>Llámanos</span>
-                      <p>+57 310 333 9208</p>
+                      <span>{t('personajes3d.contactInfo.phone.label')}</span>
+                      <p>{t('personajes3d.contactInfo.phone.number')}</p>
                     </div>
                   </div>
                   <div className="contact-method">
                     <i className="bi bi-envelope-fill"></i>
                     <div>
-                      <span>Escríbenos</span>
-                      <p>luminawebs@gmail.com</p>
+                      <span>{t('personajes3d.contactInfo.email.label')}</span>
+                      <p>{t('personajes3d.contactInfo.email.address')}</p>
                     </div>
                   </div>
                 </div>
@@ -425,8 +432,8 @@ const Personajes3DPage = () => {
       <section id="pricing" className="pricing section">
         {/* <!-- Section Title --> */}
         <div className="container section-title" data-aos="fade-up">
-          <h2>Paquetes</h2>
-          <div><span>Nuestros</span> <span className="description-title">Planes</span> 3D </div>
+          <h2>{t('personajes3d.pricing.title')}</h2>
+          <div><span>{t('personajes3d.pricing.subtitle')}</span> <span className="description-title">{t('personajes3d.pricing.subtitleHighlight')}</span> 3D </div>
         </div>
         {/* <!-- End Section Title --> */}
 
@@ -439,29 +446,26 @@ const Personajes3DPage = () => {
                   <div className="plan-icon">
                     <i className="bi bi-person-video3"></i>
                   </div>
-                  <h3>Básico</h3>
-                  <p>Para proyectos pequeños</p>
+                  <h3>{t('personajes3d.pricing.basic.title')}</h3>
+                  <p>{t('personajes3d.pricing.basic.description')}</p>
                 </div>
                 <div className="plan-pricing">
                   <div className="price">
                     <span className="currency">$</span>
-                    <span className="amount">3.2M</span>
-                    <span className="period">/min</span>
+                    <span className="amount">{t('personajes3d.pricing.basic.price')}</span>
+                    <span className="period">{t('personajes3d.pricing.basic.period')}</span>
                   </div>
-                  <div className="price-total">Total: $3.200.000</div>
+                  <div className="price-total">{t('personajes3d.pricing.basic.total')}</div>
                 </div>
                 <div className="plan-features">
                   <ul>
-                    <li><i className="bi bi-check-circle-fill"></i> 1 minuto incluido</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 1 personaje 3D</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Edición básica en Blender</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Audio + musicalización</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Formato MP4</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 2 revisiones</li>
+                    {t('personajes3d.pricing.basic.features').map((feature, index) => (
+                      <li key={index}><i className="bi bi-check-circle-fill"></i> {feature}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="plan-cta">
-                  <a href="#contact" className="btn-plan">Contratar</a>
+                  <a href="#contact" className="btn-plan">{t('personajes3d.pricing.basic.button')}</a>
                 </div>
               </div>
             </div>
@@ -470,34 +474,31 @@ const Personajes3DPage = () => {
             {/* <!-- Standard Plan --> */}
             <div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="250">
               <div className="pricing-card popular">
-                <div className="popular-tag">Más Popular</div>
+                <div className="popular-tag">{t('personajes3d.pricing.standard.popular')}</div>
                 <div className="plan-header">
                   <div className="plan-icon">
                     <i className="bi bi-people"></i>
                   </div>
-                  <h3>Estándar</h3>
-                  <p>Para cursos medianos</p>
+                  <h3>{t('personajes3d.pricing.standard.title')}</h3>
+                  <p>{t('personajes3d.pricing.standard.description')}</p>
                 </div>
                 <div className="plan-pricing">
                   <div className="price">
                     <span className="currency">$</span>
-                    <span className="amount">1.3M</span>
-                    <span className="period">/min</span>
+                    <span className="amount">{t('personajes3d.pricing.standard.price')}</span>
+                    <span className="period">{t('personajes3d.pricing.standard.period')}</span>
                   </div>
-                  <div className="price-total">Total: $26.000.000</div>
+                  <div className="price-total">{t('personajes3d.pricing.standard.total')}</div>
                 </div>
                 <div className="plan-features">
                   <ul>
-                    <li><i className="bi bi-check-circle-fill"></i> 20 minutos incluidos</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 2 personajes 3D</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Edición básica en Blender</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Audio + musicalización</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Formato MP4</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 20 revisiones</li>
+                    {t('personajes3d.pricing.standard.features').map((feature, index) => (
+                      <li key={index}><i className="bi bi-check-circle-fill"></i> {feature}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="plan-cta">
-                  <a href="#contact" className="btn-plan">Contratar</a>
+                  <a href="#contact" className="btn-plan">{t('personajes3d.pricing.standard.button')}</a>
                 </div>
               </div>
             </div>
@@ -510,29 +511,26 @@ const Personajes3DPage = () => {
                   <div className="plan-icon">
                     <i className="bi bi-stars"></i>
                   </div>
-                  <h3>Avanzado</h3>
-                  <p>Para proyectos complejos</p>
+                  <h3>{t('personajes3d.pricing.advanced.title')}</h3>
+                  <p>{t('personajes3d.pricing.advanced.description')}</p>
                 </div>
                 <div className="plan-pricing">
                   <div className="price">
                     <span className="currency">$</span>
-                    <span className="amount">1.15M</span>
-                    <span className="period">/min</span>
+                    <span className="amount">{t('personajes3d.pricing.advanced.price')}</span>
+                    <span className="period">{t('personajes3d.pricing.advanced.period')}</span>
                   </div>
-                  <div className="price-total">Total: $57.500.000</div>
+                  <div className="price-total">{t('personajes3d.pricing.advanced.total')}</div>
                 </div>
                 <div className="plan-features">
                   <ul>
-                    <li><i className="bi bi-check-circle-fill"></i> 50 minutos incluidos</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 3 personajes 3D</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Edición media en Blender</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Audio + musicalización</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Formato MP4</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 50 revisiones</li>
+                    {t('personajes3d.pricing.advanced.features').map((feature, index) => (
+                      <li key={index}><i className="bi bi-check-circle-fill"></i> {feature}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="plan-cta">
-                  <a href="#contact" className="btn-plan">Contratar</a>
+                  <a href="#contact" className="btn-plan">{t('personajes3d.pricing.advanced.button')}</a>
                 </div>
               </div>
             </div>
@@ -545,29 +543,28 @@ const Personajes3DPage = () => {
                   <div className="plan-icon">
                     <i className="bi bi-award"></i>
                   </div>
-                  <h3>Premium</h3>
-                  <p>Para instituciones educativas</p>
+                  <h3>{t('personajes3d.pricing.premium.title')}</h3>
+                  <p>{t('personajes3d.pricing.premium.description')}</p>
                 </div>
                 <div className="plan-pricing">
                   <div className="price">
                     <span className="currency">$</span>
-                    <span className="amount">1M</span>
-                    <span className="period">/min</span>
+                    <span className="amount">{t('personajes3d.pricing.premium.price')}</span>
+                    <span className="period">{t('personajes3d.pricing.premium.period')}</span>
                   </div>
-                  <div className="price-total">Total: $100.000.000</div>
+                  <div className="price-total">{t('personajes3d.pricing.premium.total')}</div>
                 </div>
                 <div className="plan-features">
+                
                   <ul>
-                    <li><i className="bi bi-check-circle-fill"></i> 100 minutos incluidos</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 3 personajes 3D</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Edición avanzada en Blender</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Audio + musicalización</li>
-                    <li><i className="bi bi-check-circle-fill"></i> Formatos múltiples (MP4, FBX, OBJ)</li>
-                    <li><i className="bi bi-check-circle-fill"></i> 100 revisiones</li>
+                    {t('personajes3d.pricing.premium.features').map((feature, index) => (
+                      <li key={index}><i className="bi bi-check-circle-fill"></i> {feature}</li>
+                    ))}
                   </ul>
+
                 </div>
                 <div className="plan-cta">
-                  <a href="#contact" className="btn-plan">Contratar</a>
+                  <a href="#contact" className="btn-plan">{t('personajes3d.pricing.premium.button')}</a>
                 </div>
               </div>
             </div>

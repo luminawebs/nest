@@ -124,7 +124,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
           {resources.map((resource) => (
             <div key={resource.id} className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={resource.delay}>
               <div className="service-card position-relative z-1">
-                <div className="service-icon">
+                <div className="service-icon" style={window.innerWidth < 768 ? { width: '100%', height: 'auto' } : { width: '100%', height: 'auto' }}>
                   <i className={resource.icon}></i>
                 </div>
                 
