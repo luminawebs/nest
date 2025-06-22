@@ -3856,8 +3856,15 @@ section,
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
-        .tab-content {
+        /* Bootstrap Tab Pane Styles */
+        .tab-pane {
             display: none;
+        }
+        .tab-pane.show.active {
+            display: block;
+        }
+        .tab-content {
+            margin-top: 0;
         }
         .tab-content.active {
             display: block;

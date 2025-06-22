@@ -8,7 +8,8 @@ export const en = {
     avatars3d: '3D Avatars',
     plans: 'Plans',
     lmsSaas: 'LMS SaaS',
-    resources: 'Resources'
+    resources: 'Resources',
+    portfolio: 'Portfolio'
   },
 
   // Header
@@ -174,6 +175,221 @@ export const en = {
         question: 'Do you offer training to use the platform?',
         answer: 'Yes, we include: 1) Initial onboarding session (2 hours), 2) Technical and pedagogical manuals, 3) Priority support for 30 days, and 4) Tutorial videos. For large teams we offer additional in-person workshops.'
       }
+    }
+  },
+
+  // 3D Characters Page
+  personajes3d: {
+    title: '3D Avatars',
+    subtitle: 'Immersive experiences with three-dimensional characters',
+    mainHeading: '3D Animation that Captivates your Audience',
+    leadText: 'Impress your users with animated 3D characters that elevate the quality of your educational and corporate content without spending a fortune.',
+    videoTitle: '3D characters video example',
+    
+    description: {
+      text: 'Discover innovative strategies for digital education. We transform content into interactive experiences that captivate students. Our specialized team combines pedagogical technology and impactful design to create courses that stand out in the competitive world of online learning.'
+    },
+    
+    meta: {
+      affordable: 'Affordable Solution',
+      delivery: 'Delivery in 3-4 Weeks',
+      retention: 'High Audience Retention'
+    },
+    
+    tabs: {
+      whyThreeD: 'Why 3D?',
+      stepByStep: 'Step by Step',
+      benefits: 'Benefits'
+    },
+    
+    whyThreeD: {
+      title: 'Impact of Animated Content',
+      stat1: '📈 Videos with animated 3D characters have 30% more retention than traditional formats (2D or live-action).',
+      stat2: '💬 70% of marketers consider 3D the most effective tool for engagement, according to HubSpot.',
+      stat3: '🛒 Campaigns with 3D animation increase conversion rates by 40% in e-commerce.',
+      stat4: '🧠 90% of consumers better remember a brand with animated audiovisual content vs. text only.',
+      imageAlt: 'Advantages of animated content'
+    },
+    
+    stepByStep: {
+      step1: {
+        number: '01',
+        title: 'Character Selection',
+        description: 'Choose from a gallery of pre-designed 3D characters or request a custom one according to your brand.'
+      },
+      step2: {
+        number: '02',
+        title: 'Script Development',
+        description: 'We help you write a clear and educational script to maximize connection with the audience.'
+      },
+      step3: {
+        number: '03',
+        title: 'Voice Recording',
+        description: 'Professional voice-over recorded in studio or remotely with your preferred voice.'
+      },
+      step4: {
+        number: '04',
+        title: 'Animation and Render',
+        description: 'We animate your character with facial, body movement and emotional expression. Then we render it in HD quality.'
+      },
+      step5: {
+        number: '05',
+        title: 'Motion Graphics + Delivery',
+        description: 'We add transitions, music and subtitles. We deliver in multiple formats for platforms, LMS or networks.'
+      }
+    },
+    
+    benefits: {
+      retention: {
+        title: 'Higher Retention',
+        description: 'Your audience remembers more and engages better with realistic animated characters.'
+      },
+      affordable: {
+        title: 'Accessible for Everyone',
+        description: 'Professional production without excessive budgets. Ideal for educational and commercial companies.'
+      },
+      agile: {
+        title: 'Agile Production',
+        description: 'The entire process in just 3 to 4 weeks. With iterative progress and fast deliveries.'
+      },
+      measurable: {
+        title: 'Measurable Results',
+        description: 'Improvement in conversions, leads and brand recall guaranteed with real statistics.'
+      }
+    },
+    
+    gallery: {
+      title: '3D Animation Examples',
+      demo1: {
+        title: 'Educational Virtual Avatar Assistant',
+        description: 'Transform PDFs into animated content'
+      }
+    },
+    
+    cta: {
+      title: 'Ready to Impress with 3D?',
+      description: 'Request a personalized animation for your course, company or presentation. Fast, professional and affordable production.',
+      button: 'Request Quote',
+      guarantee: '100% Guaranteed Delivery'
+    },
+    
+    features: {
+      title: 'What\'s Included?',
+      characters: {
+        title: '3D Characters',
+        description: 'Pre-designed or customized with institutional branding'
+      },
+      voiceover: {
+        title: 'Script + Voice-over',
+        description: 'Writing support and professional voice'
+      },
+      render: {
+        title: 'Render + Motion',
+        description: 'Animation + editing with subtitles and music'
+      },
+      delivery: {
+        title: 'Multi-format Delivery',
+        description: 'Final video ready for LMS, YouTube or events'
+      },
+      production: {
+        title: 'Fast Production',
+        description: 'Delivery in 3 to 4 weeks'
+      }
+    },
+    
+    contactInfo: {
+      title: 'Have Questions?',
+      phone: {
+        label: 'Call us',
+        number: '+57 310 333 9208'
+      },
+      email: {
+        label: 'Write to us',
+        address: 'luminawebs@gmail.com'
+      }
+    },
+    
+    pricing: {
+      title: 'Packages',
+      subtitle: 'Our',
+      subtitleHighlight: 'Plans',
+      basic: {
+        title: 'Basic',
+        description: 'For small projects',
+        price: '3.2M',
+        period: '/min',
+        total: 'Total: $3,200,000',
+        features: [
+          '1 minute included',
+          '1 3D character',
+          'Basic editing in Blender',
+          'Audio + musicalization',
+          'MP4 format',
+          '2 revisions'
+        ],
+        button: 'Hire'
+      },
+      standard: {
+        title: 'Standard',
+        description: 'For medium courses',
+        price: '1.3M',
+        period: '/min',
+        total: 'Total: $26,000,000',
+        popular: 'Most Popular',
+        features: [
+          '20 minutes included',
+          '2 3D characters',
+          'Basic editing in Blender',
+          'Audio + musicalization',
+          'MP4 format',
+          '20 revisions'
+        ],
+        button: 'Hire'
+      },
+      advanced: {
+        title: 'Advanced',
+        description: 'For complex projects',
+        price: '1.15M',
+        period: '/min',
+        total: 'Total: $57,500,000',
+        features: [
+          '50 minutes included',
+          '3 3D characters',
+          'Medium editing in Blender',
+          'Audio + musicalization',
+          'MP4 format',
+          '50 revisions'
+        ],
+        button: 'Hire'
+      },
+      premium: {
+        title: 'Premium',
+        description: 'For educational institutions',
+        price: '1M',
+        period: '/min',
+        total: 'Total: $100,000,000',
+        features: [
+          '100 minutes included',
+          '3 3D characters',
+          'Advanced editing in Blender',
+          'Audio + musicalization',
+          'Multiple formats (MP4, FBX, OBJ)',
+          '100 revisions'
+        ],
+        button: 'Hire'
+      }
+    },
+    
+    terms: {
+      title: 'Terms and Conditions',
+      items: [
+        'Deadlines: 10 days per minute in Basic version',
+        'Revisions: 2 revisions per minute included (additional $200,000 each)',
+        'Payment: Current account 21004202069 - Lúmina Interactiva SAS',
+        'Rights: The client has complete rights over the final videos',
+        'Prices subject to change according to project complexity'
+      ],
+      ctaButton: 'Questions? Contact us'
     }
   },
 

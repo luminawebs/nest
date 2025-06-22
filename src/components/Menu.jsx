@@ -121,6 +121,14 @@ const Menu = () => {
             {t('nav.resources')}
           </Link>
         </li>
+        <li>
+          <Link
+            to="/portfolio"
+            onClick={() => handleNavItemClick('Portfolio', 'main_navigation')}
+          >
+            {t('nav.portfolio')}
+          </Link>
+        </li>
       </ul>
       <i 
         className="mobile-nav-toggle d-xl-none bi bi-list"
