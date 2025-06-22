@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
 import { trackMenuClick } from '../utils/analytics';
 
 const Menu = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   
   // Handle menu click tracking
   const handleMenuClick = (menuItem, section = 'main_navigation') => {
@@ -54,7 +56,7 @@ const Menu = () => {
             to="/"
             onClick={() => handleNavItemClick('Home', 'main_navigation')}
           >
-            Home
+            {t('nav.home')}
             <i className="bi bi-chevron-down toggle-dropdown" onClick={handleDropdownToggle}></i>
           </Link>
           <ul>
@@ -63,7 +65,7 @@ const Menu = () => {
                 href="#about"
                 onClick={() => handleNavItemClick('Nosotros', 'home_dropdown')}
               >
-                Nosotros
+                {t('nav.about')}
               </a>
             </li>
             <li>
@@ -71,7 +73,7 @@ const Menu = () => {
                 href="#services"
                 onClick={() => handleNavItemClick('Soluciones', 'home_dropdown')}
               >
-                Soluciones
+                {t('nav.solutions')}
               </a>
             </li>
             <li>
@@ -79,7 +81,7 @@ const Menu = () => {
                 href="#contact"
                 onClick={() => handleNavItemClick('Contacto', 'home_dropdown')}
               >
-                Contacto
+                {t('nav.contact')}
               </a>
             </li>
           </ul>
@@ -89,7 +91,7 @@ const Menu = () => {
             to="/personajes3d"
             onClick={() => handleNavItemClick('Avatars 3D', 'main_navigation')}
           >
-            Avatars 3D
+            {t('nav.avatars3d')}
             <i className="bi bi-chevron-down toggle-dropdown" onClick={handleDropdownToggle}></i>
           </Link>
           <ul>
@@ -98,7 +100,7 @@ const Menu = () => {
                 href="/personajes3d#pricing"
                 onClick={() => handleNavItemClick('Planes', 'avatars_dropdown')}
               >
-                Planes
+                {t('nav.plans')}
               </a>
             </li>
           </ul>
@@ -108,7 +110,7 @@ const Menu = () => {
             to="/lmspricing"
             onClick={() => handleNavItemClick('LMS SaaS', 'main_navigation')}
           >
-            LMS SaaS
+            {t('nav.lmsSaas')}
           </Link>
         </li>
         <li>
@@ -116,7 +118,7 @@ const Menu = () => {
             to="/resources"
             onClick={() => handleNavItemClick('Resources', 'main_navigation')}
           >
-            Recursos
+            {t('nav.resources')}
           </Link>
         </li>
       </ul>

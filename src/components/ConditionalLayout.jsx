@@ -2,10 +2,13 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import Menu from './Menu';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from '../hooks/useTranslation';
 import { trackButtonClick } from '../utils/analytics';
 
 const ConditionalLayout = ({ children }) => {
   const location = useLocation();
+  const { t } = useTranslation();
   
   // Routes that should use minimalist layout (no regular header/footer)
   const minimalistRoutes = [
@@ -32,13 +35,17 @@ const ConditionalLayout = ({ children }) => {
             
             <Menu />
             
-            <a
-              className="btn-getstarted"
-              href="#contact"
-              onClick={() => trackButtonClick('Header Contact Button', 'Navigation')}
-            >
-              Contacto
-            </a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <LanguageSelector />
+              
+              <a
+                className="btn-getstarted"
+                href="#contact"
+                onClick={() => trackButtonClick('Header Contact Button', 'Navigation')}
+              >
+                {t('header.contact')}
+              </a>
+            </div>
           </div>
         </header>
       )}
