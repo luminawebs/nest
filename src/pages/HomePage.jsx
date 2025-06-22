@@ -209,12 +209,11 @@ const HomePage = () => {
                 </a>
                 <h3>
                   <a href="#navmenu">
-                    Cursos en <span>Articulate 360</span>
+                    {t('services.articulate.title')} <span>{t('services.articulate.titleHighlight')}</span>
                   </a>
                 </h3>
                 <p>
-                  Contenido interactivo y responsive diseñado pedagógicamente con Storyline y Rise. Incluye evaluaciones,
-                  simulaciones y compatibilidad SCORM para tu LMS.
+                  {t('services.articulate.description')}
                 </p>
               </div>
             </div>
@@ -230,12 +229,11 @@ const HomePage = () => {
                 </a>
                 <h3>
                   <a href="#navmenu">
-                    Contenido <span>HTML5</span>
+                    {t('services.html5.title')} <span>{t('services.html5.titleHighlight')}</span>
                   </a>
                 </h3>
                 <p>
-                  Módulos multimedia con animaciones, gamificación y actividades interactivas compatibles con cualquier
-                  dispositivo móvil o computadora.
+                  {t('services.html5.description')}
                 </p>
               </div>
             </div>
@@ -249,11 +247,10 @@ const HomePage = () => {
 
                 <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                 <h3>
-                  <Link to="/personajes3d#hero" className="active">Avatars 3D</Link>
+                  <Link to="/personajes3d#hero" className="active">{t('services.avatars3d.title')}</Link>
                 </h3>
                 <p>
-                  Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el
-                  aprendizaje más cercano y memorable.
+                  {t('services.avatars3d.description')}
                 </p>
               </div>
             </div>
@@ -269,12 +266,11 @@ const HomePage = () => {
                 </a>
                 <h3>
                   <a href="#navmenu">
-                    Plataforma <span>Express</span>
+                    {t('services.platform.title')} <span>{t('services.platform.titleHighlight')}</span>
                   </a>
                 </h3>
                 <p>
-                  Sistema para crear cursos universitarios en semanas, no meses. Sube tus PDFs, videos y contenido
-                  existente - nosotros lo convertimos en un curso profesional.
+                  {t('services.platform.description')}
                 </p>
               </div>
             </div>
@@ -290,12 +286,11 @@ const HomePage = () => {
                 </a>
                 <h3>
                   <a href="#navmenu">
-                    Producción <span>de Video</span>
+                    {t('services.video.title')} <span>{t('services.video.titleHighlight')}</span>
                   </a>
                 </h3>
                 <p>
-                  Videos educativos profesionales con animaciones, capturas de pantalla y locuciones. Ideal para explicar
-                  procesos complejos de manera visual.
+                  {t('services.video.description')}
                 </p>
               </div>
             </div>
@@ -311,12 +306,11 @@ const HomePage = () => {
                 </a>
                 <h3>
                   <a href="#navmenu">
-                    Integración <span>LMS</span>
+                    {t('services.lms.title')} <span>{t('services.lms.titleHighlight')}</span>
                   </a>
                 </h3>
                 <p>
-                  Conectamos tus cursos con Moodle, Blackboard, Canvas y otros sistemas. Reportes de progreso automáticos
-                  y certificación SCORM/xAPI.
+                  {t('services.lms.description')}
                 </p>
               </div>
             </div>
@@ -337,8 +331,8 @@ const HomePage = () => {
       <section id="steps" className="steps section">
         {/* <!-- Section Title --> */}
         <div className="container section-title" data-aos="fade-up">
-          <h2>Proceso</h2>
-          <div><span>Nuestro método</span> <span className="description-title">de trabajo</span></div>
+          <h2>{t('steps.title')}</h2>
+          <div><span>{t('steps.subtitle')}</span> <span className="description-title">{t('steps.subtitleHighlight')}</span></div>
         </div>
         {/* <!-- End Section Title --> */}
 
@@ -352,10 +346,9 @@ const HomePage = () => {
                   {/* <!-- Education-focused icon --> */}
                 </div>
                 <div className="step-info">
-                  <span className="step-number">Paso 01</span>
-                  <h3>Diagnóstico Educativo</h3>
-                  <p>Analizamos tus objetivos de aprendizaje, público objetivo y contenido existente para recomendar la
-                    mejor combinación de herramientas (Articulate, HTML5, 3D o plataforma express).</p>
+                  <span className="step-number">{t('steps.step1.number')}</span>
+                  <h3>{t('steps.step1.title')}</h3>
+                  <p>{t('steps.step1.description')}</p>
                 </div>
               </div>
             </div>
@@ -369,10 +362,9 @@ const HomePage = () => {
                   {/* <!-- Planning icon --> */}
                 </div>
                 <div className="step-info">
-                  <span className="step-number">Paso 02</span>
-                  <h3>Diseño Instruccional</h3>
-                  <p>Creamos la estructura pedagógica: guiones para tus videos, flujos de interacción, actividades
-                    evaluativas y la personalización de tu personaje 3D si aplica.</p>
+                  <span className="step-number">{t('steps.step2.number')}</span>
+                  <h3>{t('steps.step2.title')}</h3>
+                  <p>{t('steps.step2.description')}</p>
                 </div>
               </div>
             </div>
@@ -386,10 +378,9 @@ const HomePage = () => {
                   {/* <!-- Development icon --> */}
                 </div>
                 <div className="step-info">
-                  <span className="step-number">Paso 03</span>
-                  <h3>Producción Ágil</h3>
-                  <p>Desarrollamos tu curso en 2-4 semanas: grabamos videos, programamos interacciones HTML5, configuramos
-                    la plataforma y te entregamos avances semanales para revisión.</p>
+                  <span className="step-number">{t('steps.step3.number')}</span>
+                  <h3>{t('steps.step3.title')}</h3>
+                  <p>{t('steps.step3.description')}</p>
                 </div>
               </div>
             </div>
@@ -403,10 +394,9 @@ const HomePage = () => {
                   {/* <!-- Results icon --> */}
                 </div>
                 <div className="step-info">
-                  <span className="step-number">Paso 04</span>
-                  <h3>Implementación con Métricas</h3>
-                  <p>Publicamos tu curso en tu LMS o nuestra plataforma, con reportes automáticos de progreso estudiantil
-                    y soporte continuo para actualizaciones.</p>
+                  <span className="step-number">{t('steps.step4.number')}</span>
+                  <h3>{t('steps.step4.title')}</h3>
+                  <p>{t('steps.step4.description')}</p>
                 </div>
               </div>
             </div>
@@ -423,24 +413,22 @@ const HomePage = () => {
 
             {/* <!-- Left Content --> */}
             <div className="content-left flex-grow-1" data-aos="fade-right" data-aos-delay="200">
-              <span className="badge text-uppercase mb-2">¡Oferta especial!</span>
-              <h2>Transforma tu educación digital en semanas, no meses</h2>
-              <p className="my-4">Lúmina Interactiva ayuda a universidades a crear cursos profesionales con nuestra plataforma
-                express, personajes 3D y contenido interactivo. Únete a las 50+ instituciones que ya modernizaron su
-                enseñanza.</p>
+              <span className="badge text-uppercase mb-2">{t('cta.badge')}</span>
+              <h2>{t('cta.title')}</h2>
+              <p className="my-4">{t('cta.description')}</p>
 
               <div className="features d-flex flex-wrap gap-3 mb-4">
                 <div className="feature-item">
                   <i className="bi bi-check-circle-fill"></i>
-                  <span>Cursos listos en 15 días</span>
+                  <span>{t('cta.feature1')}</span>
                 </div>
                 <div className="feature-item">
                   <i className="bi bi-check-circle-fill"></i>
-                  <span>Integración con tu LMS</span>
+                  <span>{t('cta.feature2')}</span>
                 </div>
                 <div className="feature-item">
                   <i className="bi bi-check-circle-fill"></i>
-                  <span>Soporte pedagógico 24/7</span>
+                  <span>{t('cta.feature3')}</span>
                 </div>
               </div>
 
@@ -450,14 +438,14 @@ const HomePage = () => {
                   className="btn btn-primary"
                   onClick={() => trackButtonClick('CTA - Solicitar demostración', 'Call to Action')}
                 >
-                  Solicitar demostración
+                  {t('cta.primaryButton')}
                 </a>
                 <a
                   href="#services"
                   className="btn btn-outline"
                   onClick={() => trackButtonClick('CTA - Ver casos de éxito', 'Call to Action')}
                 >
-                  Ver casos de éxito
+                  {t('cta.secondaryButton')}
                 </a>
               </div>
             </div>
@@ -472,7 +460,7 @@ const HomePage = () => {
                 </div>
                 <div className="card-content">
                   <span className="stats-number">95%</span>
-                  <span className="stats-text">Satisfacción estudiantil</span>
+                  <span className="stats-text">{t('cta.statsText')}</span>
                 </div>
               </div>
             </div>
@@ -493,8 +481,8 @@ const HomePage = () => {
 
           {/* <!-- Section Title --> */}
           <div className="container section-title" data-aos="fade-up">
-            <h2>Contacto</h2>
-            <div><span>Vamos a</span> <span className="description-title">Conectarnos</span></div>
+            <h2>{t('contact.title')}</h2>
+            <div><span>{t('contact.subtitle')}</span> <span className="description-title">{t('contact.subtitleHighlight')}</span></div>
           </div>
           {/* <!-- End Section Title --> */}
 
@@ -509,8 +497,8 @@ const HomePage = () => {
                     <i className="bi bi-geo-alt"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Nuestra dirección</h4>
-                    <p>Cll 18 # 9 39</p>
+                    <h4>{t('contact.addressTitle')}</h4>
+                    <p>{t('contact.address')}</p>
                   </div>
                 </div>
               </div>
@@ -521,7 +509,7 @@ const HomePage = () => {
                     <i className="bi bi-envelope"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Email</h4>
+                    <h4>{t('contact.emailTitle')}</h4>
                     <p>
                       <a
                         href="mailto:luminawebs@gmail.com"
@@ -530,7 +518,7 @@ const HomePage = () => {
                         luminawebs@gmail.com
                       </a>
                     </p>
-                    <p>David Castañeda</p>
+                    <p>{t('contact.contactPerson')}</p>
                   </div>
                 </div>
               </div>
@@ -541,9 +529,9 @@ const HomePage = () => {
                     <i className="bi bi-headset"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Horario</h4>
-                    <p>Lunes-Viernes: 9 AM - 6 PM</p>
-                    <p>Sábado: 9 AM - 12 PM</p>
+                    <h4>{t('contact.scheduleTitle')}</h4>
+                    <p>{t('contact.weekdays')}</p>
+                    <p>{t('contact.saturday')}</p>
                   </div>
                 </div>
               </div>
@@ -564,7 +552,7 @@ const HomePage = () => {
             <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
               <div className="col-lg-10">
                 <div className="contact-form-wrapper">
-                  <h2 className="text-center mb-4">Ponte en Contacto</h2>
+                  <h2 className="text-center mb-4">{t('contact.formTitle')}</h2>
 
                   <form
                     action="https://formspree.io/f/mblovblv"
@@ -577,7 +565,7 @@ const HomePage = () => {
                         <div className="form-group">
                           <div className="input-with-icon">
                             <i className="bi bi-person"></i>
-                            <input type="text" className="form-control" name="name" placeholder="Nombre" required />
+                            <input type="text" className="form-control" name="name" placeholder={t('contact.form.namePlaceholder')} required />
                           </div>
                         </div>
                       </div>
@@ -586,7 +574,7 @@ const HomePage = () => {
                         <div className="form-group">
                           <div className="input-with-icon">
                             <i className="bi bi-envelope"></i>
-                            <input type="email" className="form-control" name="email" placeholder="Correo electrónico"
+                            <input type="email" className="form-control" name="email" placeholder={t('contact.form.emailPlaceholder')}
                               required />
                           </div>
                         </div>
@@ -596,7 +584,7 @@ const HomePage = () => {
                         <div className="form-group">
                           <div className="input-with-icon">
                             <i className="bi bi-text-left"></i>
-                            <input type="text" className="form-control" name="subject" placeholder="Asunto" required />
+                            <input type="text" className="form-control" name="subject" placeholder={t('contact.form.subjectPlaceholder')} required />
                           </div>
                         </div>
                       </div>
@@ -605,20 +593,20 @@ const HomePage = () => {
                         <div className="form-group">
                           <div className="input-with-icon">
                             <i className="bi bi-chat-dots message-icon"></i>
-                            <textarea className="form-control" name="message" placeholder="Escribe tu mensaje..."
+                            <textarea className="form-control" name="message" placeholder={t('contact.form.messagePlaceholder')}
                               style={{ height: '180px' }} required></textarea>
                           </div>
                         </div>
                       </div>
 
                       <div className="col-12">
-                        <div className="loading">Cargando</div>
+                        <div className="loading">{t('contact.form.loading')}</div>
                         <div className="error-message"></div>
-                        <div className="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+                        <div className="sent-message">{t('contact.form.successMessage')}</div>
                       </div>
 
                       <div className="col-12 text-center">
-                        <button type="submit" className="btn btn-primary btn-submit">ENVIAR MENSAJE</button>
+                        <button type="submit" className="btn btn-primary btn-submit">{t('contact.form.submitButton')}</button>
                       </div>
                     </div>
                   </form>
