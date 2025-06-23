@@ -48,9 +48,9 @@ const PortfolioPage = () => {
             </li>
           </ul>
 
-          <div className="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" style={{position: "relative", height: "859px"}}>
+          <div className="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui" style={{position: "absolute", left: "0px", top: "0px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-1.webp" className="img-fluid" alt="" loading="lazy" />
@@ -73,7 +73,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development" style={{position: "absolute", left: "570.667px", top: "0px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
@@ -96,7 +96,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography" style={{position: "absolute", left: "1141.33px", top: "0px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
@@ -119,7 +119,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing" style={{position: "absolute", left: "1712px", top: "0px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
@@ -142,7 +142,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui" style={{position: "absolute", left: "0px", top: "429.5px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
@@ -165,7 +165,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development" style={{position: "absolute", left: "570.667px", top: "429.5px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
@@ -188,7 +188,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography" style={{position: "absolute", left: "1141.33px", top: "429.5px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
@@ -211,7 +211,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing" style={{position: "absolute", left: "1712px", top: "429.5px"}}>
+            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
