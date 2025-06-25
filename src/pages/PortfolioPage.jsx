@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const PortfolioPage = () => {
+  const [filter, setFilter] = useState('*');
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
   return (
     <section id="portfolio" className="portfolio section">
 
@@ -31,26 +36,26 @@ const PortfolioPage = () => {
         <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul className="portfolio-filters isotope-filters aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" className="filter-active">
+<li data-filter="*" className={filter === '*' ? 'filter-active' : ''} onClick={() => handleFilterChange('*')}>
               <i className="bi bi-grid-3x3"></i> All Projects
             </li>
-            <li data-filter=".filter-ui">
+<li data-filter=".filter-ui" className={filter === '.filter-ui' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-ui')}>
               <i className="bi bi-phone"></i> UI/UX
             </li>
-            <li data-filter=".filter-development">
+<li data-filter=".filter-development" className={filter === '.filter-development' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-development')}>
               <i className="bi bi-code-slash"></i> Development
             </li>
-            <li data-filter=".filter-photography">
+<li data-filter=".filter-photography" className={filter === '.filter-photography' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-photography')}>
               <i className="bi bi-camera"></i> Photography
             </li>
-            <li data-filter=".filter-marketing">
+<li data-filter=".filter-marketing" className={filter === '.filter-marketing' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-marketing')}>
               <i className="bi bi-graph-up"></i> Marketing
             </li>
           </ul>
 
           <div className="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-1.webp" className="img-fluid" alt="" loading="lazy" />
@@ -73,7 +78,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
@@ -96,7 +101,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
@@ -119,7 +124,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
@@ -142,7 +147,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
@@ -165,7 +170,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
@@ -188,7 +193,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
@@ -211,7 +216,7 @@ const PortfolioPage = () => {
             </div>
             {/* End Portfolio Item */}
 
-            <div className="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
+<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
                   <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
