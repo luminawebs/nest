@@ -316,9 +316,9 @@ export const en = {
       basic: {
         title: 'Basic',
         description: 'For small projects',
-        price: '3.2M',
+        price: '$790 USD',
         period: '/min',
-        total: 'Total: $3,200,000',
+        total: 'Total: $790 USD',
         features: [
           '1 minute included',
           '1 3D character',
@@ -332,9 +332,9 @@ export const en = {
       standard: {
         title: 'Standard',
         description: 'For medium courses',
-        price: '1.3M',
+        price: '$320 USD',
         period: '/min',
-        total: 'Total: $26,000,000',
+        total: 'Total: $6.350 USD',
         popular: 'Most Popular',
         features: [
           '20 minutes included',
@@ -349,9 +349,9 @@ export const en = {
       advanced: {
         title: 'Advanced',
         description: 'For complex projects',
-        price: '1.15M',
+        price: '$280 USD',
         period: '/min',
-        total: 'Total: $57,500,000',
+        total: 'Total: $14.000 USD',
         features: [
           '50 minutes included',
           '3 3D characters',
@@ -365,9 +365,9 @@ export const en = {
       premium: {
         title: 'Premium',
         description: 'For educational institutions',
-        price: '1M',
+        price: '240 USD',
         period: '/min',
-        total: 'Total: $100,000,000',
+        total: 'Total: $24.500 USD',
         features: [
           '100 minutes included',
           '3 3D characters',

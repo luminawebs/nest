@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import Menu from './Menu';
@@ -9,6 +9,16 @@ import { trackButtonClick } from '../utils/analytics';
 const ConditionalLayout = ({ children }) => {
   const location = useLocation();
   const { t } = useTranslation();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Routes that should use minimalist layout (no regular header/footer)
   const minimalistRoutes = [
@@ -29,7 +39,15 @@ const ConditionalLayout = ({ children }) => {
           <div className="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="/" className="logo d-flex align-items-center me-auto me-xl-0">
               <h1 className="sitename">
-                <img src="assets/img/edunest-dark.svg" alt="" width="180" style={{ marginTop: "4px" }} />
+                <img 
+                  src="assets/img/edunest-dark.svg" 
+                  alt="" 
+                  style={{ 
+                    marginTop: "4px",
+                    width: windowWidth <= 1200 ? "120px" : "180px",
+                    transition: "width 0.3s ease"
+                  }} 
+                />
               </h1>
             </a>
             

@@ -193,6 +193,11 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
+
+.header .btn-getstarted {
+  display: initial;
+  }
+
 @media (max-width: 1200px) {
   .header {
     padding-top: 10px;
@@ -205,17 +210,19 @@ h6 {
   }
 
   .header .logo {
-    order: 1;
+    order: 0;
   }
 
   .header .btn-getstarted {
     order: 2;
     margin: 0 10px 0 0;
     padding: 6px 15px;
+  display:none;
   }
 
   .header .navmenu {
     order: 3;
+    padding-left: 20px;
   }
 }
 
