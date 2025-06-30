@@ -112,46 +112,12 @@ const PortfolioDetails = ({
         
         <section className="portfolio-details section">
           <div className="container" data-aos="fade-up" data-aos-delay="100">
-            <div className="row gy-4">
-              {/* Left Column - Media */}
-              <div className="col-lg-6" data-aos="fade-right">
-                <div className="portfolio-details-media">
-                  <div className="main-image">
-                    <div className="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
-                      <div className="swiper-wrapper">
-                        {projectData.mainImages.map((image, index) => (
-                          <div key={index} className="swiper-slide">
-                            <img src={image} alt={`${projectData.title} Image ${index + 1}`} className="img-fluid" />
-                          </div>
-                        ))}
-                      </div>
-                      <div className="swiper-button-prev"></div>
-                      <div className="swiper-button-next"></div>
-                    </div>
-                  </div>
-
-                  <div className="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
-                    <div className="row g-2 mt-3">
-                      {projectData.thumbnailImages.map((image, index) => (
-                        <div key={index} className="col-3">
-                          <img src={image} alt={`Gallery Image ${index + 1}`} className="img-fluid glightbox" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
-                    {projectData.techStack.map((tech, index) => (
-                      <span key={index}>{tech}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - Content */}
-              <div className="col-lg-6" data-aos="fade-left">
+            <div className="row">
+              {/* Single Column Layout */}
+              <div className="col-12">
                 <div className="portfolio-details-content">
-                  <div className="project-meta">
+                  {/* Project Meta - First */}
+                  <div className="project-meta" data-aos="fade-up">
                     <div className="badge-wrapper">
                       <span className="project-badge">{projectData.badge}</span>
                     </div>
@@ -167,21 +133,62 @@ const PortfolioDetails = ({
                     </div>
                   </div>
 
-                  <h2 className="project-title">{projectData.title}</h2>
+                  {/* Project Title */}
+                  <h2 className="project-title" data-aos="fade-up" data-aos-delay="100">{projectData.title}</h2>
 
-                  <div className="project-website">
+                  {/* Project Website */}
+                  <div className="project-website" data-aos="fade-up" data-aos-delay="150">
                     <i className="bi bi-link-45deg"></i>
                     <a href={projectData.websiteUrl} target="_blank" rel="noopener noreferrer">
                       {projectData.website}
                     </a>
                   </div>
 
-                  <div className="project-overview">
+                  {/* Project Description */}
+                  <div className="project-overview" data-aos="fade-up" data-aos-delay="200">
                     <p className="lead">{projectData.description}</p>
+                  </div>
 
+                  {/* Main Images Slider */}
+                  <div className="portfolio-details-media" data-aos="fade-up" data-aos-delay="250">
+                    <div className="main-image">
+                      <div className="portfolio-details-slider swiper init-swiper">
+                        <div className="swiper-wrapper">
+                          {projectData.mainImages.map((image, index) => (
+                            <div key={index} className="swiper-slide">
+                              <img src={image} alt={`${projectData.title} Image ${index + 1}`} className="img-fluid" />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="swiper-button-prev"></div>
+                        <div className="swiper-button-next"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Thumbnail Grid */}
+                  <div className="thumbnail-grid" data-aos="fade-up" data-aos-delay="300">
+                    <div className="row g-2 mt-3">
+                      {projectData.thumbnailImages.map((image, index) => (
+                        <div key={index} className="col-3">
+                          <img src={image} alt={`Gallery Image ${index + 1}`} className="img-fluid glightbox" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="tech-stack-badges" data-aos="fade-up" data-aos-delay="350">
+                    {projectData.techStack.map((tech, index) => (
+                      <span key={index}>{tech}</span>
+                    ))}
+                  </div>
+
+                  {/* Project Accordion */}
+                  <div className="project-overview" data-aos="fade-up" data-aos-delay="400">
                     <div className="accordion project-accordion" id="portfolio-details-projectAccordion">
                       {projectData.accordion.map((item, index) => (
-                        <div key={item.id} className="accordion-item" data-aos="fade-up">
+                        <div key={item.id} className="accordion-item">
                           <h2 className="accordion-header">
                             <button 
                               className={`accordion-button ${!item.expanded ? 'collapsed' : ''}`}
@@ -209,7 +216,8 @@ const PortfolioDetails = ({
                     </div>
                   </div>
 
-                  <div className="project-features" data-aos="fade-up" data-aos-delay="300">
+                  {/* Key Features */}
+                  <div className="project-features" data-aos="fade-up" data-aos-delay="450">
                     <h3><i className="bi bi-stars"></i> Key Features</h3>
                     <div className="row g-3">
                       <div className="col-md-6">
@@ -233,7 +241,8 @@ const PortfolioDetails = ({
                     </div>
                   </div>
 
-                  <div className="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                  {/* CTA Buttons */}
+                  <div className="cta-buttons" data-aos="fade-up" data-aos-delay="500">
                     <a 
                       href={projectData.liveProjectUrl} 
                       className="btn-view-project"
