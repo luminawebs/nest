@@ -1,10 +1,26 @@
 import React, { useState } from 'react';
+import PortfolioDetails from '../components/PortfolioDetails';
+import { trackButtonClick } from '../utils/analytics';
+import { portfolioData } from '../data/portfolioData';
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('*');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
+  };
+
+  const handleProjectClick = (projectId) => {
+    setSelectedProject(portfolioData[projectId]);
+    setShowModal(true);
+    trackButtonClick(`Portfolio Details - Project ${projectId}`, 'Portfolio');
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedProject(null);
   };
   return (
     <section id="portfolio" className="portfolio section">
@@ -67,9 +83,12 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/portfolio-1.webp" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details.html">
+                        <button 
+                          onClick={() => handleProjectClick(1)}
+                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                        >
                           <i className="bi bi-arrow-right"></i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -90,9 +109,12 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/portfolio-10.webp" className="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details.html">
+                        <button 
+                          onClick={() => handleProjectClick(2)}
+                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                        >
                           <i className="bi bi-arrow-right"></i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -159,9 +181,12 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/portfolio-2.webp" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details.html">
+                        <button 
+                          onClick={() => handleProjectClick(3)}
+                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                        >
                           <i className="bi bi-arrow-right"></i>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -245,6 +270,14 @@ const PortfolioPage = () => {
         </div>
 
       </div>
+
+      {/* Portfolio Details Modal */}
+      {showModal && selectedProject && (
+        <PortfolioDetails
+          projectData={selectedProject}
+          onClose={handleCloseModal}
+        />
+      )}
 
     </section>
   );
