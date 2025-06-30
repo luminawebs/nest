@@ -3,55 +3,54 @@
 
 export const portfolioData = {
   1: {
-    title: "Mobile Banking App",
-    badge: "UI/UX Design",
-    date: "September 2024",
-    client: "FinTech Solutions Inc.",
-    website: "banking-app.example.com",
+    title: "Track 3rd Party & Approvals",
+    badge: "UX Overhaul",
+    date: "Project Timeline",
+    client: "Material Receipts Client",
+    website: "projectwebsite.example.com",
     websiteUrl: "#",
-    description: "A comprehensive mobile banking application designed for modern financial management with intuitive user experience and robust security features.",
+    description: "Goals: Streamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.",
     mainImages: [
-      "assets/img/portfolio/portfolio-1.webp",
-      "assets/img/portfolio/portfolio-2.webp",
-      "assets/img/portfolio/portfolio-4.webp"
-    ],
-    thumbnailImages: [
       "assets/img/portfolio/portfolio-5.webp",
-      "assets/img/portfolio/portfolio-6.webp",
       "assets/img/portfolio/portfolio-7.webp",
       "assets/img/portfolio/portfolio-8.webp"
     ],
-    techStack: ["React Native", "Node.js", "PostgreSQL", "Firebase", "Stripe API"],
+    thumbnailImages: [
+      "assets/img/portfolio/portfolio-4.webp",
+      "assets/img/portfolio/portfolio-6.webp",
+      "assets/img/portfolio/portfolio-11.webp",
+      "assets/img/portfolio/portfolio-12.webp"
+    ],
+    techStack: ["Angular", "Express.js", "PostgreSQL", "GraphQL", "Firebase"],
     accordion: [
       {
         id: "overview",
         title: "Project Overview",
         icon: "bi-clipboard-data",
-        content: "This mobile banking app was designed to revolutionize how users interact with their finances. Our team focused on creating an intuitive interface while maintaining the highest security standards.",
+        content: "Goals: \nStreamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.\nFinance needed better tools to validate MRs (approved/rejected) before payment.",
         expanded: true
       },
       {
-        id: "challenge",
-        title: "The Challenge",
-        icon: "bi-exclamation-diamond",
-        content: "The main challenge was balancing user-friendly design with stringent security requirements while ensuring compatibility across different mobile platforms and banking regulations.",
+        id: "methodology",
+        title: "Methodology",
+        icon: "bi-layers",
+        content: "Benchmarking: 5 competitor analyses informed patterns (e.g., status tracking).\nCollaborated across teams and utilized heuristic evaluations to identify navigation issues.",
         expanded: false
       },
       {
-        id: "solution",
-        title: "The Solution",
-        icon: "bi-award",
-        content: "We implemented a modular architecture with biometric authentication, real-time fraud detection, and an AI-powered financial assistant to enhance user experience while maintaining security.",
+        id: "improvements",
+        title: "UI/UX Improvements",
+        icon: "bi-gem",
+        content: "Dashboard required to be Role-Specific\nClearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).\nConfirmation Alerts: Notify Providers upon MR acceptance by Finance.",
         expanded: false
       }
     ],
     features: [
-      "Biometric Authentication",
-      "Real-time Notifications",
-      "Budget Tracking",
-      "Investment Portfolio",
-      "Bill Payment System",
-      "Cross-platform Support"
+      "Role-Based Dashboard",
+      "Enhanced Navigation",
+      "MR PDF Generation",
+      "Fast MR Validation",
+      "Dual-signature PDF MRs"
     ],
     liveProjectUrl: "#",
     nextProjectUrl: "#"
