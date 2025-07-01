@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { trackButtonClick } from '../utils/analytics';
 
@@ -60,9 +60,28 @@ const PortfolioDetails = ({
   onClose
 }) => {
   const { t } = useTranslation();
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   // Initialize Swiper when component mounts
   useEffect(() => {
+    // Add Bootstrap 'rounded' class to all images inside this modal for consistent border radius
+    const modalEl = document.querySelector('.portfolio-details-modal');
+    if (modalEl) {
+      modalEl.querySelectorAll('img').forEach(img => img.classList.add('rounded'));
+    }
+    // Delegate click to open any image in a lightbox (works even for images added later)
+    const handleImgClick = (e) => {
+      const target = e.target;
+      if (target && target.tagName === 'IMG') {
+        setLightboxImage(target.src);
+      }
+    };
+    if (modalEl) {
+      modalEl.style.cursor = 'default';
+      modalEl.querySelectorAll('img').forEach(img => (img.style.cursor = 'zoom-in'));
+      modalEl.addEventListener('click', handleImgClick);
+    }
+
     // Dynamically initialize Swiper if needed
     if (window.Swiper) {
       const swiper = new window.Swiper('.portfolio-details-slider', {
@@ -90,6 +109,8 @@ const PortfolioDetails = ({
 
       return () => {
         if (swiper) swiper.destroy();
+        // Clean up delegated listener
+        if (modalEl) modalEl.removeEventListener('click', handleImgClick);
       };
     }
   }, []);
@@ -248,65 +269,76 @@ const PortfolioDetails = ({
               </div>
             </div>
 
+
+            <div className="row">
+              <div className="col-lg-6">
+                <section className="mb-5">
+                  <h3><i className="bi bi-clipboard-data me-2"></i>1. Project Overview</h3>
+                  <p className="lead">Goals:</p>
+                  <p>Streamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.</p>
+                  <p>Finance needed better tools to validate MRs (approved/rejected) before payment.</p>
+                  <p className="lead">Role:</p>
+                  <p>UX Validator/Analyst (identified gaps via stakeholder notes and heuristic evaluation).</p>
+                </section>
+
+                {/* Methodology */}
+                <section className="mb-5">
+                  <h3><i className="bi bi-diagram-3 me-2"></i>2. Methodology</h3>
+                  <p className="lead">Benchmarking:</p>
+                  <p>5 competitor analyses informed patterns (e.g., status tracking).</p>
+
+                  <p className="lead">Stakeholder Notes:</p>
+                  <ul>
+                    <li>Parsed conversations with Stakeholders: Business (Finance) & Product Owner</li>
+                    <li>Flagged ambiguities and validated requirements</li>
+                    <li>Mapped actions per user type</li>
+                    <li>Highlighted friction in provider/finance handoffs</li>
+                  </ul>
+
+                  <p className="lead"> Collaboration: </p>
+                  <p>Bridged gaps between devs and Product Owner to fit time requirements, technology capabilities, best methodology, solve all questions that could have remained.</p>
+                </section>
+              </div>
+
+              <div className="col-lg-6">
+
+
+                <section className="mb-5">
+                  <div className="col-lg-12" style={{ marginBottom: '20px' }} >
+                    <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
+                      <img src="assets\img\portfolio\material-receipt\01-process\old-flow.png" className="img-fluid" />
+                    </div>
+                    Their old workflow (a summary)
+                  </div>
+                  <div className="col-lg-12" style={{ marginBottom: '20px' }} >
+                    <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
+                      <img src="assets\img\portfolio\material-receipt\01-process\actions-by-user.png" className="img-fluid" /></div>
+                    Actions MR flow by user
+                  </div>
+                  <div className="col-lg-12" style={{ marginBottom: '20px' }}  >
+                    <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
+                      <img src="assets\img\portfolio\material-receipt\01-process\users-access.png" className="img-fluid" /></div>
+
+                    Possible actions by user
+                  </div>
+                </section>
+
+
+              </div>
+            </div>
+
             {/* Main Content Sections */}
             <div className="row">
+
+
+
+
+
               <div className="col-lg-12">
                 {/* Project Overview */}
 
 
-                <div className="col-lg-5">
-                  <section className="mb-5">
-                    <h3><i className="bi bi-clipboard-data me-2"></i>1. Project Overview</h3>
-                    <p className="lead">Goals:</p>
-                    <p>Streamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.</p>
-                    <p>Finance needed better tools to validate MRs (approved/rejected) before payment.</p>
-                    <p className="lead">Role:</p>
-                    <p>UX Validator/Analyst (identified gaps via stakeholder notes and heuristic evaluation).</p>
-                  </section>
 
-                  {/* Methodology */}
-                  <section className="mb-5">
-                    <h3><i className="bi bi-diagram-3 me-2"></i>2. Methodology</h3>
-                    <p className="lead">Benchmarking:</p>
-                    <p>5 competitor analyses informed patterns (e.g., status tracking).</p>
-
-                    <p className="lead">Stakeholder Notes:</p>
-                    <ul>
-                      <li>Parsed conversations with Stakeholders: Business (Finance) & Product Owner</li>
-                      <li>Flagged ambiguities and validated requirements</li>
-                      <li>Mapped actions per user type</li>
-                      <li>Highlighted friction in provider/finance handoffs</li>
-                    </ul>
-
-                    <p className="lead"> Collaboration: </p>
-                    <p>Bridged gaps between devs and Product Owner to fit time requirements, technology capabilities, best methodology, solve all questions that could have remained.</p>
-                  </section>
-                </div>
-
-
-                <section className="mb-5">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-4" >
-                        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                          <img src="assets\img\portfolio\material-receipt\01-process\old-flow.png" className="img-fluid" />
-                        </div>
-                        Their old workflow (a summary)
-                      </div>
-                      <div className="col-lg-4" >
-                        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                          <img src="assets\img\portfolio\material-receipt\01-process\users-access.png" className="img-fluid" /></div>
-
-                        Possible actions by user
-                      </div>
-                      <div className="col-lg-4" >
-                        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                          <img src="assets\img\portfolio\material-receipt\01-process\actions-by-user.png" className="img-fluid" /></div>
-                        Actions MR flow by user
-                      </div>
-                    </div>
-                  </div>
-                </section>
 
                 {/* Findings */}
 
@@ -350,7 +382,18 @@ const PortfolioDetails = ({
                       <div className="col-lg-6" >
 
                         <div style={{ backgroundColor: '#fff', padding: '0px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                          <div style={{ position: "relative", paddingTop: "58%" }}><iframe src="https://iframe.mediadelivery.net/embed/354319/a0e87217-b2b9-40a8-a981-b5bc92e85e2a?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: "absolute", top: 0, height: "120%", width: "100%" }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe></div>
+
+                          <div className="ratio ratio-1x1">
+                            <iframe
+                              src="https://iframe.mediadelivery.net/embed/354319/fe1d0cfb-0e9d-449b-8c03-35fcf11ba91a?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+                              loading="lazy"
+                              style={{ border: '0' }}
+                              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                              allowFullScreen
+                              title="Video player"
+                            />
+                          </div>
+
                         </div>
                         Heuristic Review
                       </div>
@@ -555,6 +598,16 @@ const PortfolioDetails = ({
 
 
         </section>
+
+        {/* Lightbox Modal */}
+        {lightboxImage && (
+          <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+            <div className="lightbox-content">
+              <button className="btn-close position-absolute top-0 end-0 m-3" aria-label="Close" onClick={() => setLightboxImage(null)}></button>
+              <img src={lightboxImage} alt="Zoomed" className="img-fluid rounded" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
