@@ -74,13 +74,13 @@ const PortfolioPage = () => {
 <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
               <article className="portfolio-entry">
                 <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-1.webp" className="img-fluid" alt="" loading="lazy" />
+                  <img src="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
                   <div className="entry-overlay">
                     <div className="overlay-content">
                       <div className="entry-meta">UI/UX Design</div>
-                      <h3 className="entry-title">Mobile Banking App</h3>
+                      <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
                       <div className="entry-links">
-                        <a href="assets/img/portfolio/portfolio-1.webp" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                        <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
                         <button 
