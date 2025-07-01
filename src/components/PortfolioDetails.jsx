@@ -133,7 +133,7 @@ const project = resolvedData || defaultData;
   };
 
   return (
-    <div className="portfolio-details-page">
+    <div className="portfolio-details-page" style={{ marginTop: '60px' }}>
 
         <section className="portfolio-details section">
           <div className="container" data-aos="fade-up" data-aos-delay="100">
@@ -311,7 +311,7 @@ const project = resolvedData || defaultData;
                 <section className="mb-5">
                   <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\old-flow.png" className="img-fluid" />
+                      <img src="assets/img/portfolio/material-receipt/01-process/old-flow.png" className="img-fluid" />
                     </div>
                     <figcaption className="img-foot text-end small">Their old workflow (a summary)</figcaption>
                   </figure>
