@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProjectById } from '../data/portfolioData';
 import { useTranslation } from '../hooks/useTranslation';
 import { trackButtonClick } from '../utils/analytics';
 
 // PortfolioDetails now renders as a full page (new window / route) instead of an overlay modal
-const PortfolioDetails = ({
-  projectData = {
+const PortfolioDetails = () => {
+  const { id } = useParams();
+  const resolvedData = getProjectById(id);
+
+  // Fallback placeholder if data not found
+  const defaultData = {
     title: "Innovative Financial Dashboard App",
     badge: "UX/UI Design",
     date: "September 2024",
@@ -57,9 +63,11 @@ const PortfolioDetails = ({
     ],
     liveProjectUrl: "#",
     nextProjectUrl: "#"
-  },
-  // onClose retained for backward compatibility but no longer used in page context
-}) => {
+  };
+
+const project = resolvedData || defaultData;
+  // keep backward-compat alias so existing code that references projectData still works
+  const projectData = project;
   const { t } = useTranslation();
   const [lightboxImage, setLightboxImage] = useState(null);
 
@@ -157,7 +165,8 @@ const PortfolioDetails = ({
                   {/* <div className="project-website" data-aos="fade-up" data-aos-delay="150">
                     <i className="bi bi-link-45deg"></i>
                     <a href={projectData.websiteUrl} target="_blank" rel="noopener noreferrer">
-                      {projectData.website}
+{project.title}
+}
                     </a>
                   </div> */}
 
@@ -171,7 +180,7 @@ const PortfolioDetails = ({
                     <div className="main-image">
                       <div className="portfolio-details-slider swiper init-swiper">
                         <div className="swiper-wrapper">
-                          {projectData.mainImages.map((image, index) => (
+{project.mainImages.map
                             <div key={index} className="swiper-slide">
                               <img src={image} alt={`${projectData.title} Image ${index + 1}`} className="img-fluid" />
                             </div>
