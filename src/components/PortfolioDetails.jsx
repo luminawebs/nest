@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { trackButtonClick } from '../utils/analytics';
 
+// PortfolioDetails now renders as a full page (new window / route) instead of an overlay modal
 const PortfolioDetails = ({
   projectData = {
     title: "Innovative Financial Dashboard App",
@@ -57,7 +58,7 @@ const PortfolioDetails = ({
     liveProjectUrl: "#",
     nextProjectUrl: "#"
   },
-  onClose
+  // onClose retained for backward compatibility but no longer used in page context
 }) => {
   const { t } = useTranslation();
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -65,7 +66,7 @@ const PortfolioDetails = ({
   // Initialize Swiper when component mounts
   useEffect(() => {
     // Add Bootstrap 'rounded' class to all images inside this modal for consistent border radius
-    const modalEl = document.querySelector('.portfolio-details-modal');
+    const modalEl = document.querySelector('.portfolio-details-page');
     if (modalEl) {
       modalEl.querySelectorAll('img').forEach(img => img.classList.add('rounded'));
     }
@@ -124,12 +125,7 @@ const PortfolioDetails = ({
   };
 
   return (
-    <div className="portfolio-details-modal">
-      <div className="modal-backdrop" onClick={onClose}></div>
-      <div className="modal-content">
-        <button className="modal-close" onClick={onClose}>
-          <i className="bi bi-x-lg"></i>
-        </button>
+    <div className="portfolio-details-page">
 
         <section className="portfolio-details section">
           <div className="container" data-aos="fade-up" data-aos-delay="100">
@@ -304,23 +300,24 @@ const PortfolioDetails = ({
 
 
                 <section className="mb-5">
-                  <div className="col-lg-12" style={{ marginBottom: '20px' }} >
+                  <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\img\portfolio\material-receipt\01-process\old-flow.png" className="img-fluid" />
+                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\old-flow.png" className="img-fluid" />
                     </div>
-                    Their old workflow (a summary)
-                  </div>
-                  <div className="col-lg-12" style={{ marginBottom: '20px' }} >
+                    <figcaption className="img-foot text-end small">Their old workflow (a summary)</figcaption>
+                  </figure>
+                  <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\img\portfolio\material-receipt\01-process\actions-by-user.png" className="img-fluid" /></div>
-                    Actions MR flow by user
-                  </div>
-                  <div className="col-lg-12" style={{ marginBottom: '20px' }}  >
+                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\actions-by-user.png" className="img-fluid" />
+                    </div>
+                    <figcaption className="img-foot text-end small">Actions MR flow by user</figcaption>
+                  </figure>
+                  <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\img\portfolio\material-receipt\01-process\users-access.png" className="img-fluid" /></div>
-
-                    Possible actions by user
-                  </div>
+                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\users-access.png" className="img-fluid" />
+                    </div>
+                    <figcaption className="img-foot text-end small">Possible actions by user</figcaption>
+                  </figure>
                 </section>
 
 
@@ -395,13 +392,17 @@ const PortfolioDetails = ({
                           </div>
 
                         </div>
-                        Heuristic Review
+                        
+                          <figcaption className="img-foot text-end small">Heuristic Review</figcaption>
                       </div>
                       <div className="col-lg-6" >
 
-                        <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                          <img src="assets\img\portfolio\material-receipt\01-process\new-flow.png" className="img-fluid" /></div>
-                        Findings & Key Improvements Proposed (Map MR lifecycle (creation → approval → closure) with notification touchpoints.)
+                        <figure style={{ height: '100%' }}>
+                          <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
+                            <img src="assets\\img\\portfolio\\material-receipt\\01-process\\new-flow.png" className="img-fluid" />
+                          </div>
+                          <figcaption className="img-foot text-end small">Findings & Key Improvements Proposed (Map MR lifecycle (creation → approval → closure) with notification touchpoints.)</figcaption>
+                        </figure>
                       </div>
                     </div>
                   </div>
@@ -457,16 +458,16 @@ const PortfolioDetails = ({
 
                       <div className="col-lg-8">
                         <div >
-                          <img src="assets\img\portfolio\material-receipt\02-finished\breadcrumbs.png" className="img-fluid" />
-                          <p>Clearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).</p>
+                          <img src="assets\img\portfolio\material-receipt\02-finished\breadcrumbs.png" className="img-fluid" />                          
+                          <figcaption className="img-foot text-end small">Clearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).</figcaption>
                         </div>
                         <div >
                           <img src="assets\img\portfolio\material-receipt\02-finished\mr-old-flow.png" className="img-fluid" />
-                          <p>Before user flow</p>
+                          <figcaption className="img-foot text-end small">Before user flow</figcaption>
                         </div>
                         <div >
                           <img src="assets\img\portfolio\material-receipt\02-finished\mr-new-flow.png" className="img-fluid" />
-                          <p>After user flow</p>
+                          <figcaption className="img-foot text-end small">After user flow</figcaption>
                         </div>
                       </div>
                     </div></div>
@@ -483,14 +484,15 @@ const PortfolioDetails = ({
                       <div className="col-lg-6" >
                         <div>
                           <img src="assets\img\portfolio\material-receipt\02-finished\finance.jpg" className="img-fluid" />
+                          <figcaption className="img-foot text-end small">Finance: MR validation panel with fast search options.</figcaption>
                         </div>
-                        Finance: MR validation panel with fast search options.
+                        
                       </div>
                       <div className="col-lg-6" >
                         <div>
                           <img src="assets\img\portfolio\material-receipt\02-finished\mr-pdf.jpg" className="img-fluid" />
+                          <figcaption className="img-foot text-end small">Quick MR PDF generation with pre-filled forms.</figcaption>
                         </div>
-                        Quick MR PDF generation with pre-filled forms.
 
                       </div>
                     </div>
@@ -517,8 +519,8 @@ const PortfolioDetails = ({
                       <div className="col-lg-8" >
                         <div>
                           <img src="assets\img\portfolio\material-receipt\02-finished\etapometro.png" className="img-fluid" />
+                          <figcaption className="img-foot text-end small">Gantt calendar for time constraints</figcaption>
                         </div>
-                        Gantt calendar for time constraints
                       </div>
                     </div>
                   </div>
@@ -599,7 +601,7 @@ const PortfolioDetails = ({
 
         </section>
 
-        {/* Lightbox Modal */}
+      {/* Lightbox Modal */}
         {lightboxImage && (
           <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
             <div className="lightbox-content">
@@ -608,7 +610,6 @@ const PortfolioDetails = ({
             </div>
           </div>
         )}
-      </div>
     </div>
   );
 };
