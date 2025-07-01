@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import Personajes3DPage from './pages/Personajes3DPage';
 import LMSPricing from './pages/LMSPricing';
 import PortfolioPage from './pages/PortfolioPage';
+import PortfolioDetails from './components/PortfolioDetails';
 import ResourcesPage from './pages/ResourcesPage';
 import ComingSoonPage from './pages/ComingSoonPage';
 import PageTracker from './components/PageTracker';
@@ -50,6 +51,7 @@ function App() {
               <Route path="/lmspricing" element={<LMSPricing />} />
               <Route path="/resources" element={<ResourcesPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/portfolio/:id" element={<PortfolioDetails />} />
               <Route path="/coming-soon" element={<ComingSoonPage />} />
               <Route path="/ai-proficiency-challenge" element={<XRAIProficiencyChallenge />} />
             </Routes>
