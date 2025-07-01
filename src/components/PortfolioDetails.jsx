@@ -311,19 +311,19 @@ const project = resolvedData || defaultData;
                 <section className="mb-5">
                   <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets/img/portfolio/material-receipt/01-process/old-flow.png" className="img-fluid" />
+                      <img src="/assets/img/portfolio/material-receipt/01-process/old-flow.png" className="img-fluid" />
                     </div>
                     <figcaption className="img-foot text-end small">Their old workflow (a summary)</figcaption>
                   </figure>
                   <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\actions-by-user.png" className="img-fluid" />
+                      <img src="/assets/img/portfolio/material-receipt/01-process/actions-by-user.png" className="img-fluid" />
                     </div>
                     <figcaption className="img-foot text-end small">Actions MR flow by user</figcaption>
                   </figure>
                   <figure className="col-lg-12" style={{ marginBottom: '20px' }}>
                     <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                      <img src="assets\\img\\portfolio\\material-receipt\\01-process\\users-access.png" className="img-fluid" />
+                      <img src="/assets/img/portfolio/material-receipt/01-process/users-access.png" className="img-fluid" />
                     </div>
                     <figcaption className="img-foot text-end small">Possible actions by user</figcaption>
                   </figure>
@@ -408,7 +408,7 @@ const project = resolvedData || defaultData;
 
                         <figure style={{ height: '100%' }}>
                           <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', height: '100%', alignContent: 'center' }}>
-                            <img src="assets\\img\\portfolio\\material-receipt\\01-process\\new-flow.png" className="img-fluid" />
+                            <img src="/assets/img/portfolio/material-receipt/01-process/new-flow.png" className="img-fluid" />
                           </div>
                           <figcaption className="img-foot text-end small">Findings & Key Improvements Proposed (Map MR lifecycle (creation → approval → closure) with notification touchpoints.)</figcaption>
                         </figure>
@@ -467,15 +467,15 @@ const project = resolvedData || defaultData;
 
                       <div className="col-lg-8">
                         <div >
-                          <img src="assets\img\portfolio\material-receipt\02-finished\breadcrumbs.png" className="img-fluid" />                          
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\breadcrumbs.png" className="img-fluid" />                          
                           <figcaption className="img-foot text-end small">Clearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).</figcaption>
                         </div>
                         <div >
-                          <img src="assets\img\portfolio\material-receipt\02-finished\mr-old-flow.png" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\mr-old-flow.png" className="img-fluid" />
                           <figcaption className="img-foot text-end small">Before user flow</figcaption>
                         </div>
                         <div >
-                          <img src="assets\img\portfolio\material-receipt\02-finished\mr-new-flow.png" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\mr-new-flow.png" className="img-fluid" />
                           <figcaption className="img-foot text-end small">After user flow</figcaption>
                         </div>
                       </div>
@@ -492,14 +492,14 @@ const project = resolvedData || defaultData;
                     <div className="row">
                       <div className="col-lg-6" >
                         <div>
-                          <img src="assets\img\portfolio\material-receipt\02-finished\finance.jpg" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\finance.jpg" className="img-fluid" />
                           <figcaption className="img-foot text-end small">Finance: MR validation panel with fast search options.</figcaption>
                         </div>
                         
                       </div>
                       <div className="col-lg-6" >
                         <div>
-                          <img src="assets\img\portfolio\material-receipt\02-finished\mr-pdf.jpg" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\mr-pdf.jpg" className="img-fluid" />
                           <figcaption className="img-foot text-end small">Quick MR PDF generation with pre-filled forms.</figcaption>
                         </div>
 
@@ -527,7 +527,7 @@ const project = resolvedData || defaultData;
                       </div>
                       <div className="col-lg-8" >
                         <div>
-                          <img src="assets\img\portfolio\material-receipt\02-finished\etapometro.png" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\etapometro.png" className="img-fluid" />
                           <figcaption className="img-foot text-end small">Gantt calendar for time constraints</figcaption>
                         </div>
                       </div>
@@ -541,7 +541,7 @@ const project = resolvedData || defaultData;
                     <div className="row">
                       <div className="col-lg-12" >
                         <div>
-                          <img src="assets\img\portfolio\material-receipt\02-finished\end-img.png" className="img-fluid" />
+                          <img src="/assets\img\portfolio\material-receipt\02-finished\end-img.png" className="img-fluid" />
                         </div>
                       </div>
                     </div>
