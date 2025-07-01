@@ -4,47 +4,72 @@
 export const portfolioData = {
   1: {
     title: "Track 3rd Party & Approvals",
-    badge: "UX Overhaul",
-    date: "Project Timeline",
-    client: "Material Receipts Client",
-    website: "projectwebsite.example.com",
+    badge: "A UX Overhaul for Material Receipts",
+    date: "02/2025",
+    client: "Energy (Oil & Gas) Company",
+    website: "",
     websiteUrl: "#",
-    description: "Goals: Streamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.",
+    description: `Track 3rd Party & Approvals
+A UX Overhaul for Material Receipts
+1. Project Overview
+
+Goals: 
+Streamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.
+Finance needed better tools to validate MRs (approved/rejected) before payment.
+
+Role: UX Validator/Analyst (identified gaps via stakeholder notes and heuristic evaluation).
+
+2. Methodology
+
+Benchmarking: 5 competitor analyses informed patterns (e.g., status tracking).
+
+Stakeholder Notes: 
+Parsed conversations with Stakeholders: Business (Finance) & Product Owner to flag ambiguities, validate all requirements, api usages, previous experience with current app.
+Mapped actions per user type.
+Highlighted friction in provider/finance handoffs
+Collaboration: Bridged gaps between devs and Product Owner to fit time requirements, technology capabilities, best methodology, solve all questions that could have remained.
+Heuristic Review: Highlighted navigation issues (breadcrumbs), consistency (language), feedback loops (notifications) new Material Receipts hierachy requirements. MR for each Proyect, Well & Stage.
+Findings & Key Improvements Proposed
+
+Language: Mixed Spanish/English terms caused confusion (e.g., "Proveedor" vs. "Provider").
+Navigation: Missing "Go back" buttons disrupted multi-step workflows 
+Unexistent breadcrumbs to Well selection screens.
+Redesign status indicators (progress percentages avoided because of time dev constrains)
+User Flow: Map MR lifecycle (creation → approval → closure) with notification touchpoints.
+The solution
+3. UI/UX Improvements
+Dashboard required to be Role-Specific
+Clearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).
+Field Engineers: Quick MR PDF generation with pre-filled forms.
+Finance: MR validation panel with fast search options.
+Reduced manual errors in MR handoffs (Finance could trace MRs to Providers).
+Confirmation Alerts: Notify Providers upon MR acceptance by Finance.
+(mail whole team)
+
+Backend Logic
+
+Auto-remove Providers post-payment (flagged as a requirement).
+Dual-signature enforcement in PDF MRs (automated by active user).
+
+
+Why This Matters
+
+Holistic View: Ties UI improvements (e.g., breadcrumbs) to user roles (e.g., Finance needs quick access).
+Business Impact: Shows how UX reduces workflow bottlenecks (e.g., payment delays).
+Mantain UI Business related Brand and Lookn’Feel`,
     mainImages: [
-      "assets/img/portfolio/portfolio-5.webp",
-      "assets/img/portfolio/portfolio-7.webp",
-      "assets/img/portfolio/portfolio-8.webp"
+      "assets/img/portfolio/material-receipt/02-finished/Home-documentation.png",
+      "assets/img/portfolio/material-receipt/02-finished/mr-new-flow.png",
+      "assets/img/portfolio/material-receipt/02-finished/PSD_03.png"
     ],
     thumbnailImages: [
-      "assets/img/portfolio/portfolio-4.webp",
-      "assets/img/portfolio/portfolio-6.webp",
-      "assets/img/portfolio/portfolio-11.webp",
-      "assets/img/portfolio/portfolio-12.webp"
+      "assets/img/portfolio/material-receipt/01-process/New Flow.png",
+      "assets/img/portfolio/material-receipt/01-process/Old Flow.png",
+      "assets/img/portfolio/material-receipt/01-process/actions-by-user.png",
+      "assets/img/portfolio/material-receipt/01-process/users-access.png"
     ],
-    techStack: ["Angular", "Express.js", "PostgreSQL", "GraphQL", "Firebase"],
-    accordion: [
-      {
-        id: "overview",
-        title: "Project Overview",
-        icon: "bi-clipboard-data",
-        content: "Goals: \nStreamline MR workflows across Field Engineers → Providers → Finance while ensuring audit trails from Finance Team and compliance for internal Company teams.\nFinance needed better tools to validate MRs (approved/rejected) before payment.",
-        expanded: true
-      },
-      {
-        id: "methodology",
-        title: "Methodology",
-        icon: "bi-layers",
-        content: "Benchmarking: 5 competitor analyses informed patterns (e.g., status tracking).\nCollaborated across teams and utilized heuristic evaluations to identify navigation issues.",
-        expanded: false
-      },
-      {
-        id: "improvements",
-        title: "UI/UX Improvements",
-        icon: "bi-gem",
-        content: "Dashboard required to be Role-Specific\nClearer role-based UI paths (e.g., hyperlinked breadcrumbs for Wells).\nConfirmation Alerts: Notify Providers upon MR acceptance by Finance.",
-        expanded: false
-      }
-    ],
+    techStack: ["Figma", "Design Thinking", "UI/UX", "Scrum"],
+    accordion: [],
     features: [
       "Role-Based Dashboard",
       "Enhanced Navigation",
