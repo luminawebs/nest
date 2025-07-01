@@ -4,13 +4,13 @@
 export const portfolioData = {
   1: {
     title: "Track 3rd Party & Approvals",
-    badge: "A UX Overhaul for Material Receipts",
+    badge: "A UX Revision for Material Receipts",
     date: "02/2025",
     client: "Energy (Oil & Gas) Company",
     website: "",
     websiteUrl: "#",
     description: `Track 3rd Party & Approvals
-A UX Overhaul for Material Receipts
+A UX Revision for Material Receipts
 1. Project Overview
 
 Goals: 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { useParams } from 'react-router-dom';
 import { getProjectById } from '../data/portfolioData';
 import { useTranslation } from '../hooks/useTranslation';
@@ -611,14 +612,44 @@ const project = resolvedData || defaultData;
         </section>
 
       {/* Lightbox Modal */}
-        {lightboxImage && (
-          <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
-            <div className="lightbox-content">
-              <button className="btn-close position-absolute top-0 end-0 m-3" aria-label="Close" onClick={() => setLightboxImage(null)}></button>
-              <img src={lightboxImage} alt="Zoomed" className="img-fluid rounded" />
-            </div>
-          </div>
-        )}
+        {lightboxImage &&
+          ReactDOM.createPortal(
+            <div
+              className="lightbox-overlay"
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 1050,
+                cursor: 'zoom-out',
+              }}
+              onClick={() => setLightboxImage(null)}
+            >
+              <div
+                className="lightbox-content position-relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle"
+                  aria-label="Close"
+                  onClick={() => setLightboxImage(null)}
+                ></button>
+                <img
+                  src={lightboxImage}
+                  alt="Zoomed"
+                  className="img-fluid rounded shadow"
+                  style={{ maxHeight: '85vh', maxWidth: '90vw' }}
+                />
+              </div>
+            </div>,
+            document.body
+          )}
     </div>
   );
 };
