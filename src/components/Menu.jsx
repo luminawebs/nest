@@ -6,7 +6,7 @@ import { trackMenuClick } from '../utils/analytics';
 const Menu = () => {
   const location = useLocation();
   const { t } = useTranslation();
-  
+
   // Handle menu click tracking
   const handleMenuClick = (menuItem, section = 'main_navigation') => {
     trackMenuClick(menuItem, section);
@@ -18,7 +18,7 @@ const Menu = () => {
     e.stopPropagation();
     const dropdown = e.target.closest('.dropdown');
     const dropdownMenu = dropdown.querySelector('ul');
-    
+
     // Toggle active class on parent
     dropdown.classList.toggle('active');
     // Toggle dropdown-active class on submenu
@@ -31,7 +31,7 @@ const Menu = () => {
   const handleMobileNavToggle = () => {
     const body = document.querySelector('body');
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    
+
     body.classList.toggle('mobile-nav-active');
     mobileNavToggle.classList.toggle('bi-list');
     mobileNavToggle.classList.toggle('bi-x');
@@ -40,7 +40,7 @@ const Menu = () => {
   // Close mobile nav when clicking on menu items
   const handleNavItemClick = (menuItem, section) => {
     handleMenuClick(menuItem, section);
-    
+
     // Close mobile menu if open
     const body = document.querySelector('body');
     if (body.classList.contains('mobile-nav-active')) {
@@ -51,7 +51,7 @@ const Menu = () => {
   return (
     <nav id="navmenu" className="navmenu">
       <ul>
-        <li className="dropdown">
+        {/*<li className="dropdown">
           <Link
             to="/"
             onClick={() => handleNavItemClick('Home', 'main_navigation')}
@@ -60,7 +60,7 @@ const Menu = () => {
             <i className="bi bi-chevron-down toggle-dropdown" onClick={handleDropdownToggle}></i>
           </Link>
           <ul>
-            <li>
+             <li>
               <a
                 href="#about"
                 onClick={() => handleNavItemClick('Nosotros', 'home_dropdown')}
@@ -75,7 +75,7 @@ const Menu = () => {
               >
                 {t('nav.solutions')}
               </a>
-            </li>
+            </li> 
             <li>
               <a
                 href="#contact"
@@ -85,7 +85,16 @@ const Menu = () => {
               </a>
             </li>
           </ul>
-        </li>
+        </li>*/}
+
+
+        <li><Link
+          to="/"
+          onClick={() => handleNavItemClick('Home', 'main_navigation')}
+        >
+          {t('nav.home')}
+        </Link></li>
+
         <li className="dropdown">
           <Link
             to="/personajes3d"
@@ -96,14 +105,23 @@ const Menu = () => {
           </Link>
           <ul>
             <li>
-              <a
-                href="/personajes3d#pricing"
+              <Link
+                to="/personajes3d#pricing"
                 onClick={() => handleNavItemClick('Planes', 'avatars_dropdown')}
               >
                 {t('nav.plans')}
-              </a>
+              </Link>
             </li>
           </ul>
+        </li>
+        
+        <li>
+          <Link
+            to="/courses"
+            onClick={() => handleNavItemClick('Courses', 'main_navigation')}
+          >
+            {t('nav.courses') ?? 'Courses'}
+          </Link>
         </li>
         <li>
           <Link
@@ -130,7 +148,7 @@ const Menu = () => {
           </Link>
         </li>
       </ul>
-      <i 
+      <i
         className="mobile-nav-toggle d-xl-none bi bi-list"
         onClick={handleMobileNavToggle}
       ></i>

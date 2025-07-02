@@ -374,6 +374,16 @@ h6 {
   }
 }
 
+/* Performance tweaks for mobile devices */
+@media (max-width: 768px) {
+  .header .header-container {
+    /* Disable heavy blur on low-power mobile GPUs */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: rgba(27, 38, 44, 0.90);
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/

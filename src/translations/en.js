@@ -6,6 +6,7 @@ export const en = {
     solutions: 'Solutions',
     contact: 'Contact',
     avatars3d: '3D Avatars',
+    courses: 'Courses',
     plans: 'Plans',
     lmsSaas: 'LMS SaaS',
     resources: 'Resources',
@@ -21,7 +22,7 @@ export const en = {
   hero: {
     agency: 'LUMINA INTERACTIVE',
     mainHeading: 'ELEARNING SOLUTIONS',
-    description: 'Discover innovative strategies for digital education. We transform content into interactive experiences that captivate students. Our specialized team combines pedagogical technology and impactful design to create courses that stand out in the competitive world of online learning.',
+    description: 'We transform your content into interactive experiences. Create courses that stand out in the competitive world of online learning.',
     ctaButton: 'VIEW SERVICES',
     statsLabel: 'Implemented Courses'
   },
@@ -53,7 +54,7 @@ export const en = {
     viewAllSolutions: 'View all solutions',
     articulate: {
       title: 'Courses in',
-      titleHighlight: 'Articulate 360',
+      titleHighlight: 'Articulate 360 & HTML5',
       description: 'Interactive and responsive content pedagogically designed with Storyline and Rise. Includes assessments, simulations and SCORM compatibility for your LMS.'
     },
     html5: {

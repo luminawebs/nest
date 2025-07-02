@@ -10,6 +10,7 @@ import LMSPricing from './pages/LMSPricing';
 import PortfolioPage from './pages/PortfolioPage';
 import PortfolioDetails from './components/PortfolioDetails';
 import ResourcesPage from './pages/ResourcesPage';
+import CoursesPage from './pages/CoursesPage';
 import ComingSoonPage from './pages/ComingSoonPage';
 import PageTracker from './components/PageTracker';
 import useScrollTracking from './hooks/useScrollTracking';
@@ -50,6 +51,7 @@ function App() {
               <Route path="/personajes3d" element={<Personajes3DPage />} />
               <Route path="/lmspricing" element={<LMSPricing />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/courses" element={<CoursesPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/portfolio/:id" element={<PortfolioDetails />} />
               <Route path="/coming-soon" element={<ComingSoonPage />} />

@@ -54,58 +54,58 @@ const PortfolioPage = () => {
         .overlay-content .entry-meta { font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
         .overlay-content .entry-title { font-size: 1.125rem; }
       `}</style>
-    <section id="portfolio" className="portfolio section">
+      <section id="portfolio" className="portfolio section">
 
 
-      <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
-        <div className="container position-relative">
-          <h1>Portfolio</h1>
-          <nav className="breadcrumbs">
-            <ol>
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li className="current">Portfolio</li>
-            </ol>
-          </nav>
+        <div className="page-title dark-background aos-init aos-animate" data-aos="fade">
+          <div className="container position-relative">
+            <h1>Portfolio</h1>
+            <nav className="breadcrumbs">
+              <ol>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li className="current">Portfolio</li>
+              </ol>
+            </nav>
+          </div>
         </div>
-      </div>
 
-      {/* Section Title */}
-      <div className="container section-title aos-init aos-animate" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <div><span>Check Our</span> <span className="description-title">Portfolio</span></div>
-      </div>
-      {/* End Section Title */}
+        {/* Section Title */}
+        {/* <div className="container section-title aos-init aos-animate" data-aos="fade-up">
+          <h2>Portfolio</h2>
+          <div><span>Check Our</span> <span className="description-title">Portfolio</span></div>
+        </div> */}
+        {/* End Section Title */}
 
-      <div className="container-fluid aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div className="container-fluid aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
-        <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul className="portfolio-filters isotope-filters aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-<li data-filter="*" className={filter === '*' ? 'filter-active' : ''} onClick={() => handleFilterChange('*')}>
-              <i className="bi bi-grid-3x3"></i> All Projects
-            </li>
-<li data-filter=".filter-ui" className={filter === '.filter-ui' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-ui')}>
-              <i className="bi bi-phone"></i> UI/UX
-            </li>
-<li data-filter=".filter-development" className={filter === '.filter-development' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-development')}>
-              <i className="bi bi-code-slash"></i> Development
-            </li>
-<li data-filter=".filter-photography" className={filter === '.filter-photography' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-photography')}>
-              <i className="bi bi-camera"></i> Photography
-            </li>
-<li data-filter=".filter-marketing" className={filter === '.filter-marketing' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-marketing')}>
-              <i className="bi bi-graph-up"></i> Marketing
-            </li>
-          </ul>
+            <ul className="portfolio-filters isotope-filters aos-init aos-animate mt-4" data-aos="fade-up" data-aos-delay="200">
+              <li data-filter="*" className={filter === '*' ? 'filter-active' : ''} onClick={() => handleFilterChange('*')}>
+                <i className="bi bi-grid-3x3"></i> All Projects
+              </li>
+              <li data-filter=".filter-ui" className={filter === '.filter-ui' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-ui')}>
+                <i className="bi bi-phone"></i> UI/UX
+              </li>
+              <li data-filter=".filter-development" className={filter === '.filter-development' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-development')}>
+                <i className="bi bi-code-slash"></i> Development
+              </li>
+              <li data-filter=".filter-photography" className={filter === '.filter-photography' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-photography')}>
+                <i className="bi bi-camera"></i> Photography
+              </li>
+              <li data-filter=".filter-marketing" className={filter === '.filter-marketing' ? 'filter-active' : ''} onClick={() => handleFilterChange('.filter-marketing')}>
+                <i className="bi bi-graph-up"></i> Marketing
+              </li>
+            </ul>
 
-          <div className="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <div className="row g-4 isotope-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(1)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
+              <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(1)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
                     <div className="overlay-content">
                       <div className="entry-meta">UI/UX Design</div>
                       <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
@@ -113,23 +113,23 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button 
+                        <button
                           onClick={() => handleProjectClick(1)}
-                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                          style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
                         >
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div>
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(2)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(2)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="overlay-content">
                       <div className="entry-meta">Development</div>
                       <h3 className="entry-title">E-Learning Platform</h3>
@@ -137,157 +137,157 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/portfolio-10.webp" className="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button 
-onClick={() => handleProjectClick(3)}
-                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                        <button
+                          onClick={() => handleProjectClick(3)}
+                          style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
                         >
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">Photography</div>
-                      <h3 className="entry-title">Urban Architecture</h3>
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">Photography</div>
+                        <h3 className="entry-title">Urban Architecture</h3>
                         <a href="assets/img/portfolio/portfolio-7.webp" className="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
                         <button onClick={() => handleProjectClick(3)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(6)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">Marketing</div>
-                      <h3 className="entry-title">Social Media Campaign</h3>
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(6)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">Marketing</div>
+                        <h3 className="entry-title">Social Media Campaign</h3>
                         <a href="assets/img/portfolio/portfolio-4.webp" className="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Social Media Campaign; description: Quis autem vel eum iure reprehenderit qui in ea voluptate.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button onClick={() => handleProjectClick(6)} style={{background:'none',border:'none',padding:0,color:'inherit'}}>
+                        <button onClick={() => handleProjectClick(6)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">UI/UX Design</div>
-                      <h3 className="entry-title">Smart Home Interface</h3>
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">UI/UX Design</div>
+                        <h3 className="entry-title">Smart Home Interface</h3>
                         <a href="assets/img/portfolio/portfolio-2.webp" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button 
+                        <button
                           onClick={() => handleProjectClick(3)}
-                          style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
+                          style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
                         >
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(4)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">Development</div>
-                      <h3 className="entry-title">Cloud Management System</h3>
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(4)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">Development</div>
+                        <h3 className="entry-title">Cloud Management System</h3>
                         <a href="assets/img/portfolio/portfolio-11.webp" className="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button onClick={() => handleProjectClick(4)} style={{background:'none',border:'none',padding:0,color:'inherit'}}>
+                        <button onClick={() => handleProjectClick(4)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
 
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(5)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">Photography</div>
-                      <h3 className="entry-title">Nature Collection</h3>
+              {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(5)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">Photography</div>
+                        <h3 className="entry-title">Nature Collection</h3>
                         <a href="assets/img/portfolio/portfolio-8.webp" className="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button onClick={() => handleProjectClick(5)} style={{background:'none',border:'none',padding:0,color:'inherit'}}>
+                        <button onClick={() => handleProjectClick(5)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
-            </div>
-            {/* End Portfolio Item */}
-
-<div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
-              <article className="portfolio-entry" onClick={() => handleProjectClick(7)}>
-                <figure className="entry-image">
-                  <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
-                  <div className="entry-overlay">
-                    <div className="overlay-content">
-                      <div className="entry-meta">Marketing</div>
-                      <h3 className="entry-title">Brand Strategy</h3>
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
+{/* 
+              <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(7)}>
+                  <figure className="entry-image">
+                    <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
+                    <div className="entry-overlay">
+                      <div className="overlay-content">
+                        <div className="entry-meta">Marketing</div>
+                        <h3 className="entry-title">Brand Strategy</h3>
                         <a href="assets/img/portfolio/portfolio-5.webp" className="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button onClick={() => handleProjectClick(7)} style={{background:'none',border:'none',padding:0,color:'inherit'}}>
+                        <button onClick={() => handleProjectClick(7)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
+                      </div>
                     </div>
-                  </div>
-                </figure>
-              </article>
+                  </figure>
+                </article>
+              </div> */}
+              {/* End Portfolio Item */}
+
             </div>
-            {/* End Portfolio Item */}
+            {/* End Portfolio Container */}
 
           </div>
-          {/* End Portfolio Container */}
 
         </div>
 
-      </div>
 
-
-    </section>
+      </section>
     </>
   );
 };
