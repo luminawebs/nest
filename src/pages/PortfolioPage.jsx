@@ -138,7 +138,7 @@ const PortfolioPage = () => {
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
                         <button 
-                          onClick={() => handleProjectClick(2)}
+onClick={() => handleProjectClick(3)}
                           style={{background: 'none', border: 'none', padding: 0, color: 'inherit'}}
                         >
                           <i className="bi bi-arrow-right"></i>
@@ -161,7 +161,7 @@ const PortfolioPage = () => {
                         <a href="assets/img/portfolio/portfolio-7.webp" className="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
                           <i className="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <button onClick={() => handleProjectClick(projectId)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
+                        <button onClick={() => handleProjectClick(3)} style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}>
                           <i className="bi bi-arrow-right"></i>
                         </button>
                     </div>
