@@ -3,15 +3,14 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
-import { 
-  trackButtonClick, 
-  trackServiceInquiry, 
+import {
+  trackButtonClick,
+  trackServiceInquiry,
   trackLinkClick,
   trackContactClick,
-  trackFormSubmission 
+  trackFormSubmission
 } from '../utils/analytics';
 import ImpactoDemostrado from '../components/ImpactoDemostrado';
-import FAQSection from '../components/FAQSection';
 
 
 const HomePage = () => {
@@ -100,64 +99,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="about section">
-        <div className="container section-title" data-aos="fade-up">
-          <h2>{t('about.title')}</h2>
-          <div>
-            <span>{t('about.subtitle')} </span>
-            <span className="description-title">{t('about.subtitleHighlight')}</span>
-          </div>
-        </div>
 
-        <div className="container">
-          <div className="row gx-5 align-items-center">
-            <div className="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-              <div className="about-image position-relative">
-                <img src="assets/img/courses.png" className="img-fluid rounded-4 shadow-sm" alt="Equipo de eLearning"
-                  loading="lazy" />
-                <div className="experience-badge">
-                  <span className="years">10+</span>
-                  <span className="text">{t('about.yearsExperience')}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
-              <div className="about-content">
-                <h2>{t('about.mainTitle')}</h2>
-                <p className="lead">{t('about.leadText')}</p>
-                <p>{t('about.description')}</p>
-
-                <div className="row g-4 mt-3">
-                  <div className="col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div className="feature-item">
-                      <i className="bi bi-check-circle-fill"></i>
-                      <h5>{t('about.integralSupport')}</h5>
-                      <p>{t('about.integralSupportDesc')}</p>
-                    </div>
-                  </div>
-                  <div className="col-md-6" data-aos="zoom-in" data-aos-delay="450">
-                    <div className="feature-item">
-                      <i className="bi bi-lightbulb-fill"></i>
-                      <h5>{t('about.pedagogicalTech')}</h5>
-                      <p>{t('about.pedagogicalTechDesc')}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <a
-                  href="#services"
-                  className="btn btn-primary mt-4"
-                  onClick={() => trackButtonClick('About CTA - Conoce Nuestras Soluciones', 'About')}
-                >
-                  {t('about.ctaButton')}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="services" className="services section">
 
@@ -198,6 +140,26 @@ const HomePage = () => {
           </div>
 
           <div className="row justify-content-center">
+
+
+   {/* <!-- Service 3: 3D Characters --> */}
+            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div className="service-card position-relative z-1">
+                <div className="service-icon">
+                  <i className="bi bi-person-video3"></i>
+                </div>
+
+                <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
+                <h3>
+                  <Link to="/personajes3d#hero" className="active">{t('services.avatars3d.title')}</Link>
+                </h3>
+                <p>
+                  {t('services.avatars3d.description')}
+                </p>
+              </div>
+            </div>
+
+
             {/* <!-- Service 1: Articulate Content --> */}
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="service-card position-relative z-1">
@@ -219,7 +181,7 @@ const HomePage = () => {
             </div>
 
             {/* <!-- Service 2: HTML5 Multimedia --> */}
-            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            {/* <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div className="service-card position-relative z-1">
                 <div className="service-icon">
                   <i className="bi bi-code-square"></i>
@@ -236,27 +198,12 @@ const HomePage = () => {
                   {t('services.html5.description')}
                 </p>
               </div>
-            </div>
+            </div> */}
 
-            {/* <!-- Service 3: 3D Characters --> */}
-            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div className="service-card position-relative z-1">
-                <div className="service-icon">
-                  <i className="bi bi-person-video3"></i>
-                </div>
-
-                <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
-                <h3>
-                  <Link to="/personajes3d#hero" className="active">{t('services.avatars3d.title')}</Link>
-                </h3>
-                <p>
-                  {t('services.avatars3d.description')}
-                </p>
-              </div>
-            </div>
+         
 
             {/* <!-- Service 4: Rapid Course Platform --> */}
-            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            {/* <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="service-card position-relative z-1">
                 <div className="service-icon">
                   <i className="bi bi-lightning-charge"></i>
@@ -273,10 +220,10 @@ const HomePage = () => {
                   {t('services.platform.description')}
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* <!-- Service 5: Video Production --> */}
-            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            {/* <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div className="service-card position-relative z-1">
                 <div className="service-icon">
                   <i className="bi bi-camera-reels"></i>
@@ -293,7 +240,7 @@ const HomePage = () => {
                   {t('services.video.description')}
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* <!-- Service 6: LMS Integration --> */}
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
@@ -327,83 +274,6 @@ const HomePage = () => {
 
 
 
-
-      <section id="steps" className="steps section">
-        {/* <!-- Section Title --> */}
-        <div className="container section-title" data-aos="fade-up">
-          <h2>{t('steps.title')}</h2>
-          <div><span>{t('steps.subtitle')}</span> <span className="description-title">{t('steps.subtitleHighlight')}</span></div>
-        </div>
-        {/* <!-- End Section Title --> */}
-
-        <div className="container" data-aos="fade-up" data-aos-delay="100">
-          <div className="steps-wrapper">
-            {/* <!-- Step 1 --> */}
-            <div className="step-item" data-aos="fade-right" data-aos-delay="200">
-              <div className="step-content">
-                <div className="step-icon">
-                  <i className="bi bi-mortarboard"></i>
-                  {/* <!-- Education-focused icon --> */}
-                </div>
-                <div className="step-info">
-                  <span className="step-number">{t('steps.step1.number')}</span>
-                  <h3>{t('steps.step1.title')}</h3>
-                  <p>{t('steps.step1.description')}</p>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End Step Item --> */}
-
-            {/* <!-- Step 2 --> */}
-            <div className="step-item" data-aos="fade-left" data-aos-delay="300">
-              <div className="step-content">
-                <div className="step-icon">
-                  <i className="bi bi-kanban"></i>
-                  {/* <!-- Planning icon --> */}
-                </div>
-                <div className="step-info">
-                  <span className="step-number">{t('steps.step2.number')}</span>
-                  <h3>{t('steps.step2.title')}</h3>
-                  <p>{t('steps.step2.description')}</p>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End Step Item --> */}
-
-            {/* <!-- Step 3 --> */}
-            <div className="step-item" data-aos="fade-right" data-aos-delay="400">
-              <div className="step-content">
-                <div className="step-icon">
-                  <i className="bi bi-code-slash"></i>
-                  {/* <!-- Development icon --> */}
-                </div>
-                <div className="step-info">
-                  <span className="step-number">{t('steps.step3.number')}</span>
-                  <h3>{t('steps.step3.title')}</h3>
-                  <p>{t('steps.step3.description')}</p>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End Step Item --> */}
-
-            {/* <!-- Step 4 --> */}
-            <div className="step-item" data-aos="fade-left" data-aos-delay="500">
-              <div className="step-content">
-                <div className="step-icon">
-                  <i className="bi bi-graph-up-arrow"></i>
-                  {/* <!-- Results icon --> */}
-                </div>
-                <div className="step-info">
-                  <span className="step-number">{t('steps.step4.number')}</span>
-                  <h3>{t('steps.step4.title')}</h3>
-                  <p>{t('steps.step4.description')}</p>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End Step Item --> */}
-          </div>
-        </div>
-      </section>
       {/* <!-- /Steps Section --> */}
 
       {/* <!-- Call To Action Section --> */}
@@ -473,152 +343,149 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <ImpactoDemostrado />
-      {/* <!-- Faq Section --> */}
-      <FAQSection />
       {/* <!-- /Faq Section --> */}
-<section id="contact" className="contact section">
+      <section id="contact" className="contact section">
 
-          {/* <!-- Section Title --> */}
-          <div className="container section-title" data-aos="fade-up">
-            <h2>{t('contact.title')}</h2>
-            <div><span>{t('contact.subtitle')}</span> <span className="description-title">{t('contact.subtitleHighlight')}</span></div>
-          </div>
-          {/* <!-- End Section Title --> */}
+        {/* <!-- Section Title --> */}
+        <div className="container section-title" data-aos="fade-up">
+          <h2>{t('contact.title')}</h2>
+          <div><span>{t('contact.subtitle')}</span> <span className="description-title">{t('contact.subtitleHighlight')}</span></div>
+        </div>
+        {/* <!-- End Section Title --> */}
 
 
-          <div className="container" data-aos="fade-up" data-aos-delay="100">
+        <div className="container" data-aos="fade-up" data-aos-delay="100">
 
-            {/* <!-- Contact Info Boxes --> */}
-            <div className="row gy-4 mb-5">
-              <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div className="contact-info-box">
-                  <div className="icon-box">
-                    <i className="bi bi-geo-alt"></i>
-                  </div>
-                  <div className="info-content">
-                    <h4>{t('contact.addressTitle')}</h4>
-                    <p>{t('contact.address')}</p>
-                  </div>
+          {/* <!-- Contact Info Boxes --> */}
+          <div className="row gy-4 mb-5">
+            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div className="contact-info-box">
+                <div className="icon-box">
+                  <i className="bi bi-geo-alt"></i>
                 </div>
-              </div>
-
-              <div className="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div className="contact-info-box">
-                  <div className="icon-box">
-                    <i className="bi bi-envelope"></i>
-                  </div>
-                  <div className="info-content">
-                    <h4>{t('contact.emailTitle')}</h4>
-                    <p>
-                      <a
-                        href="mailto:luminawebs@gmail.com"
-                        onClick={() => trackContactClick('Email', 'luminawebs@gmail.com')}
-                      >
-                        luminawebs@gmail.com
-                      </a>
-                    </p>
-                    <p>{t('contact.contactPerson')}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                <div className="contact-info-box">
-                  <div className="icon-box">
-                    <i className="bi bi-headset"></i>
-                  </div>
-                  <div className="info-content">
-                    <h4>{t('contact.scheduleTitle')}</h4>
-                    <p>{t('contact.weekdays')}</p>
-                    <p>{t('contact.saturday')}</p>
-                  </div>
+                <div className="info-content">
+                  <h4>{t('contact.addressTitle')}</h4>
+                  <p>{t('contact.address')}</p>
                 </div>
               </div>
             </div>
 
+            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div className="contact-info-box">
+                <div className="icon-box">
+                  <i className="bi bi-envelope"></i>
+                </div>
+                <div className="info-content">
+                  <h4>{t('contact.emailTitle')}</h4>
+                  <p>
+                    <a
+                      href="mailto:luminawebs@gmail.com"
+                      onClick={() => trackContactClick('Email', 'luminawebs@gmail.com')}
+                    >
+                      luminawebs@gmail.com
+                    </a>
+                  </p>
+                  <p>{t('contact.contactPerson')}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div className="contact-info-box">
+                <div className="icon-box">
+                  <i className="bi bi-headset"></i>
+                </div>
+                <div className="info-content">
+                  <h4>{t('contact.scheduleTitle')}</h4>
+                  <p>{t('contact.weekdays')}</p>
+                  <p>{t('contact.saturday')}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* <!-- Google Maps (Full Width) --> */}
-          <div className="map-section" data-aos="fade-up" data-aos-delay="200">
-            {/* <!-- <iframe
+        </div>
+
+        {/* <!-- Google Maps (Full Width) --> */}
+        <div className="map-section" data-aos="fade-up" data-aos-delay="200">
+          {/* <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
               width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe> --> */}
-          </div>
+        </div>
 
-          {/* <!-- Contact Form Section (Overlapping) --> */}
-          <div className="container form-container-overlap">
-            <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
-              <div className="col-lg-10">
-                <div className="contact-form-wrapper">
-                  <h2 className="text-center mb-4">{t('contact.formTitle')}</h2>
+        {/* <!-- Contact Form Section (Overlapping) --> */}
+        <div className="container form-container-overlap">
+          <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-lg-10">
+              <div className="contact-form-wrapper">
+                <h2 className="text-center mb-4">{t('contact.formTitle')}</h2>
 
-                  <form
-                    action="https://formspree.io/f/mblovblv"
-                    method="POST"
-                    className="php-email-form"
-                    onSubmit={() => trackFormSubmission('Contact Form', 'main_contact')}
-                  >
-                    <div className="row g-3">
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-person"></i>
-                            <input type="text" className="form-control" name="name" placeholder={t('contact.form.namePlaceholder')} required />
-                          </div>
+                <form
+                  action="https://formspree.io/f/mblovblv"
+                  method="POST"
+                  className="php-email-form"
+                  onSubmit={() => trackFormSubmission('Contact Form', 'main_contact')}
+                >
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <div className="input-with-icon">
+                          <i className="bi bi-person"></i>
+                          <input type="text" className="form-control" name="name" placeholder={t('contact.form.namePlaceholder')} required />
                         </div>
-                      </div>
-
-                      <div className="col-md-6">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-envelope"></i>
-                            <input type="email" className="form-control" name="email" placeholder={t('contact.form.emailPlaceholder')}
-                              required />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-text-left"></i>
-                            <input type="text" className="form-control" name="subject" placeholder={t('contact.form.subjectPlaceholder')} required />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="form-group">
-                          <div className="input-with-icon">
-                            <i className="bi bi-chat-dots message-icon"></i>
-                            <textarea className="form-control" name="message" placeholder={t('contact.form.messagePlaceholder')}
-                              style={{ height: '180px' }} required></textarea>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="loading">{t('contact.form.loading')}</div>
-                        <div className="error-message"></div>
-                        <div className="sent-message">{t('contact.form.successMessage')}</div>
-                      </div>
-
-                      <div className="col-12 text-center">
-                        <button type="submit" className="btn btn-primary btn-submit">{t('contact.form.submitButton')}</button>
                       </div>
                     </div>
-                  </form>
+
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <div className="input-with-icon">
+                          <i className="bi bi-envelope"></i>
+                          <input type="email" className="form-control" name="email" placeholder={t('contact.form.emailPlaceholder')}
+                            required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-md-12">
+                      <div className="form-group">
+                        <div className="input-with-icon">
+                          <i className="bi bi-text-left"></i>
+                          <input type="text" className="form-control" name="subject" placeholder={t('contact.form.subjectPlaceholder')} required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-12">
+                      <div className="form-group">
+                        <div className="input-with-icon">
+                          <i className="bi bi-chat-dots message-icon"></i>
+                          <textarea className="form-control" name="message" placeholder={t('contact.form.messagePlaceholder')}
+                            style={{ height: '180px' }} required></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-12">
+                      <div className="loading">{t('contact.form.loading')}</div>
+                      <div className="error-message"></div>
+                      <div className="sent-message">{t('contact.form.successMessage')}</div>
+                    </div>
+
+                    <div className="col-12 text-center">
+                      <button type="submit" className="btn btn-primary btn-submit">{t('contact.form.submitButton')}</button>
+                    </div>
+                  </div>
+                </form>
 
 
-                </div>
               </div>
             </div>
           </div>
+        </div>
 
 
-        </section>
+      </section>
 
       {/* Rest of sections... */}
     </main>

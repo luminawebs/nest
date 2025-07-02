@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FreeResourcesSection = ({ trackLinkClick }) => {
+  const navigate = useNavigate();
   const resources = [
     {
       id: 1,
@@ -12,7 +14,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       action: () => {
         trackLinkClick('AI Proficiency Challenge', 'Free Resources');
         // Navigate to dedicated AI Proficiency Challenge page
-        window.location.href = '/ai-proficiency-challenge';
+navigate('/ai-proficiency-challenge');
       },
       isButton: true
     },
@@ -25,7 +27,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       delay: '200',
       action: () => {
         trackLinkClick('Best Practices Guide', 'Free Resources');
-        window.location.href = '/coming-soon?resource=Mejores Prácticas';
+navigate('/coming-soon?resource=Mejores%20Prácticas');
       },
       isButton: true
     },
@@ -38,7 +40,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       delay: '300',
       action: () => {
         trackLinkClick('ROI Calculator', 'Free Resources');
-        window.location.href = '/coming-soon?resource=ROI eLearning';
+navigate('/coming-soon?resource=ROI%20eLearning');
       },
       isButton: true
     },
@@ -51,7 +53,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       delay: '400',
       action: () => {
         trackLinkClick('XR Implementation Checklist', 'Free Resources');
-        window.location.href = '/coming-soon?resource=Implementación XR';
+navigate('/coming-soon?resource=Implementaci%C3%B3n%20XR');
       },
       isButton: true
     },
@@ -64,7 +66,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       delay: '500',
       action: () => {
         trackLinkClick('Content Creation Templates', 'Free Resources');
-        window.location.href = '/coming-soon?resource=Creación de Contenido';
+navigate('/coming-soon?resource=Creaci%C3%B3n%20de%20Contenido');
       },
       isButton: true
     },

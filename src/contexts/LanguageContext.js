@@ -33,6 +33,27 @@ export const LanguageProvider = ({ children }) => {
     document.documentElement.lang = language;
   }, [language]);
 
+  // GeoIP-based language detection (only on first visit)
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('edunest-language');
+    if (savedLanguage) return; // user already has preference
+
+    // Fetch geolocation info from free ipapi.co (1k req/day free)
+    fetch('https://ipapi.co/json/')
+      .then((res) => res.ok ? res.json() : null)
+      .then((data) => {
+        if (!data) return;
+        const country = data.country_code;
+        // Simple mapping: common English-speaking countries → 'en', rest → 'es'
+        const englishCountries = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'];
+        const detectedLang = englishCountries.includes(country) ? 'en' : 'es';
+        setLanguage(detectedLang);
+      })
+      .catch(() => {
+        /* silent fail – keep current language */
+      });
+  }, []);
+
   const switchLanguage = (newLanguage) => {
     setLanguage(newLanguage);
   };

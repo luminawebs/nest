@@ -28,6 +28,14 @@ const MinimalistMenu = () => {
           </Link>
         </li>
         <li>
+          <Link
+            to="/courses"
+            onClick={() => handleMenuClick('Courses', 'minimalist_navigation')}
+          >
+            Courses
+          </Link>
+        </li>
+        <li>
           <a
             href="#contact"
             onClick={() => handleMenuClick('Contact', 'minimalist_navigation')}

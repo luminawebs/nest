@@ -6,6 +6,7 @@ export const es = {
     solutions: 'Soluciones',
     contact: 'Contacto',
     avatars3d: 'Avatars 3D',
+    courses: 'Cursos',
     plans: 'Planes',
     lmsSaas: 'LMS SaaS',
     resources: 'Recursos',
@@ -20,8 +21,8 @@ export const es = {
   // Hero Section
   hero: {
     agency: 'LÚMINA INTERACTIVA',
-    mainHeading: 'SOLUCIONES DE ELEARNING',
-    description: 'Descubre estrategias innovadoras para la educación digital. Transformamos contenidos en experiencias interactivas que cautivan a los estudiantes. Nuestro equipo especializado combina tecnología pedagógica y diseño impactante para crear cursos que destacan en el competitivo mundo del aprendizaje en línea.',
+    mainHeading: 'SOLUCIONES ELEARNING',
+    description: 'Transformamos contenidos en experiencias interactivas que cautivan a los estudiantes. Crea cursos que destaquen en el competitivo mundo del aprendizaje en línea.',
     ctaButton: 'VER SERVICIOS',
     statsLabel: 'Cursos Implementados'
   },

@@ -18,6 +18,7 @@ const MinimalistFooter = () => {
             <div className="footer-links">
               <Link to="/" className="me-3">Home</Link>
               <Link to="/resources" className="me-3">Recursos</Link>
+              <Link to="/courses" className="me-3">Courses</Link>
               <a href="#contact">Contacto</a>
             </div>
           </div>
