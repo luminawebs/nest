@@ -19,15 +19,16 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:optimized": "node build-image-optimizer.js build",
+    "build": "react-scripts build && node post-build-optimize.js",
+    "build:unoptimized": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "optimize-images": "node optimize-images.js",
     "performance-check": "node performance-monitor.js",
     "analyze-images": "node build-image-optimizer.js analyze",
     "optimize-all": "npm run optimize-images && npm run performance-check",
-    "optimization-guide": "node optimization-guide.js"
+    "optimization-guide": "node optimization-guide.js",
+    "clean-build": "node clean-build.js"
   },
   "eslintConfig": {
     "extends": [
