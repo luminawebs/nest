@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useParams } from 'react-router-dom';
-import { getProjectById } from '../data/portfolioData';
+import { getProjectBySlug } from '../data/portfolioData';
 import { useTranslation } from '../hooks/useTranslation';
 import { trackButtonClick } from '../utils/analytics';
 
 // PortfolioDetails now renders as a full page (new window / route) instead of an overlay modal
 const PortfolioDetails = () => {
-  const { id } = useParams();
-  const resolvedData = getProjectById(id);
+  const { slug } = useParams();
+  const resolvedData = getProjectBySlug(slug);
 
   // Fallback placeholder if data not found
   const defaultData = {
@@ -303,6 +303,16 @@ const project = resolvedData || defaultData;
 
                   <p className="lead"> Collaboration: </p>
                   <p>Bridged gaps between devs and Product Owner to fit time requirements, technology capabilities, best methodology, solve all questions that could have remained.</p>
+               
+                 <h3   style={{ marginTop: '120px' }}><i className="bi bi-search me-2"></i>Heuristic Review:</h3>
+                        <ul>
+                          <li>Navigation issues (breadcrumbs)</li>
+                          <li>Consistency (language)</li>
+                          <li>Feedback loops (notifications)</li>
+                          <li>New Material Receipts hierarchy requirements</li>
+                        </ul>
+               
+               
                 </section>
               </div>
 
@@ -356,18 +366,8 @@ const project = resolvedData || defaultData;
                 <section className="mb-5">
                   <div className="container">
                     <div className="row">
-                      <div className="col-lg-6" >
-                        <h3><i className="bi bi-search me-2"></i>Heuristic Review:</h3>
-                        <ul>
-                          <li>Navigation issues (breadcrumbs)</li>
-                          <li>Consistency (language)</li>
-                          <li>Feedback loops (notifications)</li>
-                          <li>New Material Receipts hierarchy requirements</li>
-                        </ul>
-
-
-                      </div>
-                      <div className="col-lg-6">
+                      
+                      <div className="col-lg-12">
 
                         <h3><i className="bi bi-search me-2"></i>3. Findings & Key Improvements Proposed</h3>
                         <p className="lead">Language:</p>
@@ -453,7 +453,7 @@ const project = resolvedData || defaultData;
 
 
                         <div>
-                          <h3><i className="bi bi-star me-2"></i>5. Why This Matters</h3>
+                          <h3><i className="bi bi-star me-2"></i>Why This Matters</h3>
                           <ul>
                             <li>Holistic View: Ties UI improvements to user roles</li>
                             <li>Business Impact: Reduces workflow bottlenecks</li>
