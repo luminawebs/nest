@@ -208,3 +208,27 @@ export const getProjectsByCategory = (category) => {
   );
 };
 
+// Helper function to convert title to URL-friendly slug
+export const createSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric chars with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
+    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+};
+
+// Helper function to get project by slug
+export const getProjectBySlug = (slug) => {
+  return Object.values(portfolioData).find(project => 
+    createSlug(project.title) === slug
+  ) || null;
+};
+
+// Helper function to get project ID by slug (for backward compatibility)
+export const getProjectIdBySlug = (slug) => {
+  const projectEntry = Object.entries(portfolioData).find(([id, project]) => 
+    createSlug(project.title) === slug
+  );
+  return projectEntry ? projectEntry[0] : null;
+};
+

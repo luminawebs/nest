@@ -21,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "optimize-images": "node optimize-images.js",
+    "performance-check": "node performance-monitor.js",
+    "optimize-all": "npm run optimize-images && npm run performance-check"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0",
+    "sharp": "^0.34.2"
   }
 }

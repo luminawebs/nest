@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { trackButtonClick } from '../utils/analytics';
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, createSlug } from '../data/portfolioData';
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('*');
@@ -12,10 +12,23 @@ const PortfolioPage = () => {
 
   const navigate = useNavigate();
 
+  // Function to convert title to URL-friendly slug
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric chars with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
+      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+  };
+
   const handleProjectClick = (projectId) => {
-    // Navigate within SPA to portfolio details section
-    navigate(`/portfolio/${projectId}`);
-    trackButtonClick(`Portfolio Details - Project ${projectId}`, 'Portfolio');
+    const project = portfolioData[projectId];
+    if (project) {
+      const slug = createSlug(project.title);
+      // Navigate within SPA to portfolio details section using slug
+      navigate(`/portfolio/${slug}`);
+      trackButtonClick(`Portfolio Details - ${project.title}`, 'Portfolio');
+    }
   };
 
   return (
@@ -111,7 +124,7 @@ const PortfolioPage = () => {
                       <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
                       <div className="entry-links">
                         <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
-                          <i className="bi bi-arrows-angle-expand"></i>
+                          {/* <i className="bi bi-arrows-angle-expand"></i> */}
                         </a>
                         <button
                           onClick={() => handleProjectClick(1)}
