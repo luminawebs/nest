@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FreeResourcesSection = ({ trackLinkClick }) => {
   const navigate = useNavigate();
+  const { getLocalizedPath } = useLanguage();
   const resources = [
     {
       id: 1,
@@ -14,7 +16,7 @@ const FreeResourcesSection = ({ trackLinkClick }) => {
       action: () => {
         trackLinkClick('AI Proficiency Challenge', 'Free Resources');
         // Navigate to dedicated AI Proficiency Challenge page
-navigate('/ai-proficiency-challenge');
+        navigate(getLocalizedPath('/ai-proficiency-challenge'));
       },
       isButton: true
     },
@@ -27,7 +29,7 @@ navigate('/ai-proficiency-challenge');
       delay: '200',
       action: () => {
         trackLinkClick('Best Practices Guide', 'Free Resources');
-navigate('/coming-soon?resource=Mejores%20Prácticas');
+        navigate(getLocalizedPath('/coming-soon?resource=Mejores%20Prácticas'));
       },
       isButton: true
     },
@@ -40,7 +42,7 @@ navigate('/coming-soon?resource=Mejores%20Prácticas');
       delay: '300',
       action: () => {
         trackLinkClick('ROI Calculator', 'Free Resources');
-navigate('/coming-soon?resource=ROI%20eLearning');
+        navigate(getLocalizedPath('/coming-soon?resource=ROI%20eLearning'));
       },
       isButton: true
     },
@@ -53,7 +55,7 @@ navigate('/coming-soon?resource=ROI%20eLearning');
       delay: '400',
       action: () => {
         trackLinkClick('XR Implementation Checklist', 'Free Resources');
-navigate('/coming-soon?resource=Implementaci%C3%B3n%20XR');
+        navigate(getLocalizedPath('/coming-soon?resource=Implementaci%C3%B3n%20XR'));
       },
       isButton: true
     },
@@ -66,7 +68,7 @@ navigate('/coming-soon?resource=Implementaci%C3%B3n%20XR');
       delay: '500',
       action: () => {
         trackLinkClick('Content Creation Templates', 'Free Resources');
-navigate('/coming-soon?resource=Creaci%C3%B3n%20de%20Contenido');
+        navigate(getLocalizedPath('/coming-soon?resource=Creaci%C3%B3n%20de%20Contenido'));
       },
       isButton: true
     },
@@ -79,7 +81,7 @@ navigate('/coming-soon?resource=Creaci%C3%B3n%20de%20Contenido');
       delay: '600',
       action: () => {
         trackLinkClick('Learning Analytics Dashboard', 'Free Resources');
-        window.location.href = '/coming-soon?resource=Analíticas de Aprendizaje';
+        window.location.href = getLocalizedPath('/coming-soon?resource=Analíticas de Aprendizaje');
       },
       isButton: true
     }

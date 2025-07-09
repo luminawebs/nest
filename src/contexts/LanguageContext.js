@@ -12,6 +12,13 @@ export const useLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
+    // Extract language from URL if available
+    const path = window.location.pathname;
+    const urlLang = path.split('/')[1];
+    if (['es', 'en'].includes(urlLang)) {
+      return urlLang;
+    }
+    
     // Check for saved language preference
     const savedLanguage = localStorage.getItem('edunest-language');
     if (savedLanguage) {
@@ -58,9 +65,19 @@ export const LanguageProvider = ({ children }) => {
     setLanguage(newLanguage);
   };
 
+  // Helper to get localized path
+  const getLocalizedPath = (path, lang = language) => {
+    // Remove leading slash if present
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    // Return path with language prefix
+    return `/${lang}${cleanPath ? `/${cleanPath}` : ''}`;
+  };
+
+
   const value = {
     language,
     switchLanguage,
+    getLocalizedPath,
     isSpanish: language === 'es',
     isEnglish: language === 'en'
   };

@@ -1,13 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import { useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import ConditionalLayout from './components/ConditionalLayout';
 import PageTracker from './components/PageTracker';
 import useScrollTracking from './hooks/useScrollTracking';
-import { initializeAutoTracking } from './utils/autoTracking';
 
+import { initializeAutoTracking } from './utils/autoTracking';
+import LanguageRouter from './components/LanguageRouter';
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
 const Personajes3DPage = lazy(() => import('./pages/Personajes3DPage'));
@@ -59,15 +60,8 @@ function App() {
           <ConditionalLayout>
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/personajes3d" element={<Personajes3DPage />} />
-                <Route path="/lmspricing" element={<LMSPricing />} />
-                <Route path="/resources" element={<ResourcesPage />} />
-                <Route path="/courses" element={<CoursesPage />} />
-                <Route path="/portfolio" element={<PortfolioPage />} />
-                <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
-                <Route path="/coming-soon" element={<ComingSoonPage />} />
-                <Route path="/ai-proficiency-challenge" element={<XRAIProficiencyChallenge />} />
+                <Route path=":lang/*" element={<LanguageRouter />} />
+                <Route path="/" element={<Navigate to="/es/" replace />} />
               </Routes>
             </Suspense>
           </ConditionalLayout>

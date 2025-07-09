@@ -52,20 +52,20 @@ const Personajes3DPage = () => {
         </div>
       </div>
 
-      <section id="hero" className=" section">
+      {/* <section id="hero" className=" section">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 content-col" data-aos="fade-up">
               <div className="content">
-                {/* <div className="agency-name">
+                <div className="agency-name">
                   <h5>Experiencias inmersivas con personajes tridimensionales</h5>
                 </div>
 
                 <div className="main-heading">
                   <h1>Avatars 3D</h1>
-                </div> */}
+                </div>
 
-                {/* <div className="divider"></div> */}
+                <div className="divider"></div>
 
                 <div className="description">
                   <p>Descubre estrategias innovadoras para la educación digital. Transformamos contenidos en experiencias
@@ -74,12 +74,12 @@ const Personajes3DPage = () => {
                     en línea.</p>
                 </div>
 
-                {/* <div className="cta-button">
+                <div className="cta-button">
                   <a href="#services" className="btn">
                     <span>VER SERVICIOS</span>
                     <i className="bi bi-arrow-right"></i>
                   </a>
-                </div> */}
+                </div>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ const Personajes3DPage = () => {
                     title={t('personajes3d.videoTitle')}></iframe></div>
                 </div>
 
-                {/* <div className="stats-card">
+                <div className="stats-card">
                   <div className="stats-number">
                     <h2>100+</h2>
                   </div>
@@ -110,16 +110,13 @@ const Personajes3DPage = () => {
                   <div className="stats-arrow">
                     <a href="#portafolio"><i className="bi bi-arrow-up-right"></i></a>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section className="hero-section">
-        <div className="container">
-        </div>
-      </section>
+      </section> */}
+     
 
 
 
@@ -130,6 +127,22 @@ const Personajes3DPage = () => {
           <div className="row gy-5">
 
             <div className="col-lg-8 order-lg-1 order-2">
+
+
+    <div style={{ position: 'relative', paddingTop: '56.25%', marginBottom: '30px' }}><iframe
+                    src="https://iframe.mediadelivery.net/embed/354319/33fc09af-d689-4669-8c79-82816f38f0a7?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
+                    loading="lazy" style={{
+                      border: '0',
+                      position: 'absolute',
+                      top: '0',
+                      height: '100%',
+                      width: '100%'
+                    }}
+                    allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
+                    allowFullScreen={true}
+                    title={t('personajes3d.videoTitle')}></iframe></div>
+
+
               <div className="service-main-content">
                 <div className="service-header aos-init aos-animate" data-aos="fade-up">
                   <h1>{t('personajes3d.mainHeading')}</h1>

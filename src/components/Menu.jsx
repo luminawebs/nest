@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 import { trackMenuClick } from '../utils/analytics';
 
 const Menu = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const { getLocalizedPath } = useLanguage();
 
   // Handle menu click tracking
   const handleMenuClick = (menuItem, section = 'main_navigation') => {
@@ -89,7 +91,7 @@ const Menu = () => {
 
 
         <li><Link
-          to="/"
+          to={getLocalizedPath('/')}
           onClick={() => handleNavItemClick('Home', 'main_navigation')}
         >
           {t('nav.home')}
@@ -97,7 +99,7 @@ const Menu = () => {
 
         <li className="dropdown">
           <Link
-            to="/personajes3d"
+            to={getLocalizedPath('/personajes3d')}
             onClick={() => handleNavItemClick('Avatars 3D', 'main_navigation')}
           >
             {t('nav.avatars3d')}
@@ -106,7 +108,7 @@ const Menu = () => {
           <ul>
             <li>
               <Link
-                to="/personajes3d#pricing"
+                to={getLocalizedPath('/personajes3d#pricing')}
                 onClick={() => handleNavItemClick('Planes', 'avatars_dropdown')}
               >
                 {t('nav.plans')}
@@ -117,7 +119,7 @@ const Menu = () => {
         
         <li>
           <Link
-            to="/courses"
+            to={getLocalizedPath('/courses')}
             onClick={() => handleNavItemClick('Courses', 'main_navigation')}
           >
             {t('nav.courses') ?? 'Courses'}
@@ -125,7 +127,7 @@ const Menu = () => {
         </li>
         <li>
           <Link
-            to="/lmspricing"
+            to={getLocalizedPath('/lmspricing')}
             onClick={() => handleNavItemClick('LMS SaaS', 'main_navigation')}
           >
             {t('nav.lmsSaas')}
@@ -133,7 +135,7 @@ const Menu = () => {
         </li>
         <li>
           <Link
-            to="/resources"
+            to={getLocalizedPath('/resources')}
             onClick={() => handleNavItemClick('Resources', 'main_navigation')}
           >
             {t('nav.resources')}
@@ -141,7 +143,7 @@ const Menu = () => {
         </li>
         <li>
           <Link
-            to="/portfolio"
+            to={getLocalizedPath('/portfolio')}
             onClick={() => handleNavItemClick('Portfolio', 'main_navigation')}
           >
             {t('nav.portfolio')}

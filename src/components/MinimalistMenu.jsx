@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import { trackMenuClick } from '../utils/analytics';
 
 const MinimalistMenu = () => {
+  const { getLocalizedPath } = useLanguage();
+  
   // Handle menu click tracking
   const handleMenuClick = (menuItem, section = 'minimalist_navigation') => {
     trackMenuClick(menuItem, section);
@@ -13,7 +16,7 @@ const MinimalistMenu = () => {
       <ul>
         <li>
           <Link
-            to="/"
+            to={getLocalizedPath('/')}
             onClick={() => handleMenuClick('Home', 'minimalist_navigation')}
           >
             Home
@@ -21,7 +24,7 @@ const MinimalistMenu = () => {
         </li>
         <li>
           <Link
-            to="/resources"
+            to={getLocalizedPath('/resources')}
             onClick={() => handleMenuClick('Resources', 'minimalist_navigation')}
           >
             Recursos
@@ -29,7 +32,7 @@ const MinimalistMenu = () => {
         </li>
         <li>
           <Link
-            to="/courses"
+            to={getLocalizedPath('/courses')}
             onClick={() => handleMenuClick('Courses', 'minimalist_navigation')}
           >
             Courses
