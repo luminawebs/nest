@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const MinimalistFooter = () => {
+  const { getLocalizedPath } = useLanguage();
   return (
     <footer id="footer" className="footer minimalist-footer">
       <div className="container">
         <div className="row gy-3 align-items-center">
           <div className="col-lg-4 col-md-6">
-            <Link to="/" className="logo d-flex align-items-center">
+            <Link to={getLocalizedPath('/')} className="logo d-flex align-items-center">
               <span className="sitename">
                 <img src="/assets/img/edunest-dark.svg" alt="Edunest" width="120" />
               </span>
@@ -16,9 +18,9 @@ const MinimalistFooter = () => {
           
           <div className="col-lg-4 col-md-6 text-center">
             <div className="footer-links">
-              <Link to="/" className="me-3">Home</Link>
-              <Link to="/resources" className="me-3">Recursos</Link>
-              <Link to="/courses" className="me-3">Courses</Link>
+              <Link to={getLocalizedPath('/')} className="me-3">Home</Link>
+              <Link to={getLocalizedPath('/resources')} className="me-3">Recursos</Link>
+              <Link to={getLocalizedPath('/courses')} className="me-3">Courses</Link>
               <a href="#contact">Contacto</a>
             </div>
           </div>

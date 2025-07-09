@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 import {
   trackButtonClick,
   trackServiceInquiry,
@@ -16,6 +17,7 @@ import ImpactoDemostrado from '../components/ImpactoDemostrado';
 const HomePage = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const { getLocalizedPath } = useLanguage();
 
   useEffect(() => {
     const hash = location.hash;
@@ -149,9 +151,9 @@ const HomePage = () => {
                   <i className="bi bi-person-video3"></i>
                 </div>
 
-                <Link to="/personajes3d#hero" className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
+                <Link to={getLocalizedPath('/personajes3d#hero')} className="card-action d-flex align-items-center justify-content-center rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                 <h3>
-                  <Link to="/personajes3d#hero" className="active">{t('services.avatars3d.title')}</Link>
+                  <Link to={getLocalizedPath('/personajes3d#hero')} className="active">{t('services.avatars3d.title')}</Link>
                 </h3>
                 <p>
                   {t('services.avatars3d.description')}
