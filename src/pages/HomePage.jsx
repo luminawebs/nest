@@ -324,7 +324,7 @@ const HomePage = () => {
 
             {/* <!-- Right Content --> */}
             <div className="content-right position-relative" data-aos="fade-left" data-aos-delay="300">
-              <img src="assets/img/misc/plataforma-elearning.webp" alt="Plataforma de eLearning"
+            <img src="assets/img/misc/misc-1.webp" alt="Plataforma de eLearning"
                 className="img-fluid rounded-4" />
               <div className="floating-card">
                 <div className="card-icon">

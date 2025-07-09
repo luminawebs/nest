@@ -337,7 +337,7 @@ const XRAIProficiencyChallenge = () => {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="AI Proficiency Challenge - EduNest" />
         <meta property="og:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
-        <meta property="og:image" content="https://edunest.co/assets/img/g/01-how-personalized-are-your-training-videos.png" />
+        <meta property="og:image" content="/assets/img/g/01-how-personalized-are-your-training-videos.png" />
         <meta property="og:url" content="https://edunest.co/ai-proficiency-challenge" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="EduNest" />
@@ -346,7 +346,7 @@ const XRAIProficiencyChallenge = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Proficiency Challenge - EduNest" />
         <meta name="twitter:description" content="Assess your proficiency in immersive learning technology and get personalized recommendations for your training programs." />
-        <meta name="twitter:image" content="https://edunest.co/assets/img/g/01-how-personalized-are-your-training-videos.png" />
+        <meta name="twitter:image" content="/assets/img/g/01-how-personalized-are-your-training-videos.png" />
         <meta name="twitter:site" content="@edunest" />
       </Helmet>
       
@@ -392,7 +392,7 @@ const XRAIProficiencyChallenge = () => {
         {screen === 'intro' && (
           <div className="game-card" style={{ display: 'flex', justifyContent: 'space-between', gap: '2rem' }}>
             <div style={{ flex: '1' }}>
-              <img src="./assets/img/g/01-how-personalized-are-your-training-videos.png" alt="" width={"100%"} style={{ borderRadius: '16px' }}/>
+              <img src="/assets/img/g/01-how-personalized-are-your-training-videos.png" alt="" width={"100%"} style={{ borderRadius: '16px' }}/>
             </div>
             <div style={{ flex: '1' }}>
               <h1>Learning & AI Proficiency Challenge</h1>

@@ -43,7 +43,7 @@ const CoursesPage = () => {
           <div className="row gx-5 align-items-center">
             <div className="col-lg-6" data-aos="fade-right" data-aos-delay="200">
               <div className="about-image position-relative">
-                <img src="assets/img/courses.png" className="img-fluid rounded-4 shadow-sm" alt="Equipo de eLearning"
+                <img src="/assets/img/courses.png" className="img-fluid rounded-4 shadow-sm" alt="Equipo de eLearning"
                   loading="lazy" />
                 <div className="experience-badge">
                   <span className="years">10+</span>

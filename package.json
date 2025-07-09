@@ -26,6 +26,7 @@
     "optimize-images": "node optimize-images.js",
     "performance-check": "node performance-monitor.js",
     "analyze-images": "node build-image-optimizer.js analyze",
+    "validate-images": "node validate-images.js",
     "optimize-all": "npm run optimize-images && npm run performance-check",
     "optimization-guide": "node optimization-guide.js",
     "clean-build": "node clean-build.js"
