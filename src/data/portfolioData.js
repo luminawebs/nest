@@ -58,13 +58,13 @@ Holistic View: Ties UI improvements (e.g., breadcrumbs) to user roles (e.g., Fin
 Business Impact: Shows how UX reduces workflow bottlenecks (e.g., payment delays).
 Mantain UI Business related Brand and Lookn’Feel`,
     mainImages: [
-      "assets/img/portfolio/material-receipt/02-finished/Home-documentation.png",
-      "assets/img/portfolio/material-receipt/02-finished/mr-new-flow.png",
-      "assets/img/portfolio/material-receipt/02-finished/PSD_03.png"
+      "/assets/img/portfolio/material-receipt/02-finished/Home-documentation.png",
+      "/assets/img/portfolio/material-receipt/02-finished/mr-new-flow.png",
+      "/assets/img/portfolio/material-receipt/02-finished/end-img.png"
     ],
     thumbnailImages: [
-      "assets/img/portfolio/material-receipt/01-process/New Flow.png",
-      "assets/img/portfolio/material-receipt/01-process/Old Flow.png",
+      "assets/img/portfolio/material-receipt/01-process/new-flow.png",
+      "assets/img/portfolio/material-receipt/01-process/old-flow.png",
       "assets/img/portfolio/material-receipt/01-process/actions-by-user.png",
       "assets/img/portfolio/material-receipt/01-process/users-access.png"
     ],

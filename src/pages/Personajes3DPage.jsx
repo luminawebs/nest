@@ -204,7 +204,7 @@ const Personajes3DPage = () => {
                             </div>
                           </div>
                           <div className="col-md-6">
-                            <img src="assets/img/services/3d_assistants.png" alt={t('personajes3d.whyThreeD.imageAlt')} className="img-fluid rounded" />
+                            <img src="/assets/img/services/3d_assistants.png" alt={t('personajes3d.whyThreeD.imageAlt')} className="img-fluid rounded" />
                           </div>
                         </div>
                       </div>

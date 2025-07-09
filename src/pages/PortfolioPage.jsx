@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { trackButtonClick } from '../utils/analytics';
 import { portfolioData, createSlug } from '../data/portfolioData';
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState('*');
+  const { lang } = useParams();
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
@@ -12,21 +13,12 @@ const PortfolioPage = () => {
 
   const navigate = useNavigate();
 
-  // Function to convert title to URL-friendly slug
-  const createSlug = (title) => {
-    return title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric chars with hyphens
-      .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
-      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-  };
-
   const handleProjectClick = (projectId) => {
     const project = portfolioData[projectId];
     if (project) {
       const slug = createSlug(project.title);
-      // Navigate within SPA to portfolio details section using slug
-      navigate(`/portfolio/${slug}`);
+      // Navigate within SPA to portfolio details section using slug with language prefix
+      navigate(`/${lang}/portfolio/${slug}`);
       trackButtonClick(`Portfolio Details - ${project.title}`, 'Portfolio');
     }
   };
@@ -118,14 +110,14 @@ const PortfolioPage = () => {
               <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(1)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
                     <div className="overlay-content">
                       <div className="entry-meta">UI/UX Design</div>
                       <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
                       <div className="entry-links">
-                        <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
-                          {/* <i className="bi bi-arrows-angle-expand"></i> */}
-                        </a>
+                        {/* <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                          <i className="bi bi-arrows-angle-expand"></i>
+                        </a> */}
                         <button
                           onClick={() => handleProjectClick(1)}
                           style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
@@ -137,6 +129,62 @@ const PortfolioPage = () => {
                   </figure>
                 </article>
               </div>
+
+
+
+              <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(2)}>
+                  <figure className="entry-image">
+                    <img src="/assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
+                    <div className="overlay-content">
+                      <div className="entry-meta">UI/UX Design</div>
+                      <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
+                      <div className="entry-links">
+                        {/* <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                          <i className="bi bi-arrows-angle-expand"></i>
+                        </a> */}
+                        <button
+                          onClick={() => handleProjectClick(1)}
+                          style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
+                        >
+                          <i className="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </figure>
+                </article>
+              </div>
+
+
+
+
+              <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
+                <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
+                  <figure className="entry-image">
+                    <img src="/assets/img/portfolio/material-receipt/02-finished/end-img.png" className="img-fluid" alt="" loading="lazy" />
+                    <div className="overlay-content">
+                      <div className="entry-meta">UI/UX Design</div>
+                      <h3 className="entry-title">A UX Overhaul for Material Receipts</h3>
+                      <div className="entry-links">
+                        {/* <a href="assets/img/portfolio/material-receipt/02-finished/end-img.png" className="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                          <i className="bi bi-arrows-angle-expand"></i>
+                        </a> */}
+                        <button
+                          onClick={() => handleProjectClick(1)}
+                          style={{ background: 'none', border: 'none', padding: 0, color: 'inherit' }}
+                        >
+                          <i className="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </figure>
+                </article>
+              </div>
+
+
+
+
+
               {/* End Portfolio Item */}
 
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
@@ -270,7 +318,7 @@ const PortfolioPage = () => {
                 </article>
               </div> */}
               {/* End Portfolio Item */}
-{/* 
+              {/* 
               <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(7)}>
                   <figure className="entry-image">

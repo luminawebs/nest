@@ -6,7 +6,7 @@ import React from 'react';
  * Automatically serves WebP images with JPEG fallback for better performance.
  * Falls back to original images if optimized versions don't exist.
  * 
- * @param {string} src - Original image path (e.g., "assets/img/photo.png")
+ * @param {string} src - Original image path (e.g., "assets/img/courses.png")
  * @param {string} alt - Alt text for accessibility
  * @param {string} className - CSS classes
  * @param {string} loading - Loading behavior ("lazy" | "eager")
