@@ -12,6 +12,7 @@ import {
   trackFormSubmission
 } from '../utils/analytics';
 import ImpactoDemostrado from '../components/ImpactoDemostrado';
+import HeroBanner from '../components/HeroBanner';
 
 
 const HomePage = () => {
@@ -36,69 +37,11 @@ const HomePage = () => {
   return (
     <main className="main">
       <section id="hero" className="hero section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5 content-col" data-aos="fade-up">
-              <div className="content">
-                <div className="agency-name">
-                  <h5>{t('hero.agency')}</h5>
-                </div>
-
-                <div className="main-heading">
-                  <h1>{t('hero.mainHeading')}</h1>
-                </div>
-
-                <div className="divider"></div>
-
-                <div className="description">
-                  <p>{t('hero.description')}</p>
-                </div>
-
-                <div className="cta-button">
-                  <a
-                    href="#services"
-                    className="btn"
-                    onClick={() => trackButtonClick('Hero CTA - Ver Servicios', 'Hero')}
-                  >
-                    <span>{t('hero.ctaButton')}</span>
-                    <i className="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-7" data-aos="zoom-out">
-              <div className="visual-content">
-                <div className="fluid-shape">
-                  <div style={{ position: 'relative', paddingTop: '56.25%' }}><iframe
-                    src="https://iframe.mediadelivery.net/embed/354319/33fc09af-d689-4669-8c79-82816f38f0a7?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
-                    loading="lazy" style={{
-                      border: '0',
-                      position: 'absolute',
-                      top: '0',
-                      height: '100%',
-                      width: '100%'
-                    }}
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
-                    allowFullScreen={true}
-                    title="Video ejemplo de 3D personajes"></iframe></div>
-                </div>
-
-                <div className="stats-card">
-                  <div className="stats-number">
-                    <h2>100+</h2>
-                  </div>
-                  <div className="stats-label">
-                    <p>{t('hero.statsLabel')}</p>
-                  </div>
-                  <div className="stats-arrow">
-                    <a href="#portafolio"><i className="bi bi-arrow-up-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       
+          
+          <HeroBanner />
+         
+        
       </section>
 
 
