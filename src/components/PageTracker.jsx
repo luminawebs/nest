@@ -11,9 +11,11 @@ const PageTracker = () => {
     const pageTitle = document.title;
     
     // Add a small delay to ensure the page title is updated
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       trackPageView(pagePath, pageTitle);
     }, 100);
+    
+    return () => clearTimeout(timer);
   }, [location]);
 
   return null; // This component doesn't render anything

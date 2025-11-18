@@ -128,5 +128,13 @@ export const initializeAutoTracking = () => {
     childList: true,
     subtree: true
   });
+
+  // Return cleanup function
+  return () => {
+    observer.disconnect();
+    if (window.autoTrackingTimeout) {
+      clearTimeout(window.autoTrackingTimeout);
+    }
+  };
 };
 

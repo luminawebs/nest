@@ -293,16 +293,20 @@ const XRAIProficiencyChallenge = () => {
       await sendFormData(formData, scores, answers);
       
       // Log success (for debugging)
-      console.log('Form submitted successfully:', {
-        ...formData,
-        scores,
-        answers
-      });
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Form submitted successfully:', {
+          ...formData,
+          scores,
+          answers
+        });
+      }
 
       // Show confirmation
       setScreen('confirmation');
     } catch (error) {
-      console.error('Error submitting form:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error submitting form:', error);
+      }
       alert('There was an error sending your information. Please try again or contact us directly.');
       
       // Reset button

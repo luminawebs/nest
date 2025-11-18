@@ -38,17 +38,26 @@ function App() {
   // Remove preloader when component mounts and initialize tracking
   useEffect(() => {
     const preloader = document.getElementById('preloader');
+    let preloaderTimer;
+    
     if (preloader) {
       // Add a small delay to ensure page is fully loaded
-      const timer = setTimeout(() => {
+      preloaderTimer = setTimeout(() => {
         preloader.style.display = 'none';
       }, 1000); // 1 second delay
-
-      return () => clearTimeout(timer);
     }
 
     // Initialize automatic tracking for elements without React handlers
-    initializeAutoTracking();
+    const cleanupTracking = initializeAutoTracking();
+
+    return () => {
+      if (preloaderTimer) {
+        clearTimeout(preloaderTimer);
+      }
+      if (cleanupTracking) {
+        cleanupTracking();
+      }
+    };
   }, []);
 
 

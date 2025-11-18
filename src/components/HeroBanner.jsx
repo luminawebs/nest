@@ -1,58 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { trackButtonClick } from '../utils/analytics';
+import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HeroBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { t } = useTranslation();
+  const { getLocalizedPath, language } = useLanguage();
 
   // Slide data with variations of SOLUCIONES ELEARNING content and corresponding media
-  const slides = [
-
+  // Memoize slides to update when language changes
+  const slides = useMemo(() => [
     {
       id: 0,
-      mainHeading: "Cursos en Articulate & HTML5 e AI",
-      description: "Diseñamos contenido pedagógico con avatares 3D y plataformas ágiles que revolucionan la educación digital.",
-      highlight: "revolucionan",
-      mediaType: "image", // You can change this to "image" or "video" when you have the actual media
-      mediaSrc: "/assets/img/courses.png", // Placeholder path
-      mediaAlt: "Avatares 3D revolucionarios",
-      mediaTitle: "Tecnología que Revoluciona",
+      mainHeading: t('hero.slides.slide0.mainHeading'),
+      description: t('hero.slides.slide0.description'),
+      highlight: t('hero.slides.slide0.highlight'),
+      mediaType: "image",
+      mediaSrc: "/assets/img/courses.png",
+      mediaAlt: t('hero.slides.slide0.mediaAlt'),
+      mediaTitle: t('hero.slides.slide0.mediaTitle'),
       cta: {
-        text: "Ver Cursos",
-        url: "/es/courses",
-        icon: "bi-book"
+        text: t('hero.slides.slide0.cta.text'),
+        url: getLocalizedPath(t('hero.slides.slide0.cta.url')),
+        icon: t('hero.slides.slide0.cta.icon')
       }
     },
     {
       id: 1,
-      mainHeading: "iNTEGRACIÓN LMS",
-      description: "Conectamos tus cursos con Moodle, Blackboard, Canvas y otros sistemas. Reportes de progreso automáticos y certificación SCORM/xAPI.",
-      highlight: "automáticos",
-      mediaType: "image", // You can change this to "image" or "video" when you have the actual media
-      mediaSrc: "/assets/img/lms.png", // Placeholder path
-      mediaAlt: "Integración LMS",
-      mediaTitle: "Integración Perfecta",
+      mainHeading: t('hero.slides.slide1.mainHeading'),
+      description: t('hero.slides.slide1.description'),
+      highlight: t('hero.slides.slide1.highlight'),
+      mediaType: "image",
+      mediaSrc: "/assets/img/lms.png",
+      mediaAlt: t('hero.slides.slide1.mediaAlt'),
+      mediaTitle: t('hero.slides.slide1.mediaTitle'),
       cta: {
-        text: "Ver Integraciones",
-        url: "/es/lmspricing",
-        icon: "bi-link-45deg"
+        text: t('hero.slides.slide1.cta.text'),
+        url: getLocalizedPath(t('hero.slides.slide1.cta.url')),
+        icon: t('hero.slides.slide1.cta.icon')
       }
     },
     {
       id: 2,
-      mainHeading: "3D AVATARS",
-      description: 'Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el aprendizaje más cercano y memorable.',
-      highlight: "memorable",
-      mediaType: "video", // "image", "video", or "iframe"
+      mainHeading: t('hero.slides.slide2.mainHeading'),
+      description: t('hero.slides.slide2.description'),
+      highlight: t('hero.slides.slide2.highlight'),
+      mediaType: "video",
       mediaSrc: "https://iframe.mediadelivery.net/embed/354319/33fc09af-d689-4669-8c79-82816f38f0a7?autoplay=true&loop=false&muted=false&preload=true&responsive=true",
-      mediaAlt: "Video ejemplo de experiencias interactivas",
-      mediaTitle: "Experiencias Interactivas 3D",
+      mediaAlt: t('hero.slides.slide2.mediaAlt'),
+      mediaTitle: t('hero.slides.slide2.mediaTitle'),
       cta: {
-        text: "Ver Demo",
-        url: "/es/personajes3d",
-        icon: "bi-play-circle"
+        text: t('hero.slides.slide2.cta.text'),
+        url: getLocalizedPath(t('hero.slides.slide2.cta.url')),
+        icon: t('hero.slides.slide2.cta.icon')
       }
     }
-  ];
+  ], [t, getLocalizedPath, language]);
 
   // Auto-rotate slides every 5 seconds
   useEffect(() => {
@@ -84,7 +88,7 @@ const HeroBanner = () => {
           <button
             className="carousel-control prev"
             onClick={handlePrevSlide}
-            aria-label="Slide anterior"
+            aria-label={t('hero.carousel.previousSlide')}
           >
             <i className="bi bi-chevron-left"></i>
           </button>
@@ -193,7 +197,7 @@ const HeroBanner = () => {
                         return (
                           <div className="placeholder-content">
                             <i className="bi bi-play-circle placeholder-icon"></i>
-                            <p className="placeholder-text">{currentSlideData.mediaTitle || 'Espacio para imagen o video'}</p>
+                            <p className="placeholder-text">{currentSlideData.mediaTitle || t('hero.slides.slide0.mediaTitle')}</p>
                           </div>
                         );
                     }
@@ -218,7 +222,7 @@ const HeroBanner = () => {
           <button
             className="carousel-control next"
             onClick={handleNextSlide}
-            aria-label="Siguiente slide"
+            aria-label={t('hero.carousel.nextSlide')}
           >
             <i className="bi bi-chevron-right"></i>
           </button>
@@ -231,7 +235,7 @@ const HeroBanner = () => {
               key={index}
               className={`indicator ${index === currentSlide ? 'active' : ''}`}
               onClick={() => handleSlideChange(index)}
-              aria-label={`Ir a slide ${index + 1}`}
+              aria-label={`${t('hero.carousel.goToSlide')} ${index + 1}`}
             />
           ))}
         </div>

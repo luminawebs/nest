@@ -15,16 +15,18 @@ const XRAIProficiencyChallenge = lazy(() => import('../components/G-01-AIProfici
 
 const LanguageRouter = () => {
   const { lang } = useParams();
-  const { switchLanguage } = useLanguage();
+  const { language, switchLanguage } = useLanguage();
 
   // Validate language parameter
   const isValidLanguage = ['es', 'en'].includes(lang);
 
   useEffect(() => {
-    if (isValidLanguage) {
+    // Only update language if URL param differs from current language state
+    // This prevents unnecessary updates and race conditions
+    if (isValidLanguage && lang && lang !== language) {
       switchLanguage(lang);
     }
-  }, [lang, switchLanguage, isValidLanguage]);
+  }, [lang, language, switchLanguage, isValidLanguage]);
 
   // Redirect to default language if invalid
   if (!isValidLanguage) {

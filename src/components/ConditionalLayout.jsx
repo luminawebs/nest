@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Footer from './Footer';
 import Menu from './Menu';
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage } from '../contexts/LanguageContext';
 import { trackButtonClick } from '../utils/analytics';
 
 const ConditionalLayout = ({ children }) => {
   const location = useLocation();
   const { t } = useTranslation();
+  const { getLocalizedPath } = useLanguage();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
   useEffect(() => {
@@ -37,7 +39,7 @@ const ConditionalLayout = ({ children }) => {
       {!isMinimalistRoute && (
         <header id="header" className="header d-flex align-items-center fixed-top">
           <div className="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-            <a href="/" className="logo d-flex align-items-center me-auto me-xl-0">
+            <Link to={getLocalizedPath('/')} className="logo d-flex align-items-center me-auto me-xl-0">
               <h1 className="sitename">
                 <img 
                   src="assets/img/edunest-dark.svg" 
@@ -49,7 +51,7 @@ const ConditionalLayout = ({ children }) => {
                   }} 
                 />
               </h1>
-            </a>
+            </Link>
             
             <Menu />
             

@@ -24,7 +24,50 @@ export const en = {
     mainHeading: 'ELEARNING SOLUTIONS',
     description: 'We transform your content into interactive experiences. Create courses that stand out in the competitive world of online learning.',
     ctaButton: 'VIEW SERVICES',
-    statsLabel: 'Implemented Courses'
+    statsLabel: 'Implemented Courses',
+    slides: {
+      slide0: {
+        mainHeading: 'Courses in Articulate & HTML5 & AI',
+        description: 'We design pedagogical content with 3D avatars and agile platforms that revolutionize digital education.',
+        highlight: 'revolutionize',
+        mediaAlt: 'Revolutionary 3D Avatars',
+        mediaTitle: 'Technology that Revolutionizes',
+        cta: {
+          text: 'View Courses',
+          url: '/courses',
+          icon: 'bi-book'
+        }
+      },
+      slide1: {
+        mainHeading: 'LMS INTEGRATION',
+        description: 'We connect your courses with Moodle, Blackboard, Canvas and other systems. Automatic progress reports and SCORM/xAPI certification.',
+        highlight: 'automatic',
+        mediaAlt: 'LMS Integration',
+        mediaTitle: 'Perfect Integration',
+        cta: {
+          text: 'View Integrations',
+          url: '/lmspricing',
+          icon: 'bi-link-45deg'
+        }
+      },
+      slide2: {
+        mainHeading: '3D AVATARS',
+        description: 'Affordable virtual avatars that guide students, explain complex concepts and make learning more personal and memorable.',
+        highlight: 'memorable',
+        mediaAlt: 'Interactive 3D experience video example',
+        mediaTitle: 'Interactive 3D Experiences',
+        cta: {
+          text: 'View Demo',
+          url: '/personajes3d',
+          icon: 'bi-play-circle'
+        }
+      }
+    },
+    carousel: {
+      previousSlide: 'Previous slide',
+      nextSlide: 'Next slide',
+      goToSlide: 'Go to slide'
+    }
   },
 
   // About Section

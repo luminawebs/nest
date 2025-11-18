@@ -25,9 +25,13 @@ export const sendFormData = async (formData, scores, answers) => {
     try {
       window.emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
       window.emailjs.initialized = true;
-      console.log('EmailJS initialized with public key');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('EmailJS initialized with public key');
+      }
     } catch (error) {
-      console.warn('Failed to initialize EmailJS:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Failed to initialize EmailJS:', error);
+      }
     }
   }
   
@@ -43,8 +47,10 @@ export const sendFormData = async (formData, scores, answers) => {
   );
   
   if (!isEmailJSConfigured) {
-    console.warn('EmailJS not loaded. Form data logged to console instead.');
-    console.log('Form Data:', { formData, scores, answers });
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('EmailJS not loaded. Form data logged to console instead.');
+      console.log('Form Data:', { formData, scores, answers });
+    }
     return Promise.resolve({ status: 200, text: 'Logged to console' });
   }
 
@@ -91,12 +97,16 @@ export const sendFormData = async (formData, scores, answers) => {
       EMAILJS_CONFIG.PUBLIC_KEY
     );
     
-    console.log('Email sent successfully:', response);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Email sent successfully:', response);
+    }
     return response;
   } catch (error) {
-    console.error('Failed to send email:', error);
-    // Fallback: log to console if email fails
-    console.log('Form Data (Email failed):', { formData, scores, answers });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Failed to send email:', error);
+      // Fallback: log to console if email fails
+      console.log('Form Data (Email failed):', { formData, scores, answers });
+    }
     throw error;
   }
 };
@@ -127,12 +137,16 @@ export const sendToBackendAPI = async (formData, scores, answers) => {
     }
     
     const result = await response.json();
-    console.log('Form submitted to backend:', result);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Form submitted to backend:', result);
+    }
     return result;
   } catch (error) {
-    console.error('Failed to submit to backend:', error);
-    // Fallback: log to console if API fails
-    console.log('Form Data (API failed):', { formData, scores, answers });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Failed to submit to backend:', error);
+      // Fallback: log to console if API fails
+      console.log('Form Data (API failed):', { formData, scores, answers });
+    }
     throw error;
   }
 };

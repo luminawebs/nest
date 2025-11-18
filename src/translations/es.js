@@ -24,7 +24,50 @@ export const es = {
     mainHeading: 'SOLUCIONES ELEARNING',
     description: 'Transformamos contenidos en experiencias interactivas que cautivan a los estudiantes. Crea cursos que destaquen en el competitivo mundo del aprendizaje en línea.',
     ctaButton: 'VER SERVICIOS',
-    statsLabel: 'Cursos Implementados'
+    statsLabel: 'Cursos Implementados',
+    slides: {
+      slide0: {
+        mainHeading: 'Cursos en Articulate & HTML5 e AI',
+        description: 'Diseñamos contenido pedagógico con avatares 3D y plataformas ágiles que revolucionan la educación digital.',
+        highlight: 'revolucionan',
+        mediaAlt: 'Avatares 3D revolucionarios',
+        mediaTitle: 'Tecnología que Revoluciona',
+        cta: {
+          text: 'Ver Cursos',
+          url: '/courses',
+          icon: 'bi-book'
+        }
+      },
+      slide1: {
+        mainHeading: 'iNTEGRACIÓN LMS',
+        description: 'Conectamos tus cursos con Moodle, Blackboard, Canvas y otros sistemas. Reportes de progreso automáticos y certificación SCORM/xAPI.',
+        highlight: 'automáticos',
+        mediaAlt: 'Integración LMS',
+        mediaTitle: 'Integración Perfecta',
+        cta: {
+          text: 'Ver Integraciones',
+          url: '/lmspricing',
+          icon: 'bi-link-45deg'
+        }
+      },
+      slide2: {
+        mainHeading: '3D AVATARS',
+        description: 'Avatares virtuales económicos que guían a los estudiantes, explican conceptos complejos y hacen el aprendizaje más cercano y memorable.',
+        highlight: 'memorable',
+        mediaAlt: 'Video ejemplo de experiencias interactivas',
+        mediaTitle: 'Experiencias Interactivas 3D',
+        cta: {
+          text: 'Ver Demo',
+          url: '/personajes3d',
+          icon: 'bi-play-circle'
+        }
+      }
+    },
+    carousel: {
+      previousSlide: 'Slide anterior',
+      nextSlide: 'Siguiente slide',
+      goToSlide: 'Ir a slide'
+    }
   },
 
   // About Section

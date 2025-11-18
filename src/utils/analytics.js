@@ -22,7 +22,9 @@ export const trackMenuClick = (menuItem, section = 'main_navigation') => {
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Menu click tracked - ${menuItem}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Menu click tracked - ${menuItem}`);
+  }
 };
 
 // Track button clicks
@@ -34,7 +36,9 @@ export const trackButtonClick = (buttonName, category = 'Engagement') => {
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Button click tracked - ${buttonName}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Button click tracked - ${buttonName}`);
+  }
 };
 
 // Track form submissions
@@ -47,7 +51,9 @@ export const trackFormSubmission = (formName, method = 'contact') => {
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Form submission tracked - ${formName}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Form submission tracked - ${formName}`);
+  }
 };
 
 // Track scroll events
@@ -68,7 +74,9 @@ export const trackPageView = (pagePath, pageTitle) => {
     page_title: pageTitle,
   });
   
-  console.log(`Analytics: Page view tracked - ${pageTitle} (${pagePath})`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Page view tracked - ${pageTitle} (${pagePath})`);
+  }
 };
 
 // Track link clicks (external links, downloads, etc.)
@@ -81,7 +89,9 @@ export const trackLinkClick = (linkUrl, linkText, category = 'External Link') =>
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Link click tracked - ${linkText} (${linkUrl})`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Link click tracked - ${linkText} (${linkUrl})`);
+  }
 };
 
 // Track contact info clicks
@@ -95,7 +105,9 @@ export const trackContactClick = (contactType, contactValue) => {
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Contact click tracked - ${contactType}: ${contactValue}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Contact click tracked - ${contactType}: ${contactValue}`);
+  }
 };
 
 // Track slider interactions
@@ -109,7 +121,9 @@ export const trackSliderInteraction = (action, slideIndex = null) => {
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Slider interaction tracked - ${action}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Slider interaction tracked - ${action}`);
+  }
 };
 
 // Track scroll to contact section
@@ -121,7 +135,9 @@ export const trackContactSectionView = () => {
     transport_type: 'beacon'
   });
   
-  console.log('Analytics: Contact section view tracked');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Analytics: Contact section view tracked');
+  }
 };
 
 // Enhanced ecommerce tracking for service inquiries
@@ -135,6 +151,8 @@ export const trackServiceInquiry = (serviceName, serviceCategory = 'Digital Educ
     transport_type: 'beacon'
   });
   
-  console.log(`Analytics: Service inquiry tracked - ${serviceName}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Analytics: Service inquiry tracked - ${serviceName}`);
+  }
 };
 

@@ -3,7 +3,7 @@ import { trackScroll, trackContactSectionView } from '../utils/analytics';
 
 const useScrollTracking = () => {
   useEffect(() => {
-    let scrollDepthTracked = [25, 50, 75, 100];
+    const scrollDepthTracked = [25, 50, 75, 100];
     let contactSectionViewed = false;
 
     const handleScroll = () => {
@@ -13,9 +13,9 @@ const useScrollTracking = () => {
 
       // Track scroll depth milestones
       scrollDepthTracked.forEach((depth, index) => {
-        if (scrollPercent >= depth && scrollDepthTracked.includes(depth)) {
+        if (scrollPercent >= depth && scrollDepthTracked[index] !== null) {
           trackScroll(depth);
-          scrollDepthTracked.splice(index, 1); // Remove tracked depth
+          scrollDepthTracked[index] = null; // Mark as tracked
         }
       });
 

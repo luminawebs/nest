@@ -137,7 +137,9 @@ const PortfolioGrid = () => {
       window.open(item.content, '_blank');
     } else {
       // For other content types, could navigate to detail page
-      console.log(`Opening ${item.title} content:`, item.content);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Opening ${item.title} content:`, item.content);
+      }
     }
   };
 

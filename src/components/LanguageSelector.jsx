@@ -9,16 +9,30 @@ const LanguageSelector = ({ className = '', style = {} }) => {
   const location = useLocation();
 
   const handleLanguageChange = (newLanguage) => {
+    // Prevent switching to the same language
+    if (newLanguage === language) {
+      return;
+    }
+    
     // Get current path without language prefix
     const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/[a-z]{2}/, '') || '/';
+    // Remove language prefix (e.g., /es or /en) and any trailing slash, but keep the rest
+    let pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+    // Ensure we have at least a single slash
+    if (!pathWithoutLang || pathWithoutLang === '') {
+      pathWithoutLang = '/';
+    }
     
     // Navigate to new language path
     const newPath = getLocalizedPath(pathWithoutLang, newLanguage);
-    navigate(newPath);
     
-    // Update language state
-    switchLanguage(newLanguage);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Language switch:', { currentPath, pathWithoutLang, newPath, newLanguage });
+    }
+    
+    // Navigate to the new path - LanguageRouter will handle updating the language state
+    // based on the URL parameter, so we don't need to call switchLanguage here
+    navigate(newPath, { replace: false });
     
     // Track the language switch
     trackButtonClick(`Language Switch - ${newLanguage}`, 'Language Selector');
@@ -27,7 +41,12 @@ const LanguageSelector = ({ className = '', style = {} }) => {
   return (
     <div className={`language-selector ${className}`} style={style}>
       <button 
-        onClick={() => handleLanguageChange('es')}
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleLanguageChange('es');
+        }}
         style={{
           background: 'none',
           border: 'none',
@@ -37,7 +56,9 @@ const LanguageSelector = ({ className = '', style = {} }) => {
           fontSize: '14px',
           marginRight: '8px',
           cursor: 'pointer',
-          padding: 0
+          padding: 0,
+          zIndex: 1000,
+          position: 'relative'
         }}
         aria-label="Switch to Spanish"
       >
@@ -45,7 +66,12 @@ const LanguageSelector = ({ className = '', style = {} }) => {
       </button>
       <span style={{ color: '#6c757d', fontSize: '14px' }}>|</span>
       <button 
-        onClick={() => handleLanguageChange('en')}
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handleLanguageChange('en');
+        }}
         style={{
           background: 'none',
           border: 'none',
@@ -55,7 +81,9 @@ const LanguageSelector = ({ className = '', style = {} }) => {
           fontSize: '14px',
           marginLeft: '8px',
           cursor: 'pointer',
-          padding: 0
+          padding: 0,
+          zIndex: 1000,
+          position: 'relative'
         }}
         aria-label="Switch to English"
       >

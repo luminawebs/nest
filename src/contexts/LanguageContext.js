@@ -45,20 +45,31 @@ export const LanguageProvider = ({ children }) => {
     const savedLanguage = localStorage.getItem('edunest-language');
     if (savedLanguage) return; // user already has preference
 
+    let isMounted = true;
+    const abortController = new AbortController();
+
     // Fetch geolocation info from free ipapi.co (1k req/day free)
-    fetch('https://ipapi.co/json/')
+    fetch('https://ipapi.co/json/', { signal: abortController.signal })
       .then((res) => res.ok ? res.json() : null)
       .then((data) => {
-        if (!data) return;
+        if (!data || !isMounted) return;
         const country = data.country_code;
         // Simple mapping: common English-speaking countries → 'en', rest → 'es'
         const englishCountries = ['US', 'GB', 'CA', 'AU', 'NZ', 'IE'];
         const detectedLang = englishCountries.includes(country) ? 'en' : 'es';
         setLanguage(detectedLang);
       })
-      .catch(() => {
-        /* silent fail – keep current language */
+      .catch((error) => {
+        // Ignore abort errors
+        if (error.name !== 'AbortError') {
+          /* silent fail – keep current language */
+        }
       });
+
+    return () => {
+      isMounted = false;
+      abortController.abort();
+    };
   }, []);
 
   const switchLanguage = (newLanguage) => {
@@ -70,7 +81,11 @@ export const LanguageProvider = ({ children }) => {
     // Remove leading slash if present
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
     // Return path with language prefix
-    return `/${lang}${cleanPath ? `/${cleanPath}` : ''}`;
+    // If path is root (/), return /lang/, otherwise /lang/rest
+    if (!cleanPath || cleanPath === '') {
+      return `/${lang}/`;
+    }
+    return `/${lang}/${cleanPath}`;
   };
 
 
