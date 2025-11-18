@@ -133,6 +133,7 @@ const Menu = () => {
             {t('nav.lmsSaas')}
           </Link>
         </li>
+        {/* Hidden: Resources/Recursos menu item
         <li>
           <Link
             to={getLocalizedPath('/resources')}
@@ -141,6 +142,8 @@ const Menu = () => {
             {t('nav.resources')}
           </Link>
         </li>
+        */}
+        {/* Hidden: Portfolio/Portafolio menu item
         <li>
           <Link
             to={getLocalizedPath('/portfolio')}
@@ -149,6 +152,7 @@ const Menu = () => {
             {t('nav.portfolio')}
           </Link>
         </li>
+        */}
       </ul>
       <i
         className="mobile-nav-toggle d-xl-none bi bi-list"
