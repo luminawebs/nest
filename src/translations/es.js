@@ -551,6 +551,12 @@ export const es = {
         'Consulta gratuita de 30 min'
       ]
     },
+    finalCta: {
+      title: '¿Listo para transformar tu educación digital?',
+      subtitle: 'Agenda una llamada de 30 minutos para explorar tus necesidades',
+      button: 'Agendar llamada de 30 min',
+      calendlyUrl: 'https://calendly.com/edunest-adm/30min'
+    },
     process: {
       title: 'Nuestro Proceso en 4 Pasos',
       subtitle: 'De la idea al curso implementado',

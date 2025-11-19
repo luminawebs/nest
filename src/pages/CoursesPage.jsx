@@ -117,7 +117,7 @@ const CoursesPage = () => {
                     <i className={`bi ${challenge.icon} text-primary`} style={{ fontSize: '2.5rem' }}></i>
                   </div>
                   <h4>{challenge.title}</h4>
-                  <p className=" mb-0 color-primary">{challenge.description}</p>
+                  <p className=" mb-0 color-primary white">{challenge.description}</p>
                 </div>
               </div>
             ))}
@@ -189,7 +189,7 @@ const CoursesPage = () => {
                     </span>
                   </div>
                   <h4>{step.title}</h4>
-                  <p className="text-muted">{step.description}</p>
+                  <p className="">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -250,15 +250,17 @@ const CoursesPage = () => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-lg-8" data-aos="fade-up">
-              <h2 className="mb-3">{t('courses.cta.title')}</h2>
-              <p className="lead mb-4">{t('courses.cta.subtitle')}</p>
+              <h2 className="mb-3">{t('courses.finalCta.title')}</h2>
+              <p className="lead mb-4">{t('courses.finalCta.subtitle')}</p>
               <a
-                href="#quote-form"
+                href={t('courses.finalCta.calendlyUrl')}
                 className="btn btn-primary btn-lg"
-                onClick={() => trackButtonClick('Final CTA - Request Quote', 'Courses Landing')}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackLinkClick('Final CTA - Calendly 30min', 'Courses Landing')}
               >
-                <i className="bi bi-calendar-check me-2"></i>
-                {t('courses.hero.ctaPrimary')}
+                <i className="bi bi-telephone-outbound me-2"></i>
+                {t('courses.finalCta.button')}
               </a>
             </div>
           </div>
