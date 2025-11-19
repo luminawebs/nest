@@ -15,8 +15,6 @@ const ImpactoDemostrado = () => {
             <div className="testimonial-intro">
               <h2 className="section-title mb-3">{t('testimonial.title')}</h2>
               <p className="lead mb-4">{t('testimonial.subtitle')}</p>
-              
-              {/* Navigation Buttons */}
               <div className="swiper-nav-buttons d-flex gap-3">
                 <button
                   className="slider-prev btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
@@ -68,8 +66,7 @@ const ImpactoDemostrado = () => {
 
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                  <div className="testimonial-item bg-white rounded-4 p-4 p-md-5 shadow-lg h-100">
-                    {/* Header with Logo and Title */}
+                  <div className="testimonial-item rounded-4 p-4 p-md-5 shadow-lg h-100">
                     <div className="testimonial-header d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 mb-4 pb-4 border-bottom">
                       <img 
                         src="/assets/img/Logo_del_Politecnico_Grancolombiano.svg" 
@@ -78,26 +75,36 @@ const ImpactoDemostrado = () => {
                         style={{ maxWidth: '180px', height: 'auto' }}
                       />
                       <div className="flex-grow-1">
-                        <h3 className="h4 mb-0 text-dark fw-bold">{caseStudy.title}</h3>
+                        <h3 className="h4 mb-0 fw-bold">{caseStudy.title}</h3>
                       </div>
                     </div>
-
-                    {/* Challenge Section */}
                     <div className="testimonial-challenge mb-4">
                       <p className="mb-2">
                         <strong className="text-primary">{caseStudy.challenge.label}</strong>
                       </p>
-                      <p className="text-muted mb-0 color-primary">{caseStudy.challenge.text}</p>
+                      <p className="mb-0">{caseStudy.challenge.text}</p>
                     </div>
-
-                    {/* Solution Section */}
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="testimonial-item rounded-4 p-4 p-md-5 shadow-lg h-100">
+                    <div className="testimonial-header d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 mb-4 pb-4 border-bottom">
+                      <img 
+                        src="/assets/img/Logo_del_Politecnico_Grancolombiano.svg" 
+                        alt="Politécnico Grancolombiano" 
+                        className="testimonial-logo"
+                        style={{ maxWidth: '180px', height: 'auto' }}
+                      />
+                      <div className="flex-grow-1">
+                        <h3 className="h4 mb-0 fw-bold">{caseStudy.title}</h3>
+                      </div>
+                    </div>
                     <div className="testimonial-solution mb-4">
                       <p className="mb-3">
                         <strong className="text-primary">{caseStudy.solution.label}</strong>
                       </p>
                       <ul className="case-study-features list-unstyled mb-0">
                         {caseStudy.solution.features.map((feature, index) => {
-                          // Check if it's a sub-item (indented)
                           const isSubItem = feature.startsWith('Visualización') || feature.startsWith('Descarga') || feature.startsWith('Progress') || feature.startsWith('Report');
                           return (
                             <li 
@@ -111,8 +118,21 @@ const ImpactoDemostrado = () => {
                         })}
                       </ul>
                     </div>
-
-                    {/* Results Section */}
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="testimonial-item rounded-4 p-4 p-md-5 shadow-lg h-100">
+                    <div className="testimonial-header d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4 mb-4 pb-4 border-bottom">
+                      <img 
+                        src="/assets/img/Logo_del_Politecnico_Grancolombiano.svg" 
+                        alt="Politécnico Grancolombiano" 
+                        className="testimonial-logo"
+                        style={{ maxWidth: '180px', height: 'auto' }}
+                      />
+                      <div className="flex-grow-1">
+                        <h3 className="h4 mb-0 fw-bold">{caseStudy.title}</h3>
+                      </div>
+                    </div>
                     <div className="testimonial-results">
                       <p className="mb-3">
                         <strong className="text-primary">{caseStudy.results.label}</strong>
@@ -120,11 +140,11 @@ const ImpactoDemostrado = () => {
                       <div className="results-grid row g-3">
                         {caseStudy.results.stats.map((stat, index) => (
                           <div key={index} className="col-md-4">
-                            <div className="result-item text-center p-3 bg-light rounded-3 h-100">
+                            <div className="result-item text-center p-3 rounded-3 h-100">
                               <div className="result-number display-5 fw-bold text-primary mb-2">
                                 {stat.number}
                               </div>
-                              <div className="result-label text-muted small mb-0">
+                              <div className="result-label small mb-0">
                                 {stat.label}
                               </div>
                             </div>
@@ -135,6 +155,7 @@ const ImpactoDemostrado = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

@@ -2530,6 +2530,35 @@ section,
   color: var(--contrast-color);
 }
 
+/* Impact Testimonials (dark variant) */
+.testimonial-section .testimonial-slider { position: relative; }
+.testimonial-section .testimonial-item {
+  background-color: color-mix(in srgb, var(--background-color), black 10%);
+  color: var(--contrast-color);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.testimonial-section .testimonial-item .testimonial-header {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.testimonial-section .testimonial-item .testimonial-challenge,
+.testimonial-section .testimonial-item .testimonial-solution,
+.testimonial-section .testimonial-item .testimonial-results {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1rem;
+}
+.testimonial-section .testimonial-item .text-dark { color: var(--contrast-color); }
+.testimonial-section .testimonial-item .text-muted { color: color-mix(in srgb, var(--contrast-color), transparent 40%) !important; }
+.testimonial-section .testimonial-item .result-item {
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.testimonial-section .testimonial-item .result-number { color: var(--accent-color); }
+.testimonial-section .testimonial-item .result-label { color: color-mix(in srgb, var(--contrast-color), transparent 40%); }
+.testimonial-section .swiper-nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -4549,4 +4578,20 @@ section,
                 border-bottom-color: #2d3748;
             }
         }
+
+.btn-primary {
+  --bs-btn-color: var(--contrast-color);
+  --bs-btn-bg: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
+  --bs-btn-hover-color: var(--contrast-color);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--accent-color), black 10%);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--accent-color), black 10%);
+  --bs-btn-focus-shadow-rgb: 227,161,39;
+  --bs-btn-active-color: var(--contrast-color);
+  --bs-btn-active-bg: color-mix(in srgb, var(--accent-color), black 15%);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--accent-color), black 15%);
+  --bs-btn-disabled-color: var(--contrast-color);
+  --bs-btn-disabled-bg: var(--accent-color);
+  --bs-btn-disabled-border-color: var(--accent-color);
+}
   
