@@ -437,6 +437,186 @@ export const en = {
     }
   },
 
+  // Courses Landing Page
+  courses: {
+    hero: {
+      title: 'eLearning Courses that Transform Education',
+      subtitle: 'Create interactive and memorable learning experiences',
+      description: 'We design and develop customized courses with cutting-edge technology: Articulate 360, HTML5, 3D avatars, and agile platforms. Transform your content into educational experiences that captivate and deliver results.',
+      ctaPrimary: 'Request Free Quote',
+      ctaSecondary: 'View Portfolio',
+      trustBadge: '50+ institutions trust us'
+    },
+    problem: {
+      title: 'Is Your Educational Content Not Generating the Engagement You Need?',
+      subtitle: 'Common challenges institutions face',
+      challenges: [
+        {
+          icon: 'bi-people',
+          title: 'Low Student Retention',
+          description: 'Students abandon traditional courses due to lack of interactivity and engagement.'
+        },
+        {
+          icon: 'bi-clock',
+          title: 'Long Development Times',
+          description: 'Creating professional courses can take months, delaying your educational goals.'
+        },
+        {
+          icon: 'bi-currency-dollar',
+          title: 'Limited Budgets',
+          description: 'You need professional quality solutions without spending a fortune.'
+        },
+        {
+          icon: 'bi-puzzle',
+          title: 'Complex Integration',
+          description: 'Difficulties integrating content with your existing LMS (Moodle, Blackboard, Canvas).'
+        }
+      ]
+    },
+    solution: {
+      title: 'The Solution: High-Impact eLearning Courses',
+      subtitle: 'We combine pedagogy, technology and design to create exceptional experiences',
+      features: [
+        {
+          icon: 'bi-lightning-charge',
+          title: 'Agile Development',
+          description: 'Courses ready in 2-4 weeks with weekly deliveries for review.'
+        },
+        {
+          icon: 'bi-person-video3',
+          title: 'Interactive 3D Avatars',
+          description: 'Virtual characters that guide and explain, increasing retention by up to 30%.'
+        },
+        {
+          icon: 'bi-laptop',
+          title: 'Cutting-Edge Technology',
+          description: 'Articulate 360, HTML5, SCORM/xAPI for maximum compatibility and functionality.'
+        },
+        {
+          icon: 'bi-puzzle',
+          title: 'Perfect Integration',
+          description: 'We connect with any LMS and generate automatic progress reports.'
+        }
+      ]
+    },
+    benefits: {
+      title: 'Proven Benefits',
+      subtitle: 'Real results from our clients',
+      stats: [
+        {
+          number: '95%',
+          label: 'Student Satisfaction',
+          description: 'Average satisfaction in implemented courses'
+        },
+        {
+          number: '2x',
+          label: 'Faster',
+          description: 'Development time compared to traditional methods'
+        },
+        {
+          number: '30%',
+          label: 'Higher Retention',
+          description: 'Increase in student retention with 3D avatars'
+        },
+        {
+          number: '50+',
+          label: 'Institutions',
+          description: 'Universities and companies that trust us'
+        }
+      ]
+    },
+    portfolio: {
+      title: 'Portfolio of Successful Courses',
+      subtitle: 'Explore real projects that have transformed education',
+      cta: 'View All Projects'
+    },
+    cta: {
+      title: 'Ready to Transform Your Digital Education?',
+      subtitle: 'Get a personalized quote in less than 24 hours',
+      description: 'Our team will analyze your needs and present you with a personalized proposal with timelines, costs and pedagogical strategy.',
+      form: {
+        title: 'Request Your Free Quote',
+        name: 'Full name',
+        email: 'Email address',
+        company: 'Institution/Company',
+        phone: 'Phone (optional)',
+        message: 'Tell us about your project',
+        submit: 'Request Quote',
+        success: 'Thank you! We will contact you within 24 hours.',
+        privacy: 'By submitting, you accept our privacy policy'
+      },
+      trustElements: [
+        'Response in 24 hours',
+        'No-obligation quote',
+        'Free 30-min consultation'
+      ]
+    },
+    process: {
+      title: 'Our Process in 4 Steps',
+      subtitle: 'From idea to implemented course',
+      steps: [
+        {
+          number: '01',
+          title: 'Educational Diagnosis',
+          description: 'We analyze your objectives, audience and existing content to recommend the best solution.'
+        },
+        {
+          number: '02',
+          title: 'Instructional Design',
+          description: 'We create the pedagogical structure, scripts and personalized interaction flows.'
+        },
+        {
+          number: '03',
+          title: 'Agile Development',
+          description: 'We develop your course with weekly deliveries for your review and continuous feedback.'
+        },
+        {
+          number: '04',
+          title: 'Implementation and Support',
+          description: 'We publish on your LMS, configure reports and offer continuous support.'
+        }
+      ]
+    }
+  },
+
+  // Testimonial/Impact Section
+  testimonial: {
+    title: 'Proven Impact',
+    subtitle: 'Discover how our solutions have transformed education in institutions like yours',
+    caseStudy: {
+      politecnico: {
+        title: 'Comprehensive Induction System for Politécnico Grancolombiano',
+        challenge: {
+          label: 'Challenge:',
+          text: 'Implement a massive induction course with real-time progress tracking for thousands of students.'
+        },
+        solution: {
+          label: 'Innovative Solution:',
+          features: [
+            'Customized platform with direct integration to Articulate 360 content',
+            '3D virtual avatar that guides learning throughout the course',
+            'Automated tracking system with:',
+            'Progress visualization by percentage',
+            'Report downloads for administrators',
+            'Interactive activities for greater engagement'
+          ]
+        },
+        results: {
+          label: 'Key Results:',
+          stats: [
+            { number: '95%', label: 'Student satisfaction' },
+            { number: '100%', label: 'Induction coverage' },
+            { number: '2x', label: 'Faster than traditional methods' }
+          ]
+        }
+      }
+    },
+    navigation: {
+      prev: 'Previous',
+      next: 'Next'
+    }
+  },
+
   // Common
   common: {
     loading: 'Loading...',

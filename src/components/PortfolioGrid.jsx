@@ -237,13 +237,7 @@ const PortfolioGrid = () => {
 
   return (
     <section id="portfolio-grid" className="portfolio-grid section">
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Nuestro Portfolio de Cursos</h2>
-        <div>
-          <span>Explora nuestros </span>
-          <span className="description-title">proyectos y contenidos educativos</span>
-        </div>
-      </div>
+     
 
       {/* Navigation Pills */}
       <div className="container mb-5">

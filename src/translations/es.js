@@ -437,6 +437,186 @@ export const es = {
     }
   },
 
+  // Courses Landing Page
+  courses: {
+    hero: {
+      title: 'Cursos eLearning que Transforman la Educación',
+      subtitle: 'Crea experiencias de aprendizaje interactivas y memorables',
+      description: 'Diseñamos y desarrollamos cursos personalizados con tecnología de vanguardia: Articulate 360, HTML5, avatares 3D y plataformas ágiles. Transforma tu contenido en experiencias educativas que cautivan y generan resultados.',
+      ctaPrimary: 'Solicitar Cotización Gratuita',
+      ctaSecondary: 'Ver Portfolio',
+      trustBadge: 'Más de 50+ instituciones confían en nosotros'
+    },
+    problem: {
+      title: '¿Tu Contenido Educativo No Genera el Engagement que Necesitas?',
+      subtitle: 'Los desafíos comunes que enfrentan las instituciones',
+      challenges: [
+        {
+          icon: 'bi-people',
+          title: 'Baja Retención Estudiantil',
+          description: 'Los estudiantes abandonan cursos tradicionales por falta de interactividad y engagement.'
+        },
+        {
+          icon: 'bi-clock',
+          title: 'Tiempos de Desarrollo Largos',
+          description: 'Crear cursos profesionales puede tomar meses, retrasando tus objetivos educativos.'
+        },
+        {
+          icon: 'bi-currency-dollar',
+          title: 'Presupuestos Limitados',
+          description: 'Necesitas soluciones de calidad profesional sin gastar una fortuna.'
+        },
+        {
+          icon: 'bi-puzzle',
+          title: 'Integración Compleja',
+          description: 'Dificultades para integrar contenido con tu LMS existente (Moodle, Blackboard, Canvas).'
+        }
+      ]
+    },
+    solution: {
+      title: 'La Solución: Cursos eLearning de Alto Impacto',
+      subtitle: 'Combinamos pedagogía, tecnología y diseño para crear experiencias excepcionales',
+      features: [
+        {
+          icon: 'bi-lightning-charge',
+          title: 'Desarrollo Ágil',
+          description: 'Cursos listos en 2-4 semanas con entregas semanales para revisión.'
+        },
+        {
+          icon: 'bi-person-video3',
+          title: 'Avatares 3D Interactivos',
+          description: 'Personajes virtuales que guían y explican, aumentando la retención hasta un 30%.'
+        },
+        {
+          icon: 'bi-laptop',
+          title: 'Tecnología de Vanguardia',
+          description: 'Articulate 360, HTML5, SCORM/xAPI para máxima compatibilidad y funcionalidad.'
+        },
+        {
+          icon: 'bi-puzzle',
+          title: 'Integración Perfecta',
+          description: 'Conectamos con cualquier LMS y generamos reportes automáticos de progreso.'
+        }
+      ]
+    },
+    benefits: {
+      title: 'Beneficios Comprobados',
+      subtitle: 'Resultados reales de nuestros clientes',
+      stats: [
+        {
+          number: '95%',
+          label: 'Satisfacción Estudiantil',
+          description: 'Promedio de satisfacción en cursos implementados'
+        },
+        {
+          number: '2x',
+          label: 'Más Rápido',
+          description: 'Tiempo de desarrollo comparado con métodos tradicionales'
+        },
+        {
+          number: '30%',
+          label: 'Mayor Retención',
+          description: 'Incremento en retención estudiantil con avatares 3D'
+        },
+        {
+          number: '50+',
+          label: 'Instituciones',
+          description: 'Universidades y empresas que confían en nosotros'
+        }
+      ]
+    },
+    portfolio: {
+      title: 'Portfolio de Cursos Exitosos',
+      subtitle: 'Explora proyectos reales que han transformado la educación',
+      cta: 'Ver Todos los Proyectos'
+    },
+    cta: {
+      title: '¿Listo para Transformar tu Educación Digital?',
+      subtitle: 'Obtén una cotización personalizada en menos de 24 horas',
+      description: 'Nuestro equipo analizará tus necesidades y te presentará una propuesta personalizada con tiempos, costos y estrategia pedagógica.',
+      form: {
+        title: 'Solicita tu Cotización Gratuita',
+        name: 'Nombre completo',
+        email: 'Correo electrónico',
+        company: 'Institución/Empresa',
+        phone: 'Teléfono (opcional)',
+        message: 'Cuéntanos sobre tu proyecto',
+        submit: 'Solicitar Cotización',
+        success: '¡Gracias! Te contactaremos en menos de 24 horas.',
+        privacy: 'Al enviar, aceptas nuestra política de privacidad'
+      },
+      trustElements: [
+        'Respuesta en 24 horas',
+        'Cotización sin compromiso',
+        'Consulta gratuita de 30 min'
+      ]
+    },
+    process: {
+      title: 'Nuestro Proceso en 4 Pasos',
+      subtitle: 'De la idea al curso implementado',
+      steps: [
+        {
+          number: '01',
+          title: 'Diagnóstico Educativo',
+          description: 'Analizamos tus objetivos, audiencia y contenido existente para recomendar la mejor solución.'
+        },
+        {
+          number: '02',
+          title: 'Diseño Instruccional',
+          description: 'Creamos la estructura pedagógica, guiones y flujos de interacción personalizados.'
+        },
+        {
+          number: '03',
+          title: 'Desarrollo Ágil',
+          description: 'Desarrollamos tu curso con entregas semanales para tu revisión y feedback continuo.'
+        },
+        {
+          number: '04',
+          title: 'Implementación y Soporte',
+          description: 'Publicamos en tu LMS, configuramos reportes y ofrecemos soporte continuo.'
+        }
+      ]
+    }
+  },
+
+  // Testimonial/Impact Section
+  testimonial: {
+    title: 'Impacto Demostrado',
+    subtitle: 'Descubre cómo nuestras soluciones han transformado la educación en instituciones como la tuya',
+    caseStudy: {
+      politecnico: {
+        title: 'Sistema Integral de Inducción para el Politécnico Grancolombiano',
+        challenge: {
+          label: 'Desafío:',
+          text: 'Implementar un curso masivo de inducción con seguimiento en tiempo real del progreso de miles de estudiantes.'
+        },
+        solution: {
+          label: 'Solución Innovadora:',
+          features: [
+            'Plataforma personalizada con integración directa a contenido Articulate 360',
+            'Avatar virtual 3D que guía el aprendizaje durante todo el curso',
+            'Sistema de seguimiento automatizado con:',
+            'Visualización de progreso por porcentaje',
+            'Descarga de reportes para administradores',
+            'Actividades interactivas para mayor engagement'
+          ]
+        },
+        results: {
+          label: 'Resultados Clave:',
+          stats: [
+            { number: '95%', label: 'Satisfacción estudiantil' },
+            { number: '100%', label: 'Cobertura de inducción' },
+            { number: '2x', label: 'Más rápido que métodos tradicionales' }
+          ]
+        }
+      }
+    },
+    navigation: {
+      prev: 'Anterior',
+      next: 'Siguiente'
+    }
+  },
+
   // Common
   common: {
     loading: 'Cargando...',

@@ -42,7 +42,7 @@ const ConditionalLayout = ({ children }) => {
             <Link to={getLocalizedPath('/')} className="logo d-flex align-items-center me-auto me-xl-0">
               <h1 className="sitename">
                 <img 
-                  src="assets/img/edunest-dark.svg" 
+                  src="/assets/img/edunest-dark.svg" 
                   alt="" 
                   style={{ 
                     marginTop: "4px",

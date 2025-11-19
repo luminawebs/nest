@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="row gy-4">
               <div className="col-lg-5 col-md-12 footer-about">
                 <a href="/" className="logo d-flex align-items-center">
-                  <span className="sitename"><img src="assets/img/edunest-dark.svg" alt="" /></span>
+                  <span className="sitename"><img src="/assets/img/edunest-dark.svg" alt="" /></span>
                 </a>
                 <p>Descubre estrategias innovadoras para la educación digital. Transformamos contenidos en experiencias
                   interactivas que cautivan a los estudiantes. Nuestro equipo especializado combina tecnología

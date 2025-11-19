@@ -325,7 +325,7 @@ const Personajes3DPage = () => {
                       </div>
                       {/* <div className="swiper-slide">
                         <div className="portfolio-item">
-                          <img src="assets/img/services/services-10.webp" alt="Demo 2" className="img-fluid" loading="lazy" />
+                          <img src="/assets/img/services/services-10.webp" alt="Demo 2" className="img-fluid" loading="lazy" />
                           <div className="portfolio-info">
                             <h5>Personaje 3D Interactivo</h5>
                             <p>Guías dinámicas para plataformas LMS</p>
@@ -334,7 +334,7 @@ const Personajes3DPage = () => {
                       </div>
                       <div className="swiper-slide">
                         <div className="portfolio-item">
-                          <img src="assets/img/services/services-2.webp" alt="Demo 3" className="img-fluid" loading="lazy" />
+                          <img src="/assets/img/services/services-2.webp" alt="Demo 3" className="img-fluid" loading="lazy" />
                           <div className="portfolio-info">
                             <h5>Campaña Corporativa</h5>
                             <p>Mensaje institucional con animación facial</p>

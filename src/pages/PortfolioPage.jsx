@@ -190,7 +190,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(2)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-10.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="overlay-content">
                       <div className="entry-meta">Development</div>
                       <h3 className="entry-title">E-Learning Platform</h3>
@@ -214,7 +214,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-7.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">Photography</div>
@@ -235,7 +235,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(6)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-4.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">Marketing</div>
@@ -256,7 +256,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui ${filter === '*' || filter === '.filter-ui' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(3)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-2.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">UI/UX Design</div>
@@ -280,7 +280,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development ${filter === '*' || filter === '.filter-development' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(4)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-11.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">Development</div>
@@ -301,7 +301,7 @@ const PortfolioPage = () => {
               {/* <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography ${filter === '*' || filter === '.filter-photography' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(5)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-8.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">Photography</div>
@@ -322,7 +322,7 @@ const PortfolioPage = () => {
               <div className={`col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing ${filter === '*' || filter === '.filter-marketing' ? 'd-block' : 'd-none'}`}>
                 <article className="portfolio-entry" onClick={() => handleProjectClick(7)}>
                   <figure className="entry-image">
-                    <img src="assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
+                    <img src="/assets/img/portfolio/portfolio-5.webp" className="img-fluid" alt="" loading="lazy" />
                     <div className="entry-overlay">
                       <div className="overlay-content">
                         <div className="entry-meta">Marketing</div>
