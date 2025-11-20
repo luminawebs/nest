@@ -61,6 +61,15 @@ export const sendFormData = async (formData, scores, answers) => {
     user_email: formData.email,
     user_company: formData.company || 'Not provided',
     user_job_title: formData.jobTitle || 'Not provided',
+
+    // Common template fields (matching your EmailJS template)
+    name: formData.fullName,
+    email: formData.email,
+    company: formData.company || 'Not provided',
+    phone: formData.phone || 'Not provided',
+    message: formData.message || `Lead captured from ${formData.source || 'courses'}`,
+    time: new Date().toLocaleString(),
+    subject: formData.subject || 'Quote Request',
     
     // Quiz Results
     total_score: Math.round(Object.values(scores).reduce((a, b) => a + b, 0) / 8),
@@ -84,7 +93,7 @@ export const sendFormData = async (formData, scores, answers) => {
     
     // Submission timestamp
     submission_date: new Date().toLocaleString(),
-    
+
     // Recipient email (your email where you want to receive the form data)
     to_email: process.env.REACT_APP_RECIPIENT_EMAIL || 'your-email@example.com'
   };
